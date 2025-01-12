@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\glfw\src\</FILEPATH>
+      <FILENAME>win32_thread.c</FILENAME>
+      <LINE>76</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>28125</DEFECTCODE>
+    <DESCRIPTION>The function 'InitializeCriticalSection' must be called from within a try/except block:  The requirement might be conditional.</DESCRIPTION>
+    <FUNCTION>_glfwPlatformCreateMutex</FUNCTION>
+    <DECORATED>_glfwPlatformCreateMutex</DECORATED>
+    <FUNCLINE>73</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

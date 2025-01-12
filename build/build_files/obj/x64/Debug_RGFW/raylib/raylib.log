@@ -1,0 +1,32 @@
+﻿  raudio.c
+  rcore.c
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\RGFW.h(1758,14): warning C4244: '=': conversion from 'u64' to 'u32', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\RGFW.h(1776,15): warning C4244: '=': conversion from 'double' to 'u32', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\RGFW.h(1757,12): warning C4244: 'initializing': conversion from 'double' to 'u64', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\RGFW.h(1761,26): warning C4244: 'initializing': conversion from 'double' to 'u64', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\RGFW.h(1762,47): warning C4244: 'initializing': conversion from 'double' to 'u64', possible loss of data
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\libloaderapi.h(212,6): warning C4028: formal parameter 1 different from declaration
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\libloaderapi.h(212,6): warning C4028: formal parameter 2 different from declaration
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\libloaderapi.h(223,6): warning C4028: formal parameter 1 different from declaration
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\libloaderapi.h(223,6): warning C4028: formal parameter 2 different from declaration
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\RGFW.h(5065,220): warning C4028: formal parameter 3 different from declaration
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\RGFW.h(5065,220): warning C4028: formal parameter 5 different from declaration
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\RGFW.h(5065,220): warning C4028: formal parameter 7 different from declaration
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\RGFW.h(5367,51): warning C4133: 'function': incompatible types - from 'LPWSTR' to 'LPCSTR'
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\RGFW.h(5919,20): warning C4244: 'function': conversion from 'WPARAM' to 'UINT', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\RGFW.h(5970,20): warning C4244: 'function': conversion from 'WPARAM' to 'UINT', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\RGFW.h(6041,28): error C2059: syntax error: '}'
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\RGFW.h(6789,9): warning C4244: 'function': conversion from 'u64' to 'DWORD', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\platforms\rcore_desktop_rgfw.c(625,25): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\platforms\rcore_desktop_rgfw.c(668,31): warning C4267: 'function': conversion from 'size_t' to 'u32', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\platforms\rcore_desktop_rgfw.c(703,56): warning C4244: 'function': conversion from 'unsigned __int64' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\platforms\rcore_desktop_rgfw.c(932,35): warning C4018: '<': signed/unsigned mismatch
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\platforms\rcore_desktop_rgfw.c(1015,64): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\platforms\rcore_desktop_rgfw.c(1033,64): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  rglfw.c
+  rmodels.c
+  rshapes.c
+  rtext.c
+  rtextures.c
+  utils.c
+  Generating Code...

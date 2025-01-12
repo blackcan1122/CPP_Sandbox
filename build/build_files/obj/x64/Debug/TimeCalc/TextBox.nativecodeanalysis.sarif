@@ -1,0 +1,51 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.38.33139.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/marce/documents/hax0rstuff/timecalc/src/private/textbox.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "b2139640dc7b65170a5b78df847535af8a98b899b67910275e0e4be54e8f4db7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/marce/documents/hax0rstuff/timecalc/src/public/textbox.h"
+          },
+          "hashes": {
+            "sha-256": "fe8d755034d3a9e2055f69cce81900fbb032c10f148d2dd04d734cb54f7c5a63"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/marce/documents/hax0rstuff/timecalc/build/external/raylib-master/src/raylib.h"
+          },
+          "hashes": {
+            "sha-256": "d92d7b91406be1220137af81db31452884ee08fcf91406356ad802ce5d0f5c8d"
+          }
+        }
+      ]
+    }
+  ]
+}
