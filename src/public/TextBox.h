@@ -9,6 +9,8 @@ public:
 
 	// Methods
 
+	TextInputBox() = default;
+
 	TextInputBox& Construct(Rectangle Box, Color BackgroundColor);
 	TextInputBox& Construct(float x, float y, float width, float height, Color BackgroundColor);
 	TextInputBox& UseBorder(bool UseBorder);

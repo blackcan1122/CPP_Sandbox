@@ -1,1 +1,6 @@
-﻿  TimeCalc.vcxproj -> C:\Users\marce\Documents\Hax0rStuff\TimeCalc\bin\Release\TimeCalc.exe
+﻿  main.cpp
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(90,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(91,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(92,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(93,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  TimeCalc.vcxproj -> C:\Users\marce\Documents\Hax0rStuff\TimeCalc\bin\Release\TimeCalc.exe
