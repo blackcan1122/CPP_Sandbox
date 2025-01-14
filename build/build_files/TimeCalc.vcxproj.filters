@@ -18,13 +18,24 @@
     <ClInclude Include="..\..\include\resource_dir.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\Logo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\src\public\TextBox.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\public\TimeCalculator.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\public\WindowHandle.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h" />
+    <ClInclude Include="..\..\src\raygui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\trex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\main.cpp">
@@ -33,15 +44,11 @@
     <ClCompile Include="..\..\src\private\TextBox.cpp">
       <Filter>Source Files\private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\private\TimeCalculator.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\private\WindowHandle.cpp">
       <Filter>Source Files\private</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="TimeCalc.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\resources\Logo.png" />
-    <Image Include="icon1.ico" />
   </ItemGroup>
 </Project>

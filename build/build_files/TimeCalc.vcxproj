@@ -490,26 +490,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\resource_dir.h" />
+    <ClInclude Include="..\..\src\Logo.h" />
     <ClInclude Include="..\..\src\public\TextBox.h" />
+    <ClInclude Include="..\..\src\public\TimeCalculator.h" />
     <ClInclude Include="..\..\src\public\WindowHandle.h" />
-    <ClInclude Include="resource.h" />
+    <ClInclude Include="..\..\src\raygui.h" />
+    <ClInclude Include="..\..\src\trex.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\src\private\TextBox.cpp" />
+    <ClCompile Include="..\..\src\private\TimeCalculator.cpp" />
     <ClCompile Include="..\..\src\private\WindowHandle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="raylib.vcxproj">
       <Project>{8898EA18-743A-15EF-5DF5-284349369C3F}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="TimeCalc.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\resources\Logo.png" />
-    <Image Include="icon1.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
