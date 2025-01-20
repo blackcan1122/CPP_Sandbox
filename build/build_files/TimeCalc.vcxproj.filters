@@ -21,7 +21,31 @@
     <ClInclude Include="..\..\src\Logo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\public\Core.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\public\DispatcherEvent.hpp">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\public\Event.hpp">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\public\EventDispatcher.hpp">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\public\GameInstance.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\public\GameMode.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\public\StateMachine.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\src\public\TextBox.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\public\TimeCalcMode.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\public\TimeCalculator.h">
@@ -41,7 +65,25 @@
     <ClCompile Include="..\..\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\private\DispatcherEvent.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\private\EventDispatcher.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\private\GameInstance.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\private\GameMode.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\private\StateMachine.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\private\TextBox.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\private\TimeCalcMode.cpp">
       <Filter>Source Files\private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\private\TimeCalculator.cpp">

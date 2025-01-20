@@ -491,7 +491,15 @@
   <ItemGroup>
     <ClInclude Include="..\..\include\resource_dir.h" />
     <ClInclude Include="..\..\src\Logo.h" />
+    <ClInclude Include="..\..\src\public\Core.h" />
+    <ClInclude Include="..\..\src\public\DispatcherEvent.hpp" />
+    <ClInclude Include="..\..\src\public\Event.hpp" />
+    <ClInclude Include="..\..\src\public\EventDispatcher.hpp" />
+    <ClInclude Include="..\..\src\public\GameInstance.h" />
+    <ClInclude Include="..\..\src\public\GameMode.h" />
+    <ClInclude Include="..\..\src\public\StateMachine.h" />
     <ClInclude Include="..\..\src\public\TextBox.h" />
+    <ClInclude Include="..\..\src\public\TimeCalcMode.h" />
     <ClInclude Include="..\..\src\public\TimeCalculator.h" />
     <ClInclude Include="..\..\src\public\WindowHandle.h" />
     <ClInclude Include="..\..\src\raygui.h" />
@@ -499,7 +507,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\main.cpp" />
+    <ClCompile Include="..\..\src\private\DispatcherEvent.cpp" />
+    <ClCompile Include="..\..\src\private\EventDispatcher.cpp" />
+    <ClCompile Include="..\..\src\private\GameInstance.cpp" />
+    <ClCompile Include="..\..\src\private\GameMode.cpp" />
+    <ClCompile Include="..\..\src\private\StateMachine.cpp" />
     <ClCompile Include="..\..\src\private\TextBox.cpp" />
+    <ClCompile Include="..\..\src\private\TimeCalcMode.cpp" />
     <ClCompile Include="..\..\src\private\TimeCalculator.cpp" />
     <ClCompile Include="..\..\src\private\WindowHandle.cpp" />
   </ItemGroup>
