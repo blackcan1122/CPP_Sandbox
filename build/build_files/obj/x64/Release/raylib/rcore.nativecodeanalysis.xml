@@ -1691,7 +1691,7 @@
           <ID>3</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'i' is an In/Out argument to 'strcpy' (declared at c:\program files (x86)\windows kits\10\include\10.0.22621.0\ucrt\string.h:130)</MESSAGE>
+          <MESSAGE>'i' is an In/Out argument to 'strcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -1867,7 +1867,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'bmpData' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'bmpData' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -1977,7 +1977,7 @@
           <ID>3</ID>
           <KIND>usage</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'fileExtLower' is an Input to 'strcmp' (declared at c:\program files (x86)\windows kits\10\include\10.0.22621.0\ucrt\string.h:100)</MESSAGE>
+          <MESSAGE>'fileExtLower' is an Input to 'strcmp' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -2377,7 +2377,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'msg' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'msg' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -2481,7 +2481,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'msg' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'msg' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -2809,7 +2809,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'msg' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'msg' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -2907,7 +2907,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'msg' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'msg' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>

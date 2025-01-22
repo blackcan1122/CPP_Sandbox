@@ -124,7 +124,7 @@
                           }
                         },
                         "message": {
-                          "text": "'d' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'d' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -277,7 +277,7 @@
                           }
                         },
                         "message": {
-                          "text": "'d' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'d' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -876,20 +876,6 @@
                             "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/tinyobj_loader_c.h"
                           },
                           "region": {
-                            "startLine": 1023,
-                            "startColumn": 3
-                          }
-                        }
-                      },
-                      "importance": "unimportant"
-                    },
-                    {
-                      "location": {
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/tinyobj_loader_c.h"
-                          },
-                          "region": {
                             "startLine": 1025,
                             "startColumn": 3
                           }
@@ -947,20 +933,6 @@
                           },
                           "region": {
                             "startLine": 1033,
-                            "startColumn": 3
-                          }
-                        }
-                      },
-                      "importance": "unimportant"
-                    },
-                    {
-                      "location": {
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/tinyobj_loader_c.h"
-                          },
-                          "region": {
-                            "startLine": 1035,
                             "startColumn": 3
                           }
                         }
@@ -1230,6 +1202,20 @@
                           "region": {
                             "startLine": 1103,
                             "startColumn": 30
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/tinyobj_loader_c.h"
+                          },
+                          "region": {
+                            "startLine": 1107,
+                            "startColumn": 14
                           }
                         }
                       },
@@ -2403,7 +2389,7 @@
                           }
                         },
                         "message": {
-                          "text": "'material_name_null_term' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'material_name_null_term' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -3578,7 +3564,7 @@
                           }
                         },
                         "message": {
-                          "text": "'material_name_null_term' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'material_name_null_term' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -17707,7 +17693,7 @@
                           }
                         },
                         "message": {
-                          "text": "'m_array' is an In/Out argument to 'memset' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:63)"
+                          "text": "'m_array' is an In/Out argument to 'memset' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -23581,7 +23567,7 @@
                           }
                         },
                         "message": {
-                          "text": "'tcoords' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'tcoords' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -24931,7 +24917,7 @@
                           }
                         },
                         "message": {
-                          "text": "'points' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'points' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -25120,7 +25106,7 @@
                           }
                         },
                         "message": {
-                          "text": "'triangles' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'triangles' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -25429,7 +25415,7 @@
                           }
                         },
                         "message": {
-                          "text": "'points' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'points' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -26003,7 +25989,7 @@
                           }
                         },
                         "message": {
-                          "text": "'points' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'points' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -26577,7 +26563,7 @@
                           }
                         },
                         "message": {
-                          "text": "'points' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'points' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -27151,7 +27137,7 @@
                           }
                         },
                         "message": {
-                          "text": "'points' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'points' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -27636,20 +27622,6 @@
                             "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/par_shapes.h"
                           },
                           "region": {
-                            "startLine": 1184,
-                            "startColumn": 5
-                          }
-                        }
-                      },
-                      "importance": "unimportant"
-                    },
-                    {
-                      "location": {
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/par_shapes.h"
-                          },
-                          "region": {
                             "startLine": 1187,
                             "startColumn": 13
                           }
@@ -27689,7 +27661,7 @@
                           }
                         },
                         "message": {
-                          "text": "'points' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'points' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -27775,20 +27747,6 @@
                           "region": {
                             "startLine": 1183,
                             "startColumn": 9
-                          }
-                        }
-                      },
-                      "importance": "unimportant"
-                    },
-                    {
-                      "location": {
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/par_shapes.h"
-                          },
-                          "region": {
-                            "startLine": 1184,
-                            "startColumn": 5
                           }
                         }
                       },
@@ -27938,7 +27896,7 @@
                           }
                         },
                         "message": {
-                          "text": "'triangles' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'triangles' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -31098,7 +31056,7 @@
                           }
                         },
                         "message": {
-                          "text": "'invmap' is an Input to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'invmap' is an Input to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -33535,25 +33493,6 @@
                             "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/par_shapes.h"
                           },
                           "region": {
-                            "startLine": 1765,
-                            "startColumn": 5
-                          }
-                        },
-                        "message": {
-                          "text": "Enter this loop, (assume '!!((ci==npoints))')"
-                        }
-                      },
-                      "kinds": [
-                        "branch"
-                      ]
-                    },
-                    {
-                      "location": {
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/par_shapes.h"
-                          },
-                          "region": {
                             "startLine": 1766,
                             "startColumn": 5
                           }
@@ -33573,7 +33512,7 @@
                           }
                         },
                         "message": {
-                          "text": "'condensed_map' is an Input to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'condensed_map' is an Input to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -35068,7 +35007,7 @@
                           }
                         },
                         "message": {
-                          "text": "'newmap' is an Input to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'newmap' is an Input to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -38409,7 +38348,7 @@
                           }
                         },
                         "message": {
-                          "text": "'mesh' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'mesh' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -38556,7 +38495,7 @@
                           }
                         },
                         "message": {
-                          "text": "'mesh' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'mesh' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -38589,7 +38528,7 @@
                           }
                         },
                         "message": {
-                          "text": "'mesh' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'mesh' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -38736,7 +38675,7 @@
                           }
                         },
                         "message": {
-                          "text": "'mesh' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'mesh' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -38769,7 +38708,7 @@
                           }
                         },
                         "message": {
-                          "text": "'mesh' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'mesh' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -38802,7 +38741,7 @@
                           }
                         },
                         "message": {
-                          "text": "'mesh' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'mesh' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -39585,7 +39524,7 @@
                           }
                         },
                         "message": {
-                          "text": "'ijoint' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'ijoint' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -40368,7 +40307,7 @@
                           }
                         },
                         "message": {
-                          "text": "'ijoint' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'ijoint' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -44563,7 +44502,7 @@
                           }
                         },
                         "message": {
-                          "text": "'vertices' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'vertices' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -45704,7 +45643,7 @@
                           }
                         },
                         "message": {
-                          "text": "'normals' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'normals' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -47041,7 +46980,7 @@
                           }
                         },
                         "message": {
-                          "text": "'colors' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'colors' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -49216,7 +49155,7 @@
                           }
                         },
                         "message": {
-                          "text": "'i' is an Output from 'strcpy' (declared at c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\string.h:130)"
+                          "text": "'i' is an Output from 'strcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -50294,7 +50233,7 @@
                           }
                         },
                         "message": {
-                          "text": "'i' is an Output from 'strcpy' (declared at c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\string.h:130)"
+                          "text": "'i' is an Output from 'strcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [

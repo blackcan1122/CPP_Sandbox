@@ -311,7 +311,7 @@
                           }
                         },
                         "message": {
-                          "text": "'scanline' is an In/Out argument to 'memset' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:63)"
+                          "text": "'scanline' is an In/Out argument to 'memset' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -665,7 +665,7 @@
                           }
                         },
                         "message": {
-                          "text": "'scanline2' is an In/Out argument to 'memset' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:63)"
+                          "text": "'scanline2' is an In/Out argument to 'memset' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -1019,7 +1019,7 @@
                           }
                         },
                         "message": {
-                          "text": "'scanline2' is an In/Out argument to 'memset' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:63)"
+                          "text": "'scanline2' is an In/Out argument to 'memset' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -1491,7 +1491,7 @@
                           }
                         },
                         "message": {
-                          "text": "'scanline' is an In/Out argument to 'memset' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:63)"
+                          "text": "'scanline' is an In/Out argument to 'memset' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -1776,7 +1776,7 @@
                           }
                         },
                         "message": {
-                          "text": "'buffer' is an Output from 'memset' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:63)"
+                          "text": "'buffer' is an Output from 'memset' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -1856,7 +1856,7 @@
                           }
                         },
                         "message": {
-                          "text": "'buffer' is an Output from 'memset' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:63)"
+                          "text": "'buffer' is an Output from 'memset' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -2034,25 +2034,6 @@
                             "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_truetype.h"
                           },
                           "region": {
-                            "startLine": 4065,
-                            "startColumn": 10
-                          }
-                        },
-                        "message": {
-                          "text": "Enter this loop, (assume '!!((pixels[i]==0))')"
-                        }
-                      },
-                      "kinds": [
-                        "branch"
-                      ]
-                    },
-                    {
-                      "location": {
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_truetype.h"
-                          },
-                          "region": {
                             "startLine": 4066,
                             "startColumn": 16
                           }
@@ -2101,25 +2082,6 @@
                         },
                         "message": {
                           "text": "Continue this loop, (assume 'i<w')"
-                        }
-                      },
-                      "kinds": [
-                        "branch"
-                      ]
-                    },
-                    {
-                      "location": {
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_truetype.h"
-                          },
-                          "region": {
-                            "startLine": 4065,
-                            "startColumn": 10
-                          }
-                        },
-                        "message": {
-                          "text": "Continue this loop, (assume '!!((pixels[i]==0))')"
                         }
                       },
                       "kinds": [
@@ -2244,7 +2206,7 @@
                           }
                         },
                         "message": {
-                          "text": "'buffer' is an Output from 'memset' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:63)"
+                          "text": "'buffer' is an Output from 'memset' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -2324,7 +2286,7 @@
                           }
                         },
                         "message": {
-                          "text": "'buffer' is an Output from 'memset' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:63)"
+                          "text": "'buffer' is an Output from 'memset' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -2502,25 +2464,6 @@
                             "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_truetype.h"
                           },
                           "region": {
-                            "startLine": 4127,
-                            "startColumn": 10
-                          }
-                        },
-                        "message": {
-                          "text": "Enter this loop, (assume '<branch condition>')"
-                        }
-                      },
-                      "kinds": [
-                        "branch"
-                      ]
-                    },
-                    {
-                      "location": {
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_truetype.h"
-                          },
-                          "region": {
                             "startLine": 4128,
                             "startColumn": 16
                           }
@@ -2569,25 +2512,6 @@
                         },
                         "message": {
                           "text": "Continue this loop, (assume 'i<h')"
-                        }
-                      },
-                      "kinds": [
-                        "branch"
-                      ]
-                    },
-                    {
-                      "location": {
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_truetype.h"
-                          },
-                          "region": {
-                            "startLine": 4127,
-                            "startColumn": 10
-                          }
-                        },
-                        "message": {
-                          "text": "Continue this loop, (assume '<branch condition>')"
                         }
                       },
                       "kinds": [
@@ -4650,7 +4574,7 @@
                           }
                         },
                         "message": {
-                          "text": "'text' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'text' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [

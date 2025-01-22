@@ -1,21 +1,29 @@
+#ifndef RAYGUI_IMPLEMENTATION
+#define RAYGUI_IMPLEMENTATION
+#endif // !RAYGUI_IMPLEMENTATION
 #include "GameInstance.h"
+#include "Core.h"
 #include "StateMachine.h"
 #include "GameMode.h"
-#include "PongGameMod.h"
-#include "StartingMenu.h"
-#include "SandboxMode.h"
+#include "TimeCalcMode.h"
+#include "TextBox.h"
+#include "UIEvent.h"
+#include "EventDispatcher.hpp"
+#include "Button.h"
+
+
 
 // Definition of the static member
 GameInstance* GameInstance::Instance = nullptr;
 
-GameInstance::GameInstance(int ScreenWidth, int Screenheight, int TargetFps, bool Fullscreen)
-	: m_ScreenWidth(ScreenWidth), m_ScreenHeight(Screenheight), m_TargetFps(TargetFps), m_Fullscreen(Fullscreen)
+GameInstance::GameInstance(int ScreenWidth, int Screenheight, int TargetFps, bool Fullscreen, bool IsDebug)
+	: m_ScreenWidth(ScreenWidth), m_ScreenHeight(Screenheight), m_TargetFps(TargetFps), m_Fullscreen(Fullscreen), m_IsDebug(IsDebug)
 {
 	std::cout << "GameInstance was Initialized" << std::endl;
 }
 
 
-void GameInstance::InitGameInstance(int ScreenWidth, int Screenheight, int TargetFps, bool Fullscreen)
+void GameInstance::InitGameInstance(int ScreenWidth, int Screenheight, int TargetFps, bool Fullscreen, bool isDebug)
 {
 	if (Instance != nullptr)
 	{
@@ -23,7 +31,7 @@ void GameInstance::InitGameInstance(int ScreenWidth, int Screenheight, int Targe
 		return;
 	}
 
-	Instance = new GameInstance(ScreenWidth, Screenheight, TargetFps, Fullscreen);
+	Instance = new GameInstance(ScreenWidth, Screenheight, TargetFps, Fullscreen, isDebug);
 	CreateWindow();
 	GameLoop();
 }
@@ -52,28 +60,78 @@ void GameInstance::CreateWindow()
 void GameInstance::GameLoop()
 {
 	StateMachine ActiveStateMachine;
-	ActiveStateMachine.RegisterState("Menu", []() {return new StartMenu(10); });
-	ActiveStateMachine.RegisterState("Sandbox", []() {return new SandboxMode(); });
-	ActiveStateMachine.RegisterState("Pong", []() {return new PongGameMod(); });
+	EventDispatcher UIEventDispatcher;
+	
 
+	ActiveStateMachine.RegisterState("Menu", []() {return new TimeCalcMode(false); });
+	ActiveStateMachine.RegisterState("Sandbox", []() {return new TimeCalcMode(true); });
+	//ActiveStateMachine.RegisterState("Pong", []() {return new PongGameMod(); });
+
+	// Setting initial Start Mode
 	ActiveStateMachine.ChangeState("Menu");
+	std::cout << sizeof*(static_cast<TimeCalcMode*>(ActiveStateMachine.GetCurrentGameMode())) << std::endl;
 
+
+	// Handling UI Event
+	// We Use this Event to Switch GameMode which then will update in the GameLoop
+	UIEventDispatcher.AddListener("UIEvent", [&ActiveStateMachine](std::shared_ptr<Event> Event) -> void
+		{
+			auto ButtonClickEvent = std::dynamic_pointer_cast<UIEvent>(Event);
+			if (ButtonClickEvent == nullptr)
+			{
+				return;
+			}
+			Button* ClickedButton = static_cast<Button*>(ButtonClickEvent.get()->ClickedUIElement);
+		
+			ActiveStateMachine.ChangeState(ClickedButton->GetEventPayload());
+		});
+
+	int TestSize = MeasureText("Time Calculator", 14);
+	int PlaySize = MeasureText("Play Mode", 14);
+	int OptionSize = MeasureText("Option", 14);
+
+	Button MenuButton;
+	Rectangle NewRec = { 0,-50,200,100 };
+	MenuButton.Construct(NewRec, "Time Calculator", LIGHTGRAY, true, 0.2)
+		.SetEventPayload("Menu")
+		.SetEventDispatcher(std::make_shared<EventDispatcher>(UIEventDispatcher))
+		.UpdateTextPosition(100 - (TestSize / 2), 75)
+		.OnHover([](Button* MenuButton)
+			{
+				MenuButton->UpdateButtonPosition(0, -25);
+			})
+		.OnHoverLeave([](Button* MenuButton)
+			{
+				MenuButton->UpdateButtonPosition(0, -50);
+			});
+
+	Button PlayButton;
+	Rectangle NewRecPlay = { 200,-50,200,100 };
+	PlayButton.Construct(NewRecPlay, "Play Mode", LIGHTGRAY, true, 0.2)
+		.SetEventPayload("Menu")
+		.SetEventDispatcher(std::make_shared<EventDispatcher>(UIEventDispatcher))
+		.UpdateTextPosition(100 - (PlaySize / 2), 75);
+
+	Button OptionButton;
+	Rectangle NewRecOption = { 400,-50,200,100 };
+	OptionButton.Construct(NewRecOption, "Option", LIGHTGRAY, true, 0.2)
+		.SetEventPayload("Menu")
+		.SetEventDispatcher(std::make_shared<EventDispatcher>(UIEventDispatcher))
+		.UpdateTextPosition(100 - (OptionSize / 2), 75);
+
+
+	// GAMELOOP //
 	while (!WindowShouldClose())
 	{
 		BeginDrawing();
-		if (IsKeyPressed(KEY_A))
-		{
-			ActiveStateMachine.ChangeState("Menu");
-		}
-		if (IsKeyPressed(KEY_S))
-		{
-			ActiveStateMachine.ChangeState("Sandbox");
-		}
-		if (IsKeyPressed(KEY_D))
-		{
-			ActiveStateMachine.ChangeState("Pong");
-		}
 		ActiveStateMachine.UpdateGameMode();
+
+		// GameMode Independend
+		MenuButton.Update();
+		PlayButton.Update();
+		OptionButton.Update();
+
+
 		EndDrawing();
 	}
 }

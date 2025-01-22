@@ -1,15 +1,28 @@
-﻿  main.cpp
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(294,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(295,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(296,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(297,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(318,112): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(319,112): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(333,102): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(334,99): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(335,81): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(336,99): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(337,105): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(91): warning C4715: 'TimeFormat::operator[]': not all control paths return a value
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(50): warning C4715: 'TimeFormatDecimal::operator[]': not all control paths return a value
+﻿  Button.cpp
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(30,27): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(30,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(30,30): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(30,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(30,33): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(30,33): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(30,40): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(30,40): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(36,27): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(36,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(36,30): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(36,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(36,33): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(36,33): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(36,40): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(36,40): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(60,22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(61,22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(74,19): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(75,19): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(129,75): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(129,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(129,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(129,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(132,72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(132,42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   TimeCalc.vcxproj -> C:\Users\marce\Documents\Hax0rStuff\TimeCalc\bin\Debug\TimeCalc.exe

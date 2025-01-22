@@ -1,0 +1,4 @@
+Make Gamemode deleteable and not deleteable
+make a Overall UI Class, which persists between gamemodes
+expand event system to support gamemode change via Overall UI class
+if GameMode persists while another gamemode is active, make it multi threaded

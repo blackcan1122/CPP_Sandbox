@@ -1,6 +1,13 @@
-﻿  main.cpp
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(90,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(91,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(92,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(93,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  TimeCalc.vcxproj -> C:\Users\marce\Documents\Hax0rStuff\TimeCalc\bin\Release\TimeCalc.exe
+﻿  GameInstance.cpp
+  TimeCalcMode.cpp
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(34,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(35,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(36,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(37,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(36): warning C4715: 'GameInstance::GetInstance': not all control paths return a value
+TimeCalcMode.obj : error LNK2005: "unsigned char * trex_jpg" (?trex_jpg@@3PAEA) already defined in main.obj
+TimeCalcMode.obj : error LNK2005: "unsigned int trex_jpg_len" (?trex_jpg_len@@3IA) already defined in main.obj
+TimeCalcMode.obj : error LNK2005: "unsigned char * Logo_png" (?Logo_png@@3PAEA) already defined in main.obj
+TimeCalcMode.obj : error LNK2005: "unsigned int Logo_png_len" (?Logo_png_len@@3IA) already defined in main.obj
+..\..\bin\Release\TimeCalc.exe : fatal error LNK1169: one or more multiply defined symbols found

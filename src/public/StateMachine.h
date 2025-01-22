@@ -20,4 +20,6 @@ public:
 
 	void UpdateGameMode() const;
 
+	GameMode* GetCurrentGameMode();
+
 };

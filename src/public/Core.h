@@ -1,6 +1,7 @@
 #pragma once
 // Raylib
 #include "raylib.h"
+#include "raygui.h"
 #include "rlgl.h"
 #include "raymath.h"
 
