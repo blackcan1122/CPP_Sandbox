@@ -63,7 +63,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'d' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'d' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -143,7 +143,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'d' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'d' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -438,12 +438,6 @@
       <SFA>
         <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
         <FILENAME>tinyobj_loader_c.h</FILENAME>
-        <LINE>1023</LINE>
-        <COLUMN>2</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>tinyobj_loader_c.h</FILENAME>
         <LINE>1025</LINE>
         <COLUMN>2</COLUMN>
       </SFA>
@@ -469,12 +463,6 @@
         <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
         <FILENAME>tinyobj_loader_c.h</FILENAME>
         <LINE>1033</LINE>
-        <COLUMN>2</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>tinyobj_loader_c.h</FILENAME>
-        <LINE>1035</LINE>
         <COLUMN>2</COLUMN>
       </SFA>
       <SFA>
@@ -602,6 +590,12 @@
         <FILENAME>tinyobj_loader_c.h</FILENAME>
         <LINE>1103</LINE>
         <COLUMN>29</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
+        <FILENAME>tinyobj_loader_c.h</FILENAME>
+        <LINE>1107</LINE>
+        <COLUMN>13</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
@@ -1118,7 +1112,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'material_name_null_term' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'material_name_null_term' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -1636,7 +1630,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'material_name_null_term' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'material_name_null_term' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -8614,7 +8608,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'m_array' is an In/Out argument to 'memset' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:63)</MESSAGE>
+          <MESSAGE>'m_array' is an In/Out argument to 'memset' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -11426,7 +11420,7 @@
           <ID>5</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'tcoords' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'tcoords' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -12080,7 +12074,7 @@
           <ID>1</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'points' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'points' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -12172,7 +12166,7 @@
           <ID>1</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'triangles' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'triangles' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -12326,7 +12320,7 @@
           <ID>1</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'points' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'points' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -12608,7 +12602,7 @@
           <ID>1</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'points' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'points' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -12890,7 +12884,7 @@
           <ID>1</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'points' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'points' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -13172,7 +13166,7 @@
           <ID>1</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'points' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'points' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -13412,12 +13406,6 @@
       <SFA>
         <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
         <FILENAME>par_shapes.h</FILENAME>
-        <LINE>1184</LINE>
-        <COLUMN>4</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>par_shapes.h</FILENAME>
         <LINE>1187</LINE>
         <COLUMN>12</COLUMN>
       </SFA>
@@ -13442,7 +13430,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'points' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'points' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -13488,12 +13476,6 @@
         <FILENAME>par_shapes.h</FILENAME>
         <LINE>1183</LINE>
         <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>par_shapes.h</FILENAME>
-        <LINE>1184</LINE>
-        <COLUMN>4</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
@@ -13564,7 +13546,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'triangles' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'triangles' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -15070,7 +15052,7 @@
           <ID>3</ID>
           <KIND>usage</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'invmap' is an Input to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'invmap' is an Input to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -16180,18 +16162,6 @@
       <SFA>
         <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
         <FILENAME>par_shapes.h</FILENAME>
-        <LINE>1765</LINE>
-        <COLUMN>4</COLUMN>
-        <KEYEVENT>
-          <ID>5</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this loop, (assume '!!((ci==npoints))')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>par_shapes.h</FILENAME>
         <LINE>1766</LINE>
         <COLUMN>4</COLUMN>
       </SFA>
@@ -16201,10 +16171,10 @@
         <LINE>1767</LINE>
         <COLUMN>4</COLUMN>
         <KEYEVENT>
-          <ID>6</ID>
+          <ID>5</ID>
           <KIND>usage</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'condensed_map' is an Input to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'condensed_map' is an Input to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -16213,7 +16183,7 @@
         <LINE>1767</LINE>
         <COLUMN>4</COLUMN>
         <KEYEVENT>
-          <ID>7</ID>
+          <ID>6</ID>
           <KIND>usage</KIND>
           <IMPORTANCE>Essential</IMPORTANCE>
           <MESSAGE>'condensed_map' should not be NULL, because this is not consistent with the SAL annotation on 'memcpy'</MESSAGE>
@@ -16914,7 +16884,7 @@
           <ID>2</ID>
           <KIND>usage</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'newmap' is an Input to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'newmap' is an Input to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -18510,7 +18480,7 @@
           <ID>1</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'mesh' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'mesh' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -18584,7 +18554,7 @@
           <ID>1</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'mesh' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'mesh' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -18602,7 +18572,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'mesh' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'mesh' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -18676,7 +18646,7 @@
           <ID>1</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'mesh' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'mesh' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -18694,7 +18664,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'mesh' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'mesh' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -18712,7 +18682,7 @@
           <ID>3</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'mesh' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'mesh' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -19062,7 +19032,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'ijoint' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'ijoint' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -19412,7 +19382,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'ijoint' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'ijoint' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -21346,7 +21316,7 @@
           <ID>4</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'vertices' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'vertices' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -21872,7 +21842,7 @@
           <ID>4</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'normals' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'normals' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -22482,7 +22452,7 @@
           <ID>4</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'colors' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'colors' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -23576,7 +23546,7 @@
           <ID>19</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'i' is an Output from 'strcpy' (declared at c:\program files (x86)\windows kits\10\include\10.0.22621.0\ucrt\string.h:130)</MESSAGE>
+          <MESSAGE>'i' is an Output from 'strcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -24118,7 +24088,7 @@
           <ID>19</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'i' is an Output from 'strcpy' (declared at c:\program files (x86)\windows kits\10\include\10.0.22621.0\ucrt\string.h:130)</MESSAGE>
+          <MESSAGE>'i' is an Output from 'strcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>

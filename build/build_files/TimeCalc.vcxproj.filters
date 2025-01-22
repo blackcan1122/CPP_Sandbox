@@ -21,6 +21,12 @@
     <ClInclude Include="..\..\src\Logo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\public\BaseUI.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\public\Button.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\src\public\Core.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
@@ -51,6 +57,9 @@
     <ClInclude Include="..\..\src\public\TimeCalculator.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\public\UIEvent.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\src\public\WindowHandle.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
@@ -64,6 +73,12 @@
   <ItemGroup>
     <ClCompile Include="..\..\src\main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\private\BaseUI.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\private\Button.cpp">
+      <Filter>Source Files\private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\private\DispatcherEvent.cpp">
       <Filter>Source Files\private</Filter>
@@ -87,6 +102,9 @@
       <Filter>Source Files\private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\private\TimeCalculator.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\private\UIEvent.cpp">
       <Filter>Source Files\private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\private\WindowHandle.cpp">

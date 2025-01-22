@@ -470,7 +470,7 @@
                           }
                         },
                         "message": {
-                          "text": "'image_data' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'image_data' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -964,7 +964,7 @@
                           }
                         },
                         "message": {
-                          "text": "'image_data' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'image_data' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -1478,7 +1478,7 @@
                           }
                         },
                         "message": {
-                          "text": "'image_data' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'image_data' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -2034,7 +2034,7 @@
                           }
                         },
                         "message": {
-                          "text": "'image_data' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'image_data' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -2170,6 +2170,302 @@
                   "fullyQualifiedName": "stbir__insert_coeff",
                   "decoratedName": "stbir__insert_coeff",
                   "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6001",
+          "message": {
+            "text": "Using uninitialized memory 'inputs'."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_image_resize2.h"
+                },
+                "region": {
+                  "startLine": 6202,
+                  "startColumn": 167
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "stbir__resample_vertical_gather",
+                  "decoratedName": "stbir__resample_vertical_gather",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_image_resize2.h"
+                          },
+                          "region": {
+                            "startLine": 6182,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_image_resize2.h"
+                          },
+                          "region": {
+                            "startLine": 6183,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_image_resize2.h"
+                          },
+                          "region": {
+                            "startLine": 6184,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_image_resize2.h"
+                          },
+                          "region": {
+                            "startLine": 6185,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_image_resize2.h"
+                          },
+                          "region": {
+                            "startLine": 6186,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_image_resize2.h"
+                          },
+                          "region": {
+                            "startLine": 6193,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_image_resize2.h"
+                          },
+                          "region": {
+                            "startLine": 6193,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_image_resize2.h"
+                          },
+                          "region": {
+                            "startLine": 6196,
+                            "startColumn": 21
+                          }
+                        },
+                        "message": {
+                          "text": "'inputs' is not initialized"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_image_resize2.h"
+                          },
+                          "region": {
+                            "startLine": 6197,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_image_resize2.h"
+                          },
+                          "region": {
+                            "startLine": 6197,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_image_resize2.h"
+                          },
+                          "region": {
+                            "startLine": 6197,
+                            "startColumn": 36
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume 'cnt>8' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_image_resize2.h"
+                          },
+                          "region": {
+                            "startLine": 6198,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_image_resize2.h"
+                          },
+                          "region": {
+                            "startLine": 6198,
+                            "startColumn": 22
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this loop, (assume 'i<cnt' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_image_resize2.h"
+                          },
+                          "region": {
+                            "startLine": 6202,
+                            "startColumn": 73
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_image_resize2.h"
+                          },
+                          "region": {
+                            "startLine": 6203,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_image_resize2.h"
+                          },
+                          "region": {
+                            "startLine": 6204,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/build/external/raylib-master/src/external/stb_image_resize2.h"
+                          },
+                          "region": {
+                            "startLine": 6202,
+                            "startColumn": 167
+                          }
+                        },
+                        "message": {
+                          "text": "'inputs' is used, but may not have been initialized"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
                 }
               ]
             }
@@ -4616,7 +4912,7 @@
                           }
                         },
                         "message": {
-                          "text": "'image' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'image' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -6503,7 +6799,7 @@
                           }
                         },
                         "message": {
-                          "text": "'image' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'image' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -6711,7 +7007,7 @@
                           }
                         },
                         "message": {
-                          "text": "'result' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'result' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -6981,7 +7277,7 @@
                           }
                         },
                         "message": {
-                          "text": "'croppedData' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'croppedData' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -7838,7 +8134,7 @@
                           }
                         },
                         "message": {
-                          "text": "'resizedData' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'resizedData' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [
@@ -8233,7 +8529,7 @@
                           }
                         },
                         "message": {
-                          "text": "'flippedData' is an In/Out argument to 'memcpy' (declared at c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.38.33130\\include\\vcruntime_string.h:43)"
+                          "text": "'flippedData' is an In/Out argument to 'memcpy' (declared at <no file>:0)"
                         }
                       },
                       "kinds": [

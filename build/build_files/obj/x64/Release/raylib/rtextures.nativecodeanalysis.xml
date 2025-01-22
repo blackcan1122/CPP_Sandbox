@@ -217,7 +217,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'image_data' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'image_data' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -447,7 +447,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'image_data' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'image_data' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -689,7 +689,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'image_data' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'image_data' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -949,7 +949,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'image_data' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'image_data' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -1021,6 +1021,152 @@
     <DECORATED>stbir__insert_coeff</DECORATED>
     <FUNCLINE>3329</FUNCLINE>
     <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
+      <FILENAME>stb_image_resize2.h</FILENAME>
+      <LINE>6202</LINE>
+      <COLUMN>166</COLUMN>
+    </SFA>
+    <DEFECTCODE>6001</DEFECTCODE>
+    <DESCRIPTION>Using uninitialized memory 'inputs'.</DESCRIPTION>
+    <FUNCTION>stbir__resample_vertical_gather</FUNCTION>
+    <DECORATED>stbir__resample_vertical_gather</DECORATED>
+    <FUNCLINE>6180</FUNCLINE>
+    <PROBABILITY>1</PROBABILITY>
+    <RANK>3</RANK>
+    <CATEGORY>
+      <RULECATEGORY>mspft</RULECATEGORY>
+    </CATEGORY>
+    <PATH>
+      <SFA>
+        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
+        <FILENAME>stb_image_resize2.h</FILENAME>
+        <LINE>6182</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
+        <FILENAME>stb_image_resize2.h</FILENAME>
+        <LINE>6183</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
+        <FILENAME>stb_image_resize2.h</FILENAME>
+        <LINE>6184</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
+        <FILENAME>stb_image_resize2.h</FILENAME>
+        <LINE>6185</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
+        <FILENAME>stb_image_resize2.h</FILENAME>
+        <LINE>6186</LINE>
+        <COLUMN>6</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
+        <FILENAME>stb_image_resize2.h</FILENAME>
+        <LINE>6193</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
+        <FILENAME>stb_image_resize2.h</FILENAME>
+        <LINE>6193</LINE>
+        <COLUMN>15</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
+        <FILENAME>stb_image_resize2.h</FILENAME>
+        <LINE>6196</LINE>
+        <COLUMN>20</COLUMN>
+        <KEYEVENT>
+          <ID>1</ID>
+          <KIND>declaration</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'inputs' is not initialized</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
+        <FILENAME>stb_image_resize2.h</FILENAME>
+        <LINE>6197</LINE>
+        <COLUMN>10</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
+        <FILENAME>stb_image_resize2.h</FILENAME>
+        <LINE>6197</LINE>
+        <COLUMN>13</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
+        <FILENAME>stb_image_resize2.h</FILENAME>
+        <LINE>6197</LINE>
+        <COLUMN>35</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this branch, (assume 'cnt&gt;8' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
+        <FILENAME>stb_image_resize2.h</FILENAME>
+        <LINE>6198</LINE>
+        <COLUMN>13</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
+        <FILENAME>stb_image_resize2.h</FILENAME>
+        <LINE>6198</LINE>
+        <COLUMN>21</COLUMN>
+        <KEYEVENT>
+          <ID>3</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this loop, (assume 'i&lt;cnt' is false)</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
+        <FILENAME>stb_image_resize2.h</FILENAME>
+        <LINE>6202</LINE>
+        <COLUMN>72</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
+        <FILENAME>stb_image_resize2.h</FILENAME>
+        <LINE>6203</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
+        <FILENAME>stb_image_resize2.h</FILENAME>
+        <LINE>6204</LINE>
+        <COLUMN>12</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
+        <FILENAME>stb_image_resize2.h</FILENAME>
+        <LINE>6202</LINE>
+        <COLUMN>166</COLUMN>
+        <KEYEVENT>
+          <ID>4</ID>
+          <KIND>usage</KIND>
+          <IMPORTANCE>Essential</IMPORTANCE>
+          <MESSAGE>'inputs' is used, but may not have been initialized</MESSAGE>
+        </KEYEVENT>
+      </SFA>
+    </PATH>
   </DEFECT>
   <DEFECT>
     <SFA>
@@ -2197,7 +2343,7 @@ Enum value '(info-&gt;output_pixel_layout_internal)' is checked for lower bound.
           <ID>4</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'image' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'image' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -3191,7 +3337,7 @@ Enum value '(info-&gt;output_pixel_layout_internal)' is checked for lower bound.
           <ID>1</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'image' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'image' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -3295,7 +3441,7 @@ Enum value '(info-&gt;output_pixel_layout_internal)' is checked for lower bound.
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'result' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'result' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -3429,7 +3575,7 @@ Enum value '(info-&gt;output_pixel_layout_internal)' is checked for lower bound.
           <ID>3</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'croppedData' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'croppedData' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -3855,7 +4001,7 @@ Enum value '(info-&gt;output_pixel_layout_internal)' is checked for lower bound.
           <ID>5</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'resizedData' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'resizedData' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -4057,7 +4203,7 @@ Enum value '(info-&gt;output_pixel_layout_internal)' is checked for lower bound.
           <ID>3</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'flippedData' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'flippedData' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>

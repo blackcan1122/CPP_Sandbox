@@ -1,3 +1,13 @@
 C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp;C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\build_files\obj\x64\Debug\TimeCalc\main.obj
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\BaseUI.cpp;C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\build_files\obj\x64\Debug\TimeCalc\BaseUI.obj
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp;C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\build_files\obj\x64\Debug\TimeCalc\Button.obj
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\DispatcherEvent.cpp;C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\build_files\obj\x64\Debug\TimeCalc\DispatcherEvent.obj
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\EventDispatcher.cpp;C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\build_files\obj\x64\Debug\TimeCalc\EventDispatcher.obj
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp;C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\build_files\obj\x64\Debug\TimeCalc\GameInstance.obj
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameMode.cpp;C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\build_files\obj\x64\Debug\TimeCalc\GameMode.obj
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\StateMachine.cpp;C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\build_files\obj\x64\Debug\TimeCalc\StateMachine.obj
 C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TextBox.cpp;C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\build_files\obj\x64\Debug\TimeCalc\TextBox.obj
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp;C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\build_files\obj\x64\Debug\TimeCalc\TimeCalcMode.obj
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalculator.cpp;C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\build_files\obj\x64\Debug\TimeCalc\TimeCalculator.obj
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\UIEvent.cpp;C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\build_files\obj\x64\Debug\TimeCalc\UIEvent.obj
 C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\WindowHandle.cpp;C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\build_files\obj\x64\Debug\TimeCalc\WindowHandle.obj

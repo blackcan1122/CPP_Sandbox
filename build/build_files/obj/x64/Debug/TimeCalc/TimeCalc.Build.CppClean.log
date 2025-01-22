@@ -1,8 +1,15 @@
 c:\users\marce\documents\hax0rstuff\timecalc\build\build_files\obj\x64\debug\timecalc\vc143.pdb
 c:\users\marce\documents\hax0rstuff\timecalc\build\build_files\obj\x64\debug\timecalc\vc143.idb
 c:\users\marce\documents\hax0rstuff\timecalc\build\build_files\obj\x64\debug\timecalc\windowhandle.obj
-c:\users\marce\documents\hax0rstuff\timecalc\build\build_files\obj\x64\debug\timecalc\main.obj
+c:\users\marce\documents\hax0rstuff\timecalc\build\build_files\obj\x64\debug\timecalc\timecalculator.obj
+c:\users\marce\documents\hax0rstuff\timecalc\build\build_files\obj\x64\debug\timecalc\timecalcmode.obj
 c:\users\marce\documents\hax0rstuff\timecalc\build\build_files\obj\x64\debug\timecalc\textbox.obj
+c:\users\marce\documents\hax0rstuff\timecalc\build\build_files\obj\x64\debug\timecalc\statemachine.obj
+c:\users\marce\documents\hax0rstuff\timecalc\build\build_files\obj\x64\debug\timecalc\gamemode.obj
+c:\users\marce\documents\hax0rstuff\timecalc\build\build_files\obj\x64\debug\timecalc\gameinstance.obj
+c:\users\marce\documents\hax0rstuff\timecalc\build\build_files\obj\x64\debug\timecalc\eventdispatcher.obj
+c:\users\marce\documents\hax0rstuff\timecalc\build\build_files\obj\x64\debug\timecalc\dispatcherevent.obj
+c:\users\marce\documents\hax0rstuff\timecalc\build\build_files\obj\x64\debug\timecalc\main.obj
 c:\users\marce\documents\hax0rstuff\timecalc\bin\debug\timecalc.exe
 c:\users\marce\documents\hax0rstuff\timecalc\bin\debug\timecalc.pdb
 c:\users\marce\documents\hax0rstuff\timecalc\build\build_files\obj\x64\debug\timecalc\timecalc.ilk

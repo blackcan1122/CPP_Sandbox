@@ -163,7 +163,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'available' is an Output from 'memset' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:63)</MESSAGE>
+          <MESSAGE>'available' is an Output from 'memset' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -211,18 +211,6 @@
       <SFA>
         <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
         <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1095</LINE>
-        <COLUMN>3</COLUMN>
-        <KEYEVENT>
-          <ID>6</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this loop, (assume '!!((len[k]&lt;32))')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
         <LINE>1097</LINE>
         <COLUMN>3</COLUMN>
       </SFA>
@@ -238,7 +226,7 @@
         <LINE>1099</LINE>
         <COLUMN>15</COLUMN>
         <KEYEVENT>
-          <ID>7</ID>
+          <ID>6</ID>
           <KIND>branch</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
           <MESSAGE>Skip this loop, (assume 'i&lt;=len[k]' is false)</MESSAGE>
@@ -256,7 +244,7 @@
         <LINE>1105</LINE>
         <COLUMN>17</COLUMN>
         <KEYEVENT>
-          <ID>8</ID>
+          <ID>7</ID>
           <KIND>branch</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
           <MESSAGE>Enter this loop, (assume 'i&lt;n')</MESSAGE>
@@ -286,258 +274,10 @@
         <LINE>1108</LINE>
         <COLUMN>12</COLUMN>
         <KEYEVENT>
-          <ID>9</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Skip this branch, (assume 'z==255' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1109</LINE>
-        <COLUMN>6</COLUMN>
-        <KEYEVENT>
-          <ID>10</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this loop, (assume '!!((z&lt;32))')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1116</LINE>
-        <COLUMN>19</COLUMN>
-        <KEYEVENT>
-          <ID>11</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Skip this loop, (assume 'z&gt;0&amp;&amp;!available[z]' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1117</LINE>
-        <COLUMN>12</COLUMN>
-        <KEYEVENT>
-          <ID>12</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Skip this branch, (assume 'z==0' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1118</LINE>
-        <COLUMN>10</COLUMN>
-        <KEYEVENT>
-          <ID>13</ID>
-          <KIND>usage</KIND>
-          <IMPORTANCE>Essential</IMPORTANCE>
-          <MESSAGE>Invalid read from 'available[-1]', (readable range is 0 to 31)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-    </PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-      <FILENAME>stb_vorbis.c</FILENAME>
-      <LINE>1118</LINE>
-      <COLUMN>10</COLUMN>
-    </SFA>
-    <DEFECTCODE>6385</DEFECTCODE>
-    <DESCRIPTION>Reading invalid data from 'available'.</DESCRIPTION>
-    <FUNCTION>compute_codewords</FUNCTION>
-    <DECORATED>compute_codewords</DECORATED>
-    <FUNCLINE>1086</FUNCLINE>
-    <PROBABILITY>1</PROBABILITY>
-    <RANK>4</RANK>
-    <CATEGORY>
-      <RULECATEGORY>mspft</RULECATEGORY>
-    </CATEGORY>
-    <PATH>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1088</LINE>
-        <COLUMN>7</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1088</LINE>
-        <COLUMN>9</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1088</LINE>
-        <COLUMN>11</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1089</LINE>
-        <COLUMN>10</COLUMN>
-        <KEYEVENT>
-          <ID>1</ID>
-          <KIND>declaration</KIND>
-          <IMPORTANCE>Essential</IMPORTANCE>
-          <MESSAGE>'available' is an array of 32 elements (128 bytes)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1091</LINE>
-        <COLUMN>3</COLUMN>
-        <KEYEVENT>
-          <ID>2</ID>
-          <KIND>declaration</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'available' is an Output from 'memset' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:63)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1093</LINE>
-        <COLUMN>9</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1093</LINE>
-        <COLUMN>15</COLUMN>
-        <KEYEVENT>
-          <ID>3</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this loop, (assume 'k&lt;n')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1093</LINE>
-        <COLUMN>36</COLUMN>
-        <KEYEVENT>
-          <ID>4</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this branch, (assume 'len[k]&lt;255')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1094</LINE>
-        <COLUMN>9</COLUMN>
-        <KEYEVENT>
-          <ID>5</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Skip this branch, (assume 'k==n' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1095</LINE>
-        <COLUMN>3</COLUMN>
-        <KEYEVENT>
-          <ID>6</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this loop, (assume '!!((len[k]&lt;32))')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1097</LINE>
-        <COLUMN>3</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1099</LINE>
-        <COLUMN>9</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1099</LINE>
-        <COLUMN>15</COLUMN>
-        <KEYEVENT>
-          <ID>7</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Skip this loop, (assume 'i&lt;=len[k]' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1105</LINE>
-        <COLUMN>9</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1105</LINE>
-        <COLUMN>17</COLUMN>
-        <KEYEVENT>
           <ID>8</ID>
           <KIND>branch</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this loop, (assume 'i&lt;n')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1106</LINE>
-        <COLUMN>13</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1107</LINE>
-        <COLUMN>10</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1107</LINE>
-        <COLUMN>22</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1108</LINE>
-        <COLUMN>12</COLUMN>
-        <KEYEVENT>
-          <ID>9</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
           <MESSAGE>Skip this branch, (assume 'z==255' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1109</LINE>
-        <COLUMN>6</COLUMN>
-        <KEYEVENT>
-          <ID>10</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this loop, (assume '!!((z&lt;32))')</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -546,7 +286,7 @@
         <LINE>1116</LINE>
         <COLUMN>19</COLUMN>
         <KEYEVENT>
-          <ID>11</ID>
+          <ID>9</ID>
           <KIND>branch</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
           <MESSAGE>Skip this loop, (assume 'z&gt;0&amp;&amp;!available[z]' is false)</MESSAGE>
@@ -558,7 +298,7 @@
         <LINE>1117</LINE>
         <COLUMN>12</COLUMN>
         <KEYEVENT>
-          <ID>12</ID>
+          <ID>10</ID>
           <KIND>branch</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
           <MESSAGE>Skip this branch, (assume 'z==0' is false)</MESSAGE>
@@ -569,128 +309,8 @@
         <FILENAME>stb_vorbis.c</FILENAME>
         <LINE>1118</LINE>
         <COLUMN>10</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1119</LINE>
-        <COLUMN>19</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1120</LINE>
-        <COLUMN>6</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1122</LINE>
-        <COLUMN>12</COLUMN>
         <KEYEVENT>
-          <ID>13</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Skip this branch, (assume 'z!=len[i]' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1105</LINE>
-        <COLUMN>22</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1105</LINE>
-        <COLUMN>17</COLUMN>
-        <KEYEVENT>
-          <ID>14</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Continue this loop, (assume 'i&lt;n')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1106</LINE>
-        <COLUMN>13</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1107</LINE>
-        <COLUMN>10</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1107</LINE>
-        <COLUMN>22</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1108</LINE>
-        <COLUMN>12</COLUMN>
-        <KEYEVENT>
-          <ID>15</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Skip this branch, (assume 'z==255' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1109</LINE>
-        <COLUMN>6</COLUMN>
-        <KEYEVENT>
-          <ID>16</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Continue this loop, (assume '!!((z&lt;32))')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1116</LINE>
-        <COLUMN>19</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1116</LINE>
-        <COLUMN>37</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1116</LINE>
-        <COLUMN>19</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1117</LINE>
-        <COLUMN>12</COLUMN>
-        <KEYEVENT>
-          <ID>17</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'z' may be NULL (Skip this branch)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1118</LINE>
-        <COLUMN>10</COLUMN>
-        <KEYEVENT>
-          <ID>18</ID>
+          <ID>11</ID>
           <KIND>usage</KIND>
           <IMPORTANCE>Essential</IMPORTANCE>
           <MESSAGE>Invalid read from 'available[-1]', (readable range is 0 to 31)</MESSAGE>
@@ -755,7 +375,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'available' is an Output from 'memset' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:63)</MESSAGE>
+          <MESSAGE>'available' is an Output from 'memset' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -803,18 +423,6 @@
       <SFA>
         <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
         <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1095</LINE>
-        <COLUMN>3</COLUMN>
-        <KEYEVENT>
-          <ID>6</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this loop, (assume '!!((len[k]&lt;32))')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
         <LINE>1097</LINE>
         <COLUMN>3</COLUMN>
       </SFA>
@@ -830,7 +438,7 @@
         <LINE>1099</LINE>
         <COLUMN>15</COLUMN>
         <KEYEVENT>
-          <ID>7</ID>
+          <ID>6</ID>
           <KIND>branch</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
           <MESSAGE>Skip this loop, (assume 'i&lt;=len[k]' is false)</MESSAGE>
@@ -848,7 +456,7 @@
         <LINE>1105</LINE>
         <COLUMN>17</COLUMN>
         <KEYEVENT>
-          <ID>8</ID>
+          <ID>7</ID>
           <KIND>branch</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
           <MESSAGE>Enter this loop, (assume 'i&lt;n')</MESSAGE>
@@ -878,264 +486,10 @@
         <LINE>1108</LINE>
         <COLUMN>12</COLUMN>
         <KEYEVENT>
-          <ID>9</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Skip this branch, (assume 'z==255' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1109</LINE>
-        <COLUMN>6</COLUMN>
-        <KEYEVENT>
-          <ID>10</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this loop, (assume '!!((z&lt;32))')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1116</LINE>
-        <COLUMN>19</COLUMN>
-        <KEYEVENT>
-          <ID>11</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Skip this loop, (assume 'z&gt;0&amp;&amp;!available[z]' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1117</LINE>
-        <COLUMN>12</COLUMN>
-        <KEYEVENT>
-          <ID>12</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Skip this branch, (assume 'z==0' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1118</LINE>
-        <COLUMN>10</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1119</LINE>
-        <COLUMN>19</COLUMN>
-        <KEYEVENT>
-          <ID>13</ID>
-          <KIND>usage</KIND>
-          <IMPORTANCE>Essential</IMPORTANCE>
-          <MESSAGE>Invalid write to 'available[-1]', (writable range is 0 to 31)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-    </PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-      <FILENAME>stb_vorbis.c</FILENAME>
-      <LINE>1119</LINE>
-      <COLUMN>19</COLUMN>
-    </SFA>
-    <DEFECTCODE>6386</DEFECTCODE>
-    <DESCRIPTION>Buffer overrun while writing to 'available'.</DESCRIPTION>
-    <FUNCTION>compute_codewords</FUNCTION>
-    <DECORATED>compute_codewords</DECORATED>
-    <FUNCLINE>1086</FUNCLINE>
-    <PROBABILITY>1</PROBABILITY>
-    <RANK>4</RANK>
-    <CATEGORY>
-      <RULECATEGORY>mspft</RULECATEGORY>
-    </CATEGORY>
-    <PATH>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1088</LINE>
-        <COLUMN>7</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1088</LINE>
-        <COLUMN>9</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1088</LINE>
-        <COLUMN>11</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1089</LINE>
-        <COLUMN>10</COLUMN>
-        <KEYEVENT>
-          <ID>1</ID>
-          <KIND>declaration</KIND>
-          <IMPORTANCE>Essential</IMPORTANCE>
-          <MESSAGE>'available' is an array of 32 elements (128 bytes)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1091</LINE>
-        <COLUMN>3</COLUMN>
-        <KEYEVENT>
-          <ID>2</ID>
-          <KIND>declaration</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'available' is an Output from 'memset' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:63)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1093</LINE>
-        <COLUMN>9</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1093</LINE>
-        <COLUMN>15</COLUMN>
-        <KEYEVENT>
-          <ID>3</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this loop, (assume 'k&lt;n')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1093</LINE>
-        <COLUMN>36</COLUMN>
-        <KEYEVENT>
-          <ID>4</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this branch, (assume 'len[k]&lt;255')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1094</LINE>
-        <COLUMN>9</COLUMN>
-        <KEYEVENT>
-          <ID>5</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Skip this branch, (assume 'k==n' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1095</LINE>
-        <COLUMN>3</COLUMN>
-        <KEYEVENT>
-          <ID>6</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this loop, (assume '!!((len[k]&lt;32))')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1097</LINE>
-        <COLUMN>3</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1099</LINE>
-        <COLUMN>9</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1099</LINE>
-        <COLUMN>15</COLUMN>
-        <KEYEVENT>
-          <ID>7</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Skip this loop, (assume 'i&lt;=len[k]' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1105</LINE>
-        <COLUMN>9</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1105</LINE>
-        <COLUMN>17</COLUMN>
-        <KEYEVENT>
           <ID>8</ID>
           <KIND>branch</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this loop, (assume 'i&lt;n')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1106</LINE>
-        <COLUMN>13</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1107</LINE>
-        <COLUMN>10</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1107</LINE>
-        <COLUMN>22</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1108</LINE>
-        <COLUMN>12</COLUMN>
-        <KEYEVENT>
-          <ID>9</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
           <MESSAGE>Skip this branch, (assume 'z==255' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1109</LINE>
-        <COLUMN>6</COLUMN>
-        <KEYEVENT>
-          <ID>10</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this loop, (assume '!!((z&lt;32))')</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -1144,7 +498,7 @@
         <LINE>1116</LINE>
         <COLUMN>19</COLUMN>
         <KEYEVENT>
-          <ID>11</ID>
+          <ID>9</ID>
           <KIND>branch</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
           <MESSAGE>Skip this loop, (assume 'z&gt;0&amp;&amp;!available[z]' is false)</MESSAGE>
@@ -1156,7 +510,7 @@
         <LINE>1117</LINE>
         <COLUMN>12</COLUMN>
         <KEYEVENT>
-          <ID>12</ID>
+          <ID>10</ID>
           <KIND>branch</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
           <MESSAGE>Skip this branch, (assume 'z==0' is false)</MESSAGE>
@@ -1173,128 +527,8 @@
         <FILENAME>stb_vorbis.c</FILENAME>
         <LINE>1119</LINE>
         <COLUMN>19</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1120</LINE>
-        <COLUMN>6</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1122</LINE>
-        <COLUMN>12</COLUMN>
         <KEYEVENT>
-          <ID>13</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Skip this branch, (assume 'z!=len[i]' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1105</LINE>
-        <COLUMN>22</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1105</LINE>
-        <COLUMN>17</COLUMN>
-        <KEYEVENT>
-          <ID>14</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Continue this loop, (assume 'i&lt;n')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1106</LINE>
-        <COLUMN>13</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1107</LINE>
-        <COLUMN>10</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1107</LINE>
-        <COLUMN>22</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1108</LINE>
-        <COLUMN>12</COLUMN>
-        <KEYEVENT>
-          <ID>15</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Skip this branch, (assume 'z==255' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1109</LINE>
-        <COLUMN>6</COLUMN>
-        <KEYEVENT>
-          <ID>16</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Continue this loop, (assume '!!((z&lt;32))')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1116</LINE>
-        <COLUMN>19</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1116</LINE>
-        <COLUMN>37</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1116</LINE>
-        <COLUMN>19</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1117</LINE>
-        <COLUMN>12</COLUMN>
-        <KEYEVENT>
-          <ID>17</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'z' may be NULL (Skip this branch)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1118</LINE>
-        <COLUMN>10</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\external\raylib-master\src\external\</FILEPATH>
-        <FILENAME>stb_vorbis.c</FILENAME>
-        <LINE>1119</LINE>
-        <COLUMN>19</COLUMN>
-        <KEYEVENT>
-          <ID>18</ID>
+          <ID>11</ID>
           <KIND>usage</KIND>
           <IMPORTANCE>Essential</IMPORTANCE>
           <MESSAGE>Invalid write to 'available[-1]', (writable range is 0 to 31)</MESSAGE>
@@ -2349,7 +1583,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'qoa_ctx' is an In/Out argument to 'memset' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:63)</MESSAGE>
+          <MESSAGE>'qoa_ctx' is an In/Out argument to 'memset' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -2483,7 +1717,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'qoa_ctx' is an In/Out argument to 'memset' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:63)</MESSAGE>
+          <MESSAGE>'qoa_ctx' is an In/Out argument to 'memset' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -2605,7 +1839,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'qoa_ctx' is an In/Out argument to 'memset' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:63)</MESSAGE>
+          <MESSAGE>'qoa_ctx' is an In/Out argument to 'memset' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -2703,7 +1937,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'qoa_ctx' is an In/Out argument to 'memset' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:63)</MESSAGE>
+          <MESSAGE>'qoa_ctx' is an In/Out argument to 'memset' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -2813,7 +2047,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'qoa_ctx' is an In/Out argument to 'memset' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:63)</MESSAGE>
+          <MESSAGE>'qoa_ctx' is an In/Out argument to 'memset' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -2911,7 +2145,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'qoa_ctx' is an In/Out argument to 'memset' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:63)</MESSAGE>
+          <MESSAGE>'qoa_ctx' is an In/Out argument to 'memset' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -3027,7 +2261,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'file_data' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'file_data' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -3615,7 +2849,7 @@
           <ID>4</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'modfile' is an In/Out argument to 'memset' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:63)</MESSAGE>
+          <MESSAGE>'modfile' is an In/Out argument to 'memset' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -3737,7 +2971,7 @@
           <ID>4</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'modfile' is an In/Out argument to 'memset' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:63)</MESSAGE>
+          <MESSAGE>'modfile' is an In/Out argument to 'memset' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
@@ -3817,7 +3051,7 @@
           <ID>2</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>'data' is an In/Out argument to 'memcpy' (declared at c:\program files\microsoft visual studio\2022\community\vc\tools\msvc\14.38.33130\include\vcruntime_string.h:43)</MESSAGE>
+          <MESSAGE>'data' is an In/Out argument to 'memcpy' (declared at &lt;no file&gt;:0)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
