@@ -6,6 +6,7 @@
 #include "StateMachine.h"
 #include "GameMode.h"
 #include "TimeCalcMode.h"
+#include "SandboxMode.h"
 #include "TextBox.h"
 #include "UIEvent.h"
 #include "EventDispatcher.hpp"
@@ -64,7 +65,7 @@ void GameInstance::GameLoop()
 	
 
 	ActiveStateMachine.RegisterState("Menu", []() {return new TimeCalcMode(false); });
-	ActiveStateMachine.RegisterState("Sandbox", []() {return new TimeCalcMode(true); });
+	ActiveStateMachine.RegisterState("Sandbox", []() {return new SandboxMode(); });
 	//ActiveStateMachine.RegisterState("Pong", []() {return new PongGameMod(); });
 
 	// Setting initial Start Mode
@@ -88,36 +89,73 @@ void GameInstance::GameLoop()
 
 	int TestSize = MeasureText("Time Calculator", 14);
 	int PlaySize = MeasureText("Play Mode", 14);
+	int OtherPlaySize = MeasureText("Other Play Mode", 14);
 	int OptionSize = MeasureText("Option", 14);
 
+	int Width = GetScreenWidth() / 4;
+
+
 	Button MenuButton;
-	Rectangle NewRec = { 0,-50,200,100 };
+	Rectangle NewRec = { Width-Width,-50,Width,100 };
 	MenuButton.Construct(NewRec, "Time Calculator", LIGHTGRAY, true, 0.2)
 		.SetEventPayload("Menu")
 		.SetEventDispatcher(std::make_shared<EventDispatcher>(UIEventDispatcher))
-		.UpdateTextPosition(100 - (TestSize / 2), 75)
-		.OnHover([](Button* MenuButton)
+		.UpdateTextPosition((Width/2) - (TestSize / 2), 75)
+		.OnHover([Width](Button* MenuButton)
 			{
-				MenuButton->UpdateButtonPosition(0, -25);
+				MenuButton->UpdateButtonPosition(Width - Width, -25);
 			})
-		.OnHoverLeave([](Button* MenuButton)
+		.OnHoverLeave([Width](Button* MenuButton)
 			{
-				MenuButton->UpdateButtonPosition(0, -50);
+				MenuButton->UpdateButtonPosition(Width - Width, -50);
 			});
 
 	Button PlayButton;
-	Rectangle NewRecPlay = { 200,-50,200,100 };
+	Rectangle NewRecPlay = { Width*2 - Width,-50,Width,100 };
 	PlayButton.Construct(NewRecPlay, "Play Mode", LIGHTGRAY, true, 0.2)
+		.SetEventPayload("Sandbox")
+		.SetEventDispatcher(std::make_shared<EventDispatcher>(UIEventDispatcher))
+		.UpdateTextPosition((Width / 2) - (PlaySize / 2), 75)
+		.OnHover([Width](Button* MenuButton)
+			{
+				MenuButton->UpdateButtonPosition(Width*2 - Width, -25);
+				MenuButton->UpdateColor(DARKGRAY);
+			})
+		.OnHoverLeave([Width](Button* MenuButton)
+			{
+				MenuButton->UpdateButtonPosition(Width * 2 - Width, -50);
+				MenuButton->UpdateColor(LIGHTGRAY);
+			});
+
+	Button OtherGameButton;
+	Rectangle NewRecOtherGame = { Width * 3 - Width,-50,Width, 100 };
+	OtherGameButton.Construct(NewRecOtherGame, "Other Play Mode", LIGHTGRAY, true, 0.2)
 		.SetEventPayload("Menu")
 		.SetEventDispatcher(std::make_shared<EventDispatcher>(UIEventDispatcher))
-		.UpdateTextPosition(100 - (PlaySize / 2), 75);
+		.UpdateTextPosition((Width / 2) - (OtherPlaySize / 2), 75)
+		.OnHover([Width](Button* MenuButton)
+			{
+				MenuButton->UpdateButtonPosition(Width * 3 - Width, -25);
+			})
+		.OnHoverLeave([Width](Button* MenuButton)
+			{
+				MenuButton->UpdateButtonPosition(Width * 3 - Width, -50);
+			});
 
 	Button OptionButton;
-	Rectangle NewRecOption = { 400,-50,200,100 };
+	Rectangle NewRecOption = { Width * 4 - Width,-50,Width,100 };
 	OptionButton.Construct(NewRecOption, "Option", LIGHTGRAY, true, 0.2)
 		.SetEventPayload("Menu")
 		.SetEventDispatcher(std::make_shared<EventDispatcher>(UIEventDispatcher))
-		.UpdateTextPosition(100 - (OptionSize / 2), 75);
+		.UpdateTextPosition((Width / 2) - (OptionSize / 2), 75)
+		.OnHover([Width](Button* MenuButton)
+			{
+				MenuButton->UpdateButtonPosition(Width * 4 - Width, -25);
+			})
+		.OnHoverLeave([Width](Button* MenuButton)
+			{
+				MenuButton->UpdateButtonPosition(Width * 4 - Width, -50);
+			});
 
 
 	// GAMELOOP //
@@ -129,6 +167,7 @@ void GameInstance::GameLoop()
 		// GameMode Independend
 		MenuButton.Update();
 		PlayButton.Update();
+		OtherGameButton.Update();
 		OptionButton.Update();
 
 
