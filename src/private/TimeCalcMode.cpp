@@ -5,10 +5,12 @@
 
 TimeCalcMode::TimeCalcMode(bool bIsDebug)
 {
-
+	SetTargetFPS(30);
 	image = LoadImageFromMemory(".jpg", trex_jpg, trex_jpg_len);     // Loaded in CPU memory (RAM)
 	imageLogo = LoadImageFromMemory(".png", Logo_png, Logo_png_len);     // Loaded in CPU memory (RAM)
 	texture = LoadTextureFromImage(image);          // Image converted to texture, GPU memory (VRAM)
+	SetWindowSize(600, 600);
+	ClearWindowState(FLAG_WINDOW_RESIZABLE);
 
 	SetWindowIcon(imageLogo);
 	UnloadImage(imageLogo);

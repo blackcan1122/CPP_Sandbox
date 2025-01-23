@@ -1,28 +1,6 @@
-﻿  Button.cpp
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(30,27): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(30,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(30,30): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(30,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(30,33): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(30,33): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(30,40): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(30,40): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(36,27): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(36,27): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(36,30): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(36,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(36,33): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(36,33): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(36,40): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(36,40): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(60,22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(61,22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(74,19): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(75,19): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(129,75): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(129,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(129,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(129,32): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(132,72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\Button.cpp(132,42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+﻿  TimeCalcMode.cpp
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(33,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(34,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(35,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(36,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   TimeCalc.vcxproj -> C:\Users\marce\Documents\Hax0rStuff\TimeCalc\bin\Debug\TimeCalc.exe

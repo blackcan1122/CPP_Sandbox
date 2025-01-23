@@ -21,10 +21,19 @@
     <ClInclude Include="..\..\src\Logo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\public\BaseCircle.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\public\BaseRectangle.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\src\public\BaseUI.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\public\Button.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\public\CollisionEvent.hpp">
       <Filter>Header Files\public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\public\Core.h">
@@ -45,10 +54,31 @@
     <ClInclude Include="..\..\src\public\GameMode.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\public\GravityEvent.hpp">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\public\Helper.hpp">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\public\Physic.hpp">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\public\SandboxMode.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\src\public\StateMachine.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\public\TextBox.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\public\TickAll.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\public\Tickable.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\public\TickableFactory.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\public\TimeCalcMode.h">
@@ -74,10 +104,19 @@
     <ClCompile Include="..\..\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\private\BaseCircle.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\private\BaseRectangle.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\private\BaseUI.cpp">
       <Filter>Source Files\private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\private\Button.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\private\CollisionEvent.cpp">
       <Filter>Source Files\private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\private\DispatcherEvent.cpp">
@@ -92,10 +131,28 @@
     <ClCompile Include="..\..\src\private\GameMode.cpp">
       <Filter>Source Files\private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\private\GravityEvent.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\private\Helper.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\private\Physic.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\private\SandboxMode.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\private\StateMachine.cpp">
       <Filter>Source Files\private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\private\TextBox.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\private\Tickable.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\private\TickableFactory.cpp">
       <Filter>Source Files\private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\private\TimeCalcMode.cpp">
