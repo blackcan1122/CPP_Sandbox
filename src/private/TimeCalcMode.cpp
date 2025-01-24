@@ -19,6 +19,19 @@ TimeCalcMode::TimeCalcMode(bool bIsDebug)
 
 }
 
+TimeCalcMode::TimeCalcMode(bool bIsDebug, TimeTrackerSave UseExistingTimeCalc)
+{
+	ActiveTimeCalc = UseExistingTimeCalc.GetSerializedData();
+}
+
+
+TimeTrackerSave TimeCalcMode::GetSerializedData()
+{
+	TimeTrackerSave NewSave;
+	NewSave.SerializeData(ActiveTimeCalc.GetCorrectionTime(), ActiveTimeCalc.GetPauseTime(), ActiveTimeCalc.GetStartTime());
+	return NewSave;
+}
+
 void TimeCalcMode::Update()
 {
 	ClearBackground(BLACK);
@@ -41,4 +54,10 @@ TimeCalcMode::~TimeCalcMode()
 {
 	UnloadTexture(texture);
 	std::cout << "Destructor is called" << std::endl;
+}
+
+void TimeCalcMode::LoadSaveGame(TimeTrackerSave UseSave)
+{
+	ActiveTimeCalc = UseSave.GetSerializedData();
+	ActiveTimeCalc.UpdateTextBox();
 }

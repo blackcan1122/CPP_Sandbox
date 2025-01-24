@@ -502,9 +502,11 @@
     <ClInclude Include="..\..\src\public\EventDispatcher.hpp" />
     <ClInclude Include="..\..\src\public\GameInstance.h" />
     <ClInclude Include="..\..\src\public\GameMode.h" />
+    <ClInclude Include="..\..\src\public\GameModeState.h" />
     <ClInclude Include="..\..\src\public\GravityEvent.hpp" />
     <ClInclude Include="..\..\src\public\Helper.hpp" />
     <ClInclude Include="..\..\src\public\Physic.hpp" />
+    <ClInclude Include="..\..\src\public\PongGameMod.h" />
     <ClInclude Include="..\..\src\public\SandboxMode.h" />
     <ClInclude Include="..\..\src\public\StateMachine.h" />
     <ClInclude Include="..\..\src\public\TextBox.h" />
@@ -513,6 +515,7 @@
     <ClInclude Include="..\..\src\public\TickableFactory.h" />
     <ClInclude Include="..\..\src\public\TimeCalcMode.h" />
     <ClInclude Include="..\..\src\public\TimeCalculator.h" />
+    <ClInclude Include="..\..\src\public\TimeTrackerSave.h" />
     <ClInclude Include="..\..\src\public\UIEvent.h" />
     <ClInclude Include="..\..\src\public\WindowHandle.h" />
     <ClInclude Include="..\..\src\raygui.h" />
@@ -529,9 +532,11 @@
     <ClCompile Include="..\..\src\private\EventDispatcher.cpp" />
     <ClCompile Include="..\..\src\private\GameInstance.cpp" />
     <ClCompile Include="..\..\src\private\GameMode.cpp" />
+    <ClCompile Include="..\..\src\private\GameModeState.cpp" />
     <ClCompile Include="..\..\src\private\GravityEvent.cpp" />
     <ClCompile Include="..\..\src\private\Helper.cpp" />
     <ClCompile Include="..\..\src\private\Physic.cpp" />
+    <ClCompile Include="..\..\src\private\PongGameMod.cpp" />
     <ClCompile Include="..\..\src\private\SandboxMode.cpp" />
     <ClCompile Include="..\..\src\private\StateMachine.cpp" />
     <ClCompile Include="..\..\src\private\TextBox.cpp" />
@@ -539,6 +544,7 @@
     <ClCompile Include="..\..\src\private\TickableFactory.cpp" />
     <ClCompile Include="..\..\src\private\TimeCalcMode.cpp" />
     <ClCompile Include="..\..\src\private\TimeCalculator.cpp" />
+    <ClCompile Include="..\..\src\private\TimeTrackerSave.cpp" />
     <ClCompile Include="..\..\src\private\UIEvent.cpp" />
     <ClCompile Include="..\..\src\private\WindowHandle.cpp" />
   </ItemGroup>

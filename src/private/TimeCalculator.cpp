@@ -19,6 +19,44 @@ void TimeCalculator::UpdateCalculator()
 	HandleRendering();
 }
 
+TimeFormat TimeCalculator::GetCorrectionTime()
+{
+	return CorrectionTime;
+}
+
+TimeFormat TimeCalculator::GetPauseTime()
+{
+	return PauseTime;
+}
+
+TimeFormat TimeCalculator::GetStartTime()
+{
+	return StartTime;
+}
+
+void TimeCalculator::SetCorrectionTime(TimeFormat NewCorrectionTime)
+{
+	CorrectionTime = NewCorrectionTime;
+}
+
+void TimeCalculator::SetStartTime(TimeFormat NewStartTime)
+{
+	StartTime = NewStartTime;
+}
+
+void TimeCalculator::SetPauseTime(TimeFormat NewPauseTime)
+{
+	PauseTime = NewPauseTime;
+}
+
+void TimeCalculator::UpdateTextBox()
+{
+	std::strcpy(ArriveTimeBox.StringToHold, StartTime.ConvertToString().c_str());
+	std::strcpy(PauseTimeBox.StringToHold, PauseTime.ConvertToString().c_str());
+	std::strcpy(CorrectionTimeBox.StringToHold, CorrectionTime.ConvertToString().c_str());
+
+}
+
 void TimeCalculator::InitMember()
 {
 	ArriveTimeBox.Construct(GetScreenWidth() / 2.0f, 180, 225, 50, RAYWHITE)
