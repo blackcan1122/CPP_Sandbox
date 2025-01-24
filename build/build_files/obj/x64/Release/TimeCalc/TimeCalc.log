@@ -1,6 +1,11 @@
-﻿  main.cpp
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(90,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(91,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(92,62): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\main.cpp(93,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+﻿  PongGameMod.cpp
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\public\BaseRectangle.h(101,20): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\public\Physic.hpp(79,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\PongGameMod.cpp(60,47): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\PongGameMod.cpp(60,47): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\PongGameMod.cpp(91,23): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\PongGameMod.cpp(95,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\PongGameMod.cpp(148,22): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\PongGameMod.cpp(159,38): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\PongGameMod.cpp(160,35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   TimeCalc.vcxproj -> C:\Users\marce\Documents\Hax0rStuff\TimeCalc\bin\Release\TimeCalc.exe
