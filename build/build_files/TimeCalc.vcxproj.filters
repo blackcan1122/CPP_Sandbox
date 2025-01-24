@@ -54,6 +54,9 @@
     <ClInclude Include="..\..\src\public\GameMode.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\public\GameModeState.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\src\public\GravityEvent.hpp">
       <Filter>Header Files\public</Filter>
     </ClInclude>
@@ -61,6 +64,9 @@
       <Filter>Header Files\public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\public\Physic.hpp">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\public\PongGameMod.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\public\SandboxMode.h">
@@ -85,6 +91,9 @@
       <Filter>Header Files\public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\public\TimeCalculator.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\public\TimeTrackerSave.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\public\UIEvent.h">
@@ -131,6 +140,9 @@
     <ClCompile Include="..\..\src\private\GameMode.cpp">
       <Filter>Source Files\private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\private\GameModeState.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\private\GravityEvent.cpp">
       <Filter>Source Files\private</Filter>
     </ClCompile>
@@ -138,6 +150,9 @@
       <Filter>Source Files\private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\private\Physic.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\private\PongGameMod.cpp">
       <Filter>Source Files\private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\private\SandboxMode.cpp">
@@ -159,6 +174,9 @@
       <Filter>Source Files\private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\private\TimeCalculator.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\private\TimeTrackerSave.cpp">
       <Filter>Source Files\private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\private\UIEvent.cpp">

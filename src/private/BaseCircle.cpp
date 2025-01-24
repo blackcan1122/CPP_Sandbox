@@ -108,8 +108,8 @@ void BaseCircle::CalculateGravity(float Gravity, float Deltatime)
 void BaseCircle::CalculateNewPos(float Deltatime)
 {
 	// Update velocity first
-	//Velocity.x *= Dampening;
-	//Velocity.y *= Dampening;
+	Velocity.x *= Dampening;
+	Velocity.y *= Dampening;
 
 	// Velocity threshold
 	const float velocityThreshold = 7.0f;
@@ -124,7 +124,7 @@ void BaseCircle::CalculateNewPos(float Deltatime)
 	// Screen boundary collision
 	if (IsBoundByScreen)
 	{
-		const float bounce = 0.8f; // Coefficient of restitution for walls
+		const float bounce = 1.f; // Coefficient of restitution for walls
 
 		if (NewPos.y - Radius < 0)
 		{
@@ -148,7 +148,6 @@ void BaseCircle::CalculateNewPos(float Deltatime)
 			Velocity.x = -Velocity.x * bounce;
 		}
 	}
-
 	SetPosition(NewPos);
 }
 
@@ -364,16 +363,17 @@ void BaseCircle::CalculateCollision(std::shared_ptr<Tickable> CollisionObject)
 		float penetration = RadiusSum - Distance;
 		const float percent = 0.8f;  // Correction percentage
 		const float slop = 0.01f;    // Penetration allowance
+		float e = 0.7f;
 
 		
-		if (penetration > slop)
-		{
-			Vector2 correction = Vector2Scale(Normal, (penetration * percent) / (1.0f / this->Mass + 1.0f / CollObject->Mass));
-		
-			this->SetPosition(Vector2Add(this->GetPosition(),
-				Vector2Scale(correction, 1.0f / this->Mass)));
-			CollObject->SetPosition(Vector2Subtract(CollObject->GetPosition(),
-				Vector2Scale(correction, 1.0f / CollObject->Mass)));
+		if (penetration > slop) {
+			Vector2 correction = Vector2Scale(Normal, penetration * percent);
+			// Distribute correction based on combined mass
+			Vector2 thisCorrection = Vector2Scale(correction, this->Mass / (this->Mass + CollObject->Mass));
+			Vector2 otherCorrection = Vector2Scale(correction, CollObject->Mass / (this->Mass + CollObject->Mass));
+
+			this->SetPosition(Vector2Add(this->GetPosition(), thisCorrection));
+			CollObject->SetPosition(Vector2Subtract(CollObject->GetPosition(), otherCorrection));
 		}
 
 		// Calculate relative velocity
@@ -383,25 +383,29 @@ void BaseCircle::CalculateCollision(std::shared_ptr<Tickable> CollisionObject)
 		float VelAlongNormal = Vector2DotProduct(RelativeVelocity, Normal);
 
 		// Don't resolve if objects are moving apart
-		if (VelAlongNormal > 0) {
-			return;
+		if (VelAlongNormal < 0) {
+			float j = -(1 + e) * VelAlongNormal / (this->Mass + CollObject->Mass);
+
+			Vector2 impulseThis = Vector2Scale(Normal, j * this->Mass);
+			Vector2 impulseOther = Vector2Scale(Normal, j * CollObject->Mass);
+
+			this->Velocity = Vector2Add(this->Velocity, Vector2Scale(impulseThis, Dampening / this->Mass));
+			CollObject->Velocity = Vector2Subtract(CollObject->Velocity, Vector2Scale(impulseOther, Dampening / CollObject->Mass));
 		}
-
-		// Coefficient of restitution (bounce factor)
-		float e = 0.7f;  // Adjust this between 0 and 1 for more or less bounce
-
-		// Calculate impulse scalar
-		float j = -(1.0f + e) * VelAlongNormal;
-		j /= (1.0f / this->Mass + 1.0f / CollObject->Mass);
-
-		// Apply impulse
-		Vector2 Impulse = Vector2Scale(Normal, j);
-		this->Velocity = Vector2Add(this->Velocity,Vector2Scale(Impulse, 1.0f / this->Mass));
-		CollObject->Velocity = Vector2Subtract(CollObject->Velocity,Vector2Scale(Impulse, 1.0f / CollObject->Mass));
-
 
 	}
 
+}
+
+void BaseCircle::UseDampening(bool UseDampening)
+{
+	if (UseDampening)
+	{
+		Dampening = 0.9f;
+		return;
+	}
+	
+	Dampening = 1.f;
 }
 
 void BaseCircle::UseDrag(bool Drag)

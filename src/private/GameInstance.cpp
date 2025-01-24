@@ -11,6 +11,8 @@
 #include "UIEvent.h"
 #include "EventDispatcher.hpp"
 #include "Button.h"
+#include "PongGameMod.h"
+#include "TimeTrackerSave.h"
 
 
 
@@ -66,7 +68,9 @@ void GameInstance::GameLoop()
 
 	ActiveStateMachine.RegisterState("Menu", []() {return new TimeCalcMode(false); });
 	ActiveStateMachine.RegisterState("Sandbox", []() {return new SandboxMode(); });
-	//ActiveStateMachine.RegisterState("Pong", []() {return new PongGameMod(); });
+	ActiveStateMachine.RegisterState("Pong", []() {return new PongGameMod(); });
+
+	std::shared_ptr<TimeTrackerSave> NewSave = nullptr;
 
 	// Setting initial Start Mode
 	ActiveStateMachine.ChangeState("Menu");
@@ -75,7 +79,7 @@ void GameInstance::GameLoop()
 
 	// Handling UI Event
 	// We Use this Event to Switch GameMode which then will update in the GameLoop
-	UIEventDispatcher.AddListener("UIEvent", [&ActiveStateMachine](std::shared_ptr<Event> Event) -> void
+	UIEventDispatcher.AddListener("UIEvent", [&ActiveStateMachine, &NewSave](std::shared_ptr<Event> Event) -> void
 		{
 			auto ButtonClickEvent = std::dynamic_pointer_cast<UIEvent>(Event);
 			if (ButtonClickEvent == nullptr)
@@ -84,7 +88,22 @@ void GameInstance::GameLoop()
 			}
 			Button* ClickedButton = static_cast<Button*>(ButtonClickEvent.get()->ClickedUIElement);
 		
+
+			if (TimeCalcMode* CurrentMode = dynamic_cast<TimeCalcMode*>(ActiveStateMachine.GetCurrentGameMode()))
+			{
+				NewSave = std::make_shared<TimeTrackerSave>(CurrentMode->GetSerializedData());
+			}
+
+
 			ActiveStateMachine.ChangeState(ClickedButton->GetEventPayload());
+
+			if (ClickedButton->GetEventPayload() == "Menu" && NewSave != nullptr)
+			{
+				if (TimeCalcMode* CurrentMode = dynamic_cast<TimeCalcMode*>(ActiveStateMachine.GetCurrentGameMode()))
+				{
+					CurrentMode->LoadSaveGame(*NewSave.get());
+				}
+			}
 		});
 
 	int TestSize = MeasureText("Time Calculator", 14);
@@ -130,7 +149,7 @@ void GameInstance::GameLoop()
 	Button OtherGameButton;
 	Rectangle NewRecOtherGame = { Width * 3 - Width,-50,Width, 100 };
 	OtherGameButton.Construct(NewRecOtherGame, "Other Play Mode", LIGHTGRAY, true, 0.2)
-		.SetEventPayload("Menu")
+		.SetEventPayload("Pong")
 		.SetEventDispatcher(std::make_shared<EventDispatcher>(UIEventDispatcher))
 		.UpdateTextPosition((Width / 2) - (OtherPlaySize / 2), 75)
 		.OnHover([Width](Button* MenuButton)

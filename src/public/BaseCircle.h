@@ -72,6 +72,7 @@ public:
 	void DrawCircleShape();
 	Vector2 CalculateForwardVector();
 	void CalculateCollision(std::shared_ptr<Tickable> CollisionObject);
+	void UseDampening(bool UseDampening);
 	void UseDrag(bool Drag);
 	void SetStartVelocity(Vector2 StartVelocity);
 	Rectangle GetBBox();

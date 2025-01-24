@@ -106,12 +106,16 @@ void SandboxMode::Update()
     {
         for (int i = 0; i < AmountOfBalls; i++)
         {
+            Vector2 RandomOffset;
+            RandomOffset.x = GetRandomValue(-5, 5);
+             RandomOffset.y = GetRandomValue(-5, 5);
+            
             RuntimeCircles.push_back(std::make_shared<BaseCircle>());
             RuntimeCircles[RuntimeCircles.size() - 1]->SetIsControllable(false);
             RuntimeCircles[RuntimeCircles.size() - 1]->SetUseGravity(true);
             RuntimeCircles[RuntimeCircles.size() - 1]->SetStartVelocity(Vector2() = {50,50});
             RuntimeCircles[RuntimeCircles.size() - 1]->SetIsBoundByScreen(true);
-            RuntimeCircles[RuntimeCircles.size() - 1]->SetPosition(GetMousePosition());
+            RuntimeCircles[RuntimeCircles.size() - 1]->SetPosition(GetMousePosition()+ RandomOffset);
         }
         PhysicEngineObj.CollectAllObjectsForGravity();
     }
