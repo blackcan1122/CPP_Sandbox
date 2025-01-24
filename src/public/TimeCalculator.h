@@ -125,6 +125,29 @@ struct TimeFormat
 		return true;
 
 	}
+
+	std::string ConvertToString()
+	{
+		std::string NewString;
+		if (Hour <= 9)
+		{
+			NewString += "0" + std::to_string(Hour) + ":";
+		}
+		else
+		{
+			NewString += std::to_string(Hour) + ":";
+		}
+		if (Minutes <= 9)
+		{
+			NewString += "0" + std::to_string(Minutes);
+		}
+		else
+		{
+			NewString += std::to_string(Minutes);
+		}
+
+		return NewString;
+	}
 };
 
 
@@ -135,6 +158,15 @@ public:
 	TimeCalculator();
 	void SetDebugMode(bool Debug);
 	void UpdateCalculator();
+
+	TimeFormat GetCorrectionTime();
+	TimeFormat GetPauseTime();
+	TimeFormat GetStartTime();
+
+	void SetCorrectionTime(TimeFormat NewCorrectionTime);
+	void SetStartTime(TimeFormat NewStartTime);
+	void SetPauseTime(TimeFormat NewPauseTime);
+	void UpdateTextBox();
 
 
 
@@ -161,12 +193,6 @@ private:
 	TextInputBox OutputTime;
 
 	bool bIsDebug = false;
-
-
-
-
-
-
 
 
 };

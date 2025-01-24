@@ -1,0 +1,2 @@
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\bin\Release\raylib.lib.lastcodeanalysissucceeded
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\build\build_files\obj\x64\Release\raylib\NativeCodeAnalysis.read.1.tlog
