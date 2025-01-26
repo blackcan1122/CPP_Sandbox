@@ -1,5 +1,6 @@
 #pragma once
 #include "Core.h"
+#include "EventDispatcher.hpp"
 
 class GameInstance
 {
@@ -24,6 +25,8 @@ protected:
 	bool m_Fullscreen;
 	bool m_IsDebug = false;
 
+	static EventDispatcher UIEventDispatcher;
+	static EventDispatcher SaveStateDispatcher;
 
 	/*
 	*****************************
@@ -41,6 +44,10 @@ public:
 
 	static void InitGameInstance(int ScreenWidth, int Screenheight, int TargetFps, bool Fullscreen, bool IsDebug);
 	static GameInstance* GetInstance();
+
+
+	static EventDispatcher& GetUIEventDispatcher();
+	static EventDispatcher& GetSaveStateEventDispatcher();
 
 
 };

@@ -59,6 +59,7 @@ public:
 	void SetUseGravity(bool Status) override;
 	void CalculateGravity(float Gravity, float Deltatime) override;
 	void SetIsBoundByScreen(bool Status) override;
+	void FakeInput(KeyboardKey Key, float DeltaTime);
 
 	/*
 	* *******************************

@@ -58,6 +58,7 @@ public:
 	void SetPosition(Vector2 NewPos) override;
 	Vector2 CalculatePosition(Vector2& CurrentPos, Vector2& Velocity, float& Dampening, Vector2& Accel,const float Deltatime) override;
 	bool GetGravityAffected() override;
+	Vector2 GetVelocity();
 	void CalculateGravity(float Gravity, float Deltatime) override;
 
 

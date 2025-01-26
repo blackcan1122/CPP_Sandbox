@@ -22,6 +22,9 @@ protected:
     float m_DeltaTime;
 
 private:
+
+    float PredictBallY(Vector2 BallPosition, Vector2 BallVelocity, float PaddleX);
+
     std::string Name;
     std::shared_ptr<BaseRectangle> PlayerOne;
     std::shared_ptr<BaseRectangle> PlayerTwo;

@@ -61,6 +61,11 @@ bool BaseCircle::GetGravityAffected()
 	return GravityAffects;
 }
 
+Vector2 BaseCircle::GetVelocity()
+{
+	return Velocity;
+}
+
 void BaseCircle::CalculateGravity(float Gravity, float Deltatime)
 {
 	if ((this->GetPosition().y + Radius) > static_cast<int>(GetScreenHeight()) && IsBoundByScreen)

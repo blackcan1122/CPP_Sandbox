@@ -7,11 +7,17 @@
     <Filter Include="Header Files\public">
       <UniqueIdentifier>{4FB31613-BB14-F420-4482-3AD3B0E22AE0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{000BCD17-6C75-818E-B5B3-3234215D5FE3}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{E9C7FDCE-D52A-8D73-7EB0-C5296AF258F6}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\private">
       <UniqueIdentifier>{F3CF425C-DF5E-CC25-887D-E02074EBDCCB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resources">
+      <UniqueIdentifier>{202B5BA7-8C95-0F1E-D5D3-C0C3417DED72}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -19,6 +25,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Logo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\lindi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\public\BaseCircle.h">
@@ -63,6 +72,9 @@
     <ClInclude Include="..\..\src\public\Helper.hpp">
       <Filter>Header Files\public</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\public\LoadGameEvent.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\src\public\Physic.hpp">
       <Filter>Header Files\public</Filter>
     </ClInclude>
@@ -70,6 +82,9 @@
       <Filter>Header Files\public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\public\SandboxMode.h">
+      <Filter>Header Files\public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\public\SaveGameEvent.h">
       <Filter>Header Files\public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\public\StateMachine.h">
@@ -149,6 +164,9 @@
     <ClCompile Include="..\..\src\private\Helper.cpp">
       <Filter>Source Files\private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\private\LoadGameEvent.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\src\private\Physic.cpp">
       <Filter>Source Files\private</Filter>
     </ClCompile>
@@ -156,6 +174,9 @@
       <Filter>Source Files\private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\private\SandboxMode.cpp">
+      <Filter>Source Files\private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\private\SaveGameEvent.cpp">
       <Filter>Source Files\private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\private\StateMachine.cpp">
@@ -185,5 +206,15 @@
     <ClCompile Include="..\..\src\private\WindowHandle.cpp">
       <Filter>Source Files\private</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\resources\Logo.ico">
+      <Filter>Resources</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\resources\TimeCalc1.rc">
+      <Filter>resources</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

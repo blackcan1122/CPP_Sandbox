@@ -1,12 +1,16 @@
 #include "TimeCalcMode.h"
-#include "trex.h"
+#include "Lindi.h"
 #include "Logo.h"
+#include "GameInstance.h"
+#include "EventDispatcher.hpp"
+#include "SaveGameEvent.h"
+#include "LoadGameEvent.h"
 
 
 TimeCalcMode::TimeCalcMode(bool bIsDebug)
 {
 	SetTargetFPS(30);
-	image = LoadImageFromMemory(".jpg", trex_jpg, trex_jpg_len);     // Loaded in CPU memory (RAM)
+	image = LoadImageFromMemory(".jpg", lindi_jpg, lindi_jpg_len);     // Loaded in CPU memory (RAM)
 	imageLogo = LoadImageFromMemory(".png", Logo_png, Logo_png_len);     // Loaded in CPU memory (RAM)
 	texture = LoadTextureFromImage(image);          // Image converted to texture, GPU memory (VRAM)
 	SetWindowSize(600, 600);
@@ -16,6 +20,10 @@ TimeCalcMode::TimeCalcMode(bool bIsDebug)
 	UnloadImage(imageLogo);
 	UnloadImage(image);   // Once image has been converted to texture and uploaded to VRAM, it can be unloaded from RAM
 
+	std::shared_ptr<LoadGameEvent> LoadEvent = std::make_shared<LoadGameEvent>();
+	LoadEvent->TimeCalcGameMode = this;
+
+	GameInstance::GetSaveStateEventDispatcher().Dispatch(LoadEvent);
 
 }
 
@@ -38,7 +46,18 @@ void TimeCalcMode::Update()
 
 	// Setup the back buffer for drawing (clear color and depth buffers)
 
-	DrawTexture(texture, GetScreenWidth() / 2 - texture.width / 2, GetScreenHeight() / 2 - texture.height / 2, DARKGRAY);
+	float ScaleFactor = 0.45f;
+
+	DrawTextureEx(
+		texture,
+		Vector2{
+			((float)GetScreenWidth() / 2) - ((texture.width * ScaleFactor) / 2),  // Center horizontally
+			((float)GetScreenHeight() / 2) - ((texture.height * ScaleFactor) / 2) // Center vertically
+		},
+		0.0f,   // No rotation
+		ScaleFactor,  // Scale texture to 25% of its original size
+		Color{40,40,40,255}   // Default tint color
+	);
 
 	ActiveTimeCalc.UpdateCalculator();
 
@@ -53,7 +72,13 @@ void TimeCalcMode::Update()
 TimeCalcMode::~TimeCalcMode()
 {
 	UnloadTexture(texture);
-	std::cout << "Destructor is called" << std::endl;
+	std::cout << "Destructor of TimeCalcMode is called" << std::endl;
+
+	std::shared_ptr<SaveGameEvent> SaveEvent = std::make_shared<SaveGameEvent>();
+	SaveEvent->SaveGame = std::make_shared<TimeTrackerSave>(GetSerializedData());
+
+	GameInstance::GetSaveStateEventDispatcher().Dispatch(SaveEvent);
+
 }
 
 void TimeCalcMode::LoadSaveGame(TimeTrackerSave UseSave)

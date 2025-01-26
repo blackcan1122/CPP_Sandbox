@@ -34,7 +34,7 @@ void PongGameMod::Update()
 {
     ClearBackground(GRAY);
     m_DeltaTime = GetFrameTime();
-    
+    DrawFPS(100, 100);
 
     if (Wait == true)
     {
@@ -57,11 +57,20 @@ void PongGameMod::Update()
     waitTimeElapsed += m_DeltaTime;
     TickAll(m_DeltaTime);
 
-    Vector2 PlayerTwoPos = { GetScreenWidth() - 100, Ball->GetPosition().y - (PlayerTwo->GetDimensions().y/2)};
-    
-    Vector2 NewPlayerPos = Vector2Lerp(PlayerTwo->GetPosition(), PlayerTwoPos, RandomDifficulty + m_DeltaTime * 0.1f);
+    //Vector2 PlayerTwoPos = { GetScreenWidth() - 100, Ball->GetPosition().y - (PlayerTwo->GetDimensions().y/2)};
+    //
+    //Vector2 NewPlayerPos = Vector2Lerp(PlayerTwo->GetPosition(), PlayerTwoPos, RandomDifficulty + m_DeltaTime * 0.1f);
 
-    PlayerTwo->SetPosition(NewPlayerPos);
+    //PlayerTwo->SetPosition(NewPlayerPos);
+
+    float predictedBallY = PredictBallY(Ball->GetPosition(), Ball->GetVelocity(), PlayerTwo->GetPosition().x);
+
+    if (PlayerTwo->GetPosition().y > predictedBallY) {
+        PlayerTwo->FakeInput(KEY_UP, m_DeltaTime);
+    }
+    else {
+        PlayerTwo->FakeInput(KEY_DOWN, m_DeltaTime);
+    }
 
 
 
@@ -127,8 +136,8 @@ void PongGameMod::Reset()
     std::random_device rd;
     std::mt19937 RandomGenerator(rd()); // Seed with a random device
     std::uniform_real_distribution<float> FloatValueForDifficulty(0.6f, 0.90f);
-    std::uniform_real_distribution<float> FloatValueX(-500.f, 500.f);
-    std::uniform_real_distribution<float> FloatValueY(-500.f, 500.f);
+    std::uniform_real_distribution<float> FloatValueX(-100.f, 100.f);
+    std::uniform_real_distribution<float> FloatValueY(-100.f, 100.f);
 
     //PlayerOne
     PlayerOne->RestrictAxis('Y');
@@ -161,8 +170,9 @@ void PongGameMod::Reset()
     Ball->SetPosition(BallPos);
 
     Vector2 InitialVelocity = { FloatValueX(RandomGenerator), FloatValueY(RandomGenerator) };
-    if (Vector2Length(InitialVelocity) < 300.0f) {
-        InitialVelocity = Vector2Scale(Vector2Normalize(InitialVelocity), 300.0f);
+    if (Vector2Length(InitialVelocity) < 25.f) 
+    {
+        InitialVelocity = Vector2Scale(Vector2Normalize(InitialVelocity), 25.f);
     }
     Ball->SetStartVelocity(InitialVelocity);
 
@@ -177,4 +187,41 @@ void PongGameMod::Reset()
 std::string PongGameMod::GetName()
 {
     return GameMode::GetName();
+}
+
+float PongGameMod::PredictBallY(Vector2 ballPosition, Vector2 ballVelocity, float paddleX)
+{
+    // Ensure the ball is moving towards the AI paddle
+    if (ballVelocity.x <= 0) {
+        return ballPosition.y; // Ball is moving away; return current position
+    }
+
+    float predictedY = ballPosition.y;
+
+    // Simulate the ball's movement
+    while (ballPosition.x < paddleX) {
+        // Update ball position
+        ballPosition.x += ballVelocity.x * GetFrameTime();
+        ballPosition.y += ballVelocity.y * GetFrameTime();
+
+
+        if (ballPosition.y <= 0) 
+        {
+            ballPosition.y = -ballPosition.y;
+            ballVelocity.y *= -1;            
+        }
+
+        else if (ballPosition.y >= GetScreenHeight())  
+        {
+            ballPosition.y = 2 * GetScreenHeight() - ballPosition.y;
+            ballVelocity.y *= -1;
+        }
+
+        // Stop if the ball goes off-screen (failsafe)
+        if (ballPosition.x < 0 || ballPosition.y < 0 || ballPosition.y > GetScreenHeight()) {
+            break;
+        }
+    }
+
+    return ballPosition.y;
 }
