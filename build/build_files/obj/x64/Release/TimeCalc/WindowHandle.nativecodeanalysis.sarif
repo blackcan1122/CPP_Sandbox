@@ -1,0 +1,113 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'IntVector2::X' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/src/public/WindowHandle.h"
+                },
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "IntVector2::{ctor}",
+                  "decoratedName": "??0IntVector2@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "IntVector2::X"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'IntVector2::Y' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/src/public/WindowHandle.h"
+                },
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "IntVector2::{ctor}",
+                  "decoratedName": "??0IntVector2@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "IntVector2::Y"
+          }
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.38.33139.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/marce/Documents/Hax0rStuff/TimeCalc/src/public/WindowHandle.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "06968f148411e8217f8cecd85923680bf54a0763d4c8208a46820d2856cbd1ad"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/marce/documents/hax0rstuff/timecalc/src/private/windowhandle.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "0bcc8b643b5f8172c2fbd6e95429ba9ddff520950545ad0574f62e0b86b7fdef"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/marce/documents/hax0rstuff/timecalc/build/external/raylib-master/src/raylib.h"
+          },
+          "hashes": {
+            "sha-256": "d92d7b91406be1220137af81db31452884ee08fcf91406356ad802ce5d0f5c8d"
+          }
+        }
+      ]
+    }
+  ]
+}

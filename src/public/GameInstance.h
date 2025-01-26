@@ -5,7 +5,7 @@ class GameInstance
 {
 
 private:
-	GameInstance(int ScreenWidth, int Screenheight, int TargetFps, bool Fullscreen);
+	GameInstance(int ScreenWidth, int Screenheight, int TargetFps, bool Fullscreen, bool IsDebug);
 	~GameInstance() = default;
 
 	static GameInstance* Instance;
@@ -22,6 +22,7 @@ protected:
 	int m_ScreenHeight;
 	int m_TargetFps;
 	bool m_Fullscreen;
+	bool m_IsDebug = false;
 
 
 	/*
@@ -38,7 +39,7 @@ public:
 	GameInstance(const GameInstance&) = delete;
 	GameInstance& operator=(const GameInstance&) = delete;
 
-	static void InitGameInstance(int ScreenWidth, int Screenheight, int TargetFps, bool Fullscreen);
+	static void InitGameInstance(int ScreenWidth, int Screenheight, int TargetFps, bool Fullscreen, bool IsDebug);
 	static GameInstance* GetInstance();
 
 
