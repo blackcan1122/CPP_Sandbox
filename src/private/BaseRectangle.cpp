@@ -22,6 +22,7 @@ void BaseRectangle::SetIsControllable(bool Status)
 	IsControllable = Status;
 }
 
+
 bool BaseRectangle::GetGravityAffected()
 {
 	return GravityAffects;
@@ -54,6 +55,68 @@ void BaseRectangle::CalculateGravity(float Gravity, float Deltatime)
 void BaseRectangle::SetIsBoundByScreen(bool Status)
 {
 	IsBoundByScreen = Status;
+}
+
+void BaseRectangle::FakeInput(KeyboardKey Key, float DeltaTime)
+{
+	// Accelarting
+	Accel = 30.f; // Magic Accel Number
+
+	if (Key == KEY_UP && AxisRestriction != 'X')
+	{
+		Velocity.y -= Accel;
+	}
+	if (Key == KEY_DOWN && AxisRestriction != 'X')
+	{
+		Velocity.y += Accel;
+	}
+	if (Key == KEY_RIGHT && AxisRestriction != 'Y')
+	{
+		Velocity.x += Accel;
+	}
+	if (Key == KEY_LEFT && AxisRestriction != 'Y')
+	{
+		Velocity.x -= Accel;
+	}
+
+	// Apply Dampening
+	Velocity.x *= Dampening;
+	Velocity.y *= Dampening;
+
+	// Update position with velocity
+
+	Position.x += Velocity.x * DeltaTime;
+	Position.y += Velocity.y * DeltaTime;
+
+	//Check if velocity is close to zero and set it to zero if so
+	if (std::abs(Velocity.x) < 0.02)
+	{
+		Velocity.x = 0;
+	}
+	if (std::abs(Velocity.y) < 0.02)
+	{
+		Velocity.y = 0;
+	}
+
+	if (IsBoundByScreen == true)
+	{
+		if (Position.x < 0 || Position.x > GetScreenWidth())
+		{
+			Velocity.x = 0;
+		}
+		else if (Position.y < 0 || Position.y >(GetScreenHeight() - Dimensions.y))
+		{
+			if (Position.y < 0)
+			{
+				Position.y = 0;
+			}
+			else
+			{
+				Position.y = (GetScreenHeight() - Dimensions.y);
+			}
+			Velocity.x = 0;
+		}
+	}
 }
 
 

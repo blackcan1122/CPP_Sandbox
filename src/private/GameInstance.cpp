@@ -9,12 +9,15 @@
 #include "SandboxMode.h"
 #include "TextBox.h"
 #include "UIEvent.h"
+#include "SaveGameEvent.h"
+#include "LoadGameEvent.h"
 #include "EventDispatcher.hpp"
 #include "Button.h"
 #include "PongGameMod.h"
 #include "TimeTrackerSave.h"
 
-
+EventDispatcher GameInstance::UIEventDispatcher;
+EventDispatcher GameInstance::SaveStateDispatcher;
 
 // Definition of the static member
 GameInstance* GameInstance::Instance = nullptr;
@@ -48,38 +51,65 @@ GameInstance* GameInstance::GetInstance()
 	std::cerr << "GameInstance was not Created, please Call InitGameInstance first" << std::endl;
 }
 
+EventDispatcher& GameInstance::GetUIEventDispatcher()
+{
+	return UIEventDispatcher;
+}
+
+EventDispatcher& GameInstance::GetSaveStateEventDispatcher()
+{
+	return SaveStateDispatcher;
+}
+
 
 void GameInstance::CreateWindow()
 {
-	if (Instance->m_Fullscreen)
-	{
-		SetConfigFlags(FLAG_FULLSCREEN_MODE);
-	}
+	SetConfigFlags(FLAG_WINDOW_HIGHDPI | FLAG_MSAA_4X_HINT);
 
-	InitWindow(Instance->m_ScreenWidth, Instance->m_ScreenHeight, "GameWindow");
+	InitWindow(Instance->m_ScreenWidth, Instance->m_ScreenHeight, "I DONT EVEN KNOW WTF IM DOING ?!?!?!?!?!?!?");
 	SetTargetFPS(Instance->m_TargetFps);
 }
 
 void GameInstance::GameLoop()
 {
 	StateMachine ActiveStateMachine;
-	EventDispatcher UIEventDispatcher;
-	
+
 
 	ActiveStateMachine.RegisterState("Menu", []() {return new TimeCalcMode(false); });
 	ActiveStateMachine.RegisterState("Sandbox", []() {return new SandboxMode(); });
 	ActiveStateMachine.RegisterState("Pong", []() {return new PongGameMod(); });
 
+	//SaveState
 	std::shared_ptr<TimeTrackerSave> NewSave = nullptr;
+	
+	SaveStateDispatcher.AddListener("SaveGameEvent", [&NewSave](std::shared_ptr<Event> Event) -> void
+		{ 
+			if (std::shared_ptr<SaveGameEvent> CurrentEvent = std::dynamic_pointer_cast<SaveGameEvent>(Event))
+			{
+				NewSave = CurrentEvent->SaveGame;
+			}
+			
+		});
+
+	SaveStateDispatcher.AddListener("LoadGameEvent", [&NewSave](std::shared_ptr<Event> Event) -> void
+		{
+			if (NewSave == nullptr)
+			{
+				return;
+			}
+			if (std::shared_ptr<LoadGameEvent> CurrentEvent = std::dynamic_pointer_cast<LoadGameEvent>(Event))
+			{
+				CurrentEvent->TimeCalcGameMode->LoadSaveGame(*NewSave.get());
+			}
+
+		});
 
 	// Setting initial Start Mode
 	ActiveStateMachine.ChangeState("Menu");
-	std::cout << sizeof*(static_cast<TimeCalcMode*>(ActiveStateMachine.GetCurrentGameMode())) << std::endl;
-
 
 	// Handling UI Event
 	// We Use this Event to Switch GameMode which then will update in the GameLoop
-	UIEventDispatcher.AddListener("UIEvent", [&ActiveStateMachine, &NewSave](std::shared_ptr<Event> Event) -> void
+	UIEventDispatcher.AddListener("UIEvent", [&ActiveStateMachine](std::shared_ptr<Event> Event) -> void
 		{
 			auto ButtonClickEvent = std::dynamic_pointer_cast<UIEvent>(Event);
 			if (ButtonClickEvent == nullptr)
@@ -87,29 +117,15 @@ void GameInstance::GameLoop()
 				return;
 			}
 			Button* ClickedButton = static_cast<Button*>(ButtonClickEvent.get()->ClickedUIElement);
-		
-
-			if (TimeCalcMode* CurrentMode = dynamic_cast<TimeCalcMode*>(ActiveStateMachine.GetCurrentGameMode()))
-			{
-				NewSave = std::make_shared<TimeTrackerSave>(CurrentMode->GetSerializedData());
-			}
-
 
 			ActiveStateMachine.ChangeState(ClickedButton->GetEventPayload());
 
-			if (ClickedButton->GetEventPayload() == "Menu" && NewSave != nullptr)
-			{
-				if (TimeCalcMode* CurrentMode = dynamic_cast<TimeCalcMode*>(ActiveStateMachine.GetCurrentGameMode()))
-				{
-					CurrentMode->LoadSaveGame(*NewSave.get());
-				}
-			}
 		});
 
-	int TestSize = MeasureText("Time Calculator", 14);
-	int PlaySize = MeasureText("Play Mode", 14);
-	int OtherPlaySize = MeasureText("Other Play Mode", 14);
-	int OptionSize = MeasureText("Option", 14);
+	int TestSize = MeasureText("Time Calculator", 18);
+	int PlaySize = MeasureText("Sandbox", 18);
+	int OtherPlaySize = MeasureText("Pong", 18);
+	int OptionSize = MeasureText("Option", 18);
 
 	int Width = GetScreenWidth() / 4;
 
@@ -119,46 +135,59 @@ void GameInstance::GameLoop()
 	MenuButton.Construct(NewRec, "Time Calculator", LIGHTGRAY, true, 0.2)
 		.SetEventPayload("Menu")
 		.SetEventDispatcher(std::make_shared<EventDispatcher>(UIEventDispatcher))
-		.UpdateTextPosition((Width/2) - (TestSize / 2), 75)
+		.UpdateTextPosition((Width / 2) - (TestSize / 2), 75)
+		.UpdateFontSize(18)
 		.OnHover([Width](Button* MenuButton)
 			{
 				MenuButton->UpdateButtonPosition(Width - Width, -25);
+				MenuButton->UpdateColor(DARKGRAY);
+				MenuButton->UpdateTextColor(RAYWHITE);
 			})
 		.OnHoverLeave([Width](Button* MenuButton)
 			{
 				MenuButton->UpdateButtonPosition(Width - Width, -50);
+				MenuButton->UpdateColor(LIGHTGRAY);
+				MenuButton->UpdateTextColor(BLACK);
 			});
 
 	Button PlayButton;
 	Rectangle NewRecPlay = { Width*2 - Width,-50,Width,100 };
-	PlayButton.Construct(NewRecPlay, "Play Mode", LIGHTGRAY, true, 0.2)
+	PlayButton.Construct(NewRecPlay, "Sandbox", LIGHTGRAY, true, 0.2)
 		.SetEventPayload("Sandbox")
 		.SetEventDispatcher(std::make_shared<EventDispatcher>(UIEventDispatcher))
 		.UpdateTextPosition((Width / 2) - (PlaySize / 2), 75)
+		.UpdateFontSize(18)
 		.OnHover([Width](Button* MenuButton)
 			{
 				MenuButton->UpdateButtonPosition(Width*2 - Width, -25);
 				MenuButton->UpdateColor(DARKGRAY);
+				MenuButton->UpdateTextColor(RAYWHITE);
 			})
 		.OnHoverLeave([Width](Button* MenuButton)
 			{
 				MenuButton->UpdateButtonPosition(Width * 2 - Width, -50);
 				MenuButton->UpdateColor(LIGHTGRAY);
+				MenuButton->UpdateTextColor(BLACK);
 			});
 
 	Button OtherGameButton;
 	Rectangle NewRecOtherGame = { Width * 3 - Width,-50,Width, 100 };
-	OtherGameButton.Construct(NewRecOtherGame, "Other Play Mode", LIGHTGRAY, true, 0.2)
+	OtherGameButton.Construct(NewRecOtherGame, "Pong", LIGHTGRAY, true, 0.2)
 		.SetEventPayload("Pong")
 		.SetEventDispatcher(std::make_shared<EventDispatcher>(UIEventDispatcher))
 		.UpdateTextPosition((Width / 2) - (OtherPlaySize / 2), 75)
+		.UpdateFontSize(18)
 		.OnHover([Width](Button* MenuButton)
 			{
 				MenuButton->UpdateButtonPosition(Width * 3 - Width, -25);
+				MenuButton->UpdateColor(DARKGRAY);
+				MenuButton->UpdateTextColor(RAYWHITE);
 			})
 		.OnHoverLeave([Width](Button* MenuButton)
 			{
 				MenuButton->UpdateButtonPosition(Width * 3 - Width, -50);
+				MenuButton->UpdateColor(LIGHTGRAY);
+				MenuButton->UpdateTextColor(BLACK);
 			});
 
 	Button OptionButton;
@@ -167,13 +196,18 @@ void GameInstance::GameLoop()
 		.SetEventPayload("Menu")
 		.SetEventDispatcher(std::make_shared<EventDispatcher>(UIEventDispatcher))
 		.UpdateTextPosition((Width / 2) - (OptionSize / 2), 75)
+		.UpdateFontSize(18)
 		.OnHover([Width](Button* MenuButton)
 			{
 				MenuButton->UpdateButtonPosition(Width * 4 - Width, -25);
+				MenuButton->UpdateColor(DARKGRAY);
+				MenuButton->UpdateTextColor(RAYWHITE);
 			})
 		.OnHoverLeave([Width](Button* MenuButton)
 			{
 				MenuButton->UpdateButtonPosition(Width * 4 - Width, -50);
+				MenuButton->UpdateColor(LIGHTGRAY);
+				MenuButton->UpdateTextColor(BLACK);
 			});
 
 

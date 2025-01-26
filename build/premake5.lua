@@ -145,6 +145,7 @@ if (downloadRaylib) then
         filter {"system:windows", "configurations:Release", "action:gmake*"}
             kind "WindowedApp"
             buildoptions { "-Wl,--subsystem,windows" }
+            files { "../resources/TimeCalc1.rc" }
 
         filter {"system:windows", "configurations:Release", "action:vs*"}
             kind "WindowedApp"
@@ -159,8 +160,17 @@ if (downloadRaylib) then
         {
             ["Header Files/*"] = { "../include/**.h",  "../include/**.hpp", "../src/**.h", "../src/**.hpp"},
             ["Source Files/*"] = {"../src/**.c", "src/**.cpp"},
+            ["Resources/*"] = {"../resources/**.ico"}
         }
-        files {"../src/**.c", "../src/**.cpp", "../src/**.h", "../src/**.hpp", "../include/**.h", "../include/**.hpp"}
+        files {
+            "../src/**.c", 
+            "../src/**.cpp", 
+            "../src/**.h", 
+            "../src/**.hpp", 
+            "../include/**.h", 
+            "../include/**.hpp",
+            "../resources/**.ico" -- Add the .ico file to the project
+        }
     
         includedirs { "../src" }
         includedirs { "../src/public" }
@@ -186,10 +196,12 @@ if (downloadRaylib) then
             characterset ("Unicode")
             buildoptions { "/Zc:__cplusplus" }
 
-        filter "system:windows"
+            filter "system:windows"
             defines{"_WIN32"}
             links {"winmm", "gdi32", "opengl32"}
             libdirs {"../bin/%{cfg.buildcfg}"}
+            files { "../resources/TimeCalc1.rc" } -- Include .rc file for all configurations on Windows
+        
 
         filter "system:linux"
             links {"pthread", "m", "dl", "rt", "X11"}

@@ -25,6 +25,9 @@ public:
 	virtual Button& UpdateButtonPosition(Vector2 NewPos);
 	virtual Button& UpdateButtonPosition(int X, int Y);
 	virtual Button& UpdateColor(Color NewColor);
+	virtual Button& UpdateTextColor(Color NewTextColor);
+	virtual Button& UpdateFontSize(int NewFontSize);
+
 	virtual Button& OnHover(std::function<void(Button* ButtonClass)> callback);
 	virtual Button& OnHoverLeave(std::function<void(Button* ButtonClass)> callback);
 
@@ -45,10 +48,11 @@ private:
 	std::string ResponsibleGameMode;
 	std::string m_Text;
 	Vector2 TextPosition;
-	int FontSize;
+	int FontSize = 14;
 	bool m_IsRounded;
 	bool m_WasLastHovered = false;
 	float m_Roundness;
 	Rectangle ButtonDim;
 	Color m_BackgroundColor;
+	Color m_TextColor = BLACK;
 };

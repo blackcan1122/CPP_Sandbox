@@ -1,42 +1,32 @@
 ﻿  GameInstance.cpp
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\public\BaseRectangle.h(101,20): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\public\BaseRectangle.h(102,20): warning C4305: 'initializing': truncation from 'double' to 'float'
 C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\public\Physic.hpp(79,24): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(118,28): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(118,28): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(118,39): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(118,39): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(119,67): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(133,35): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(133,35): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(133,47): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(133,47): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(134,65): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(150,42): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(150,42): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(150,54): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(150,54): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(151,81): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(165,39): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(165,39): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(165,51): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(165,51): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(166,66): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(134,28): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(134,28): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(134,39): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(134,39): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(135,67): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(154,35): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(154,35): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(154,47): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(154,47): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(155,63): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(174,42): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(174,42): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(174,54): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(174,54): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(175,70): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(194,39): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(194,39): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(194,51): warning C4838: conversion from 'int' to 'float' requires a narrowing conversion
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(194,51): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(195,66): warning C4305: 'argument': truncation from 'double' to 'float'
+  LoadGameEvent.cpp
   TimeCalcMode.cpp
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(46,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(47,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(48,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(49,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  TimeCalculator.cpp
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalculator.cpp(161,102): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalculator.cpp(162,99): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalculator.cpp(163,81): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalculator.cpp(164,99): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalculator.cpp(165,105): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalculator.cpp(172,111): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalculator.cpp(173,111): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  TimeTrackerSave.cpp
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(65,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(66,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(67,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(68,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   Generating Code...
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\public\TimeCalculator.h(69): warning C4715: 'TimeFormat::operator[]': not all control paths return a value
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\public\TimeCalculator.h(28): warning C4715: 'TimeFormatDecimal::operator[]': not all control paths return a value
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(49): warning C4715: 'GameInstance::GetInstance': not all control paths return a value
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\GameInstance.cpp(52): warning C4715: 'GameInstance::GetInstance': not all control paths return a value
   TimeCalc.vcxproj -> C:\Users\marce\Documents\Hax0rStuff\TimeCalc\bin\Debug\TimeCalc.exe

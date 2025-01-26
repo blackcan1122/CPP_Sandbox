@@ -82,6 +82,19 @@ Button& Button::UpdateColor(Color NewColor)
     return *this;
 }
 
+Button& Button::UpdateTextColor(Color NewTextColor)
+{
+    m_TextColor = NewTextColor;
+    return *this;
+}
+
+Button& Button::UpdateFontSize(int NewFontSize)
+{
+    FontSize = NewFontSize;
+    return *this;
+}
+
+
 Button& Button::OnHover(std::function<void(Button* ButtonClass)> callback)
 {
     HoverCallback = callback;
@@ -129,7 +142,7 @@ void Button::Update()
         DrawRectangle(ButtonDim.x, ButtonDim.y, ButtonDim.width, ButtonDim.height, m_BackgroundColor);
     }
 
-    DrawText(m_Text.c_str(), ButtonDim.x + TextPosition.x, ButtonDim.y + TextPosition.y, 14, BLACK);
+    DrawText(m_Text.c_str(), ButtonDim.x + TextPosition.x, ButtonDim.y + TextPosition.y, FontSize, m_TextColor);
 }
 
 std::shared_ptr<UIEvent> Button::OnClickEvent()
