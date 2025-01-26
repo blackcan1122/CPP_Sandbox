@@ -30,3 +30,8 @@ void StateMachine::UpdateGameMode() const
 		CurrentGameMode->Update();
 	}
 }
+
+GameMode* StateMachine::GetCurrentGameMode()
+{
+	return CurrentGameMode;
+}

@@ -1,9 +1,10 @@
 #pragma once
 #include "raylib.h"
 #include <string>
+#include "BaseUI.h"
 
 
-class TextInputBox
+class TextInputBox : public BaseUI
 {
 public:
 
@@ -31,17 +32,18 @@ public:
 	TextInputBox& UpdateBorder(int Thickness, Color BorderColor);
 
 
-	void Update();
+	virtual void Update() override;
 
 	bool bIsFocused(Vector2 MousePosition);
-	bool LastActiveElement(Vector2 MousePosition);
 
 	char StringToHold[50 + 1] = "\0";
+
+	Rectangle Box;
 
 private:
 
 	// Member
-	Rectangle Box;
+	
 	Color BoxBackgroundColor;
 	std::string Text;
 	Vector2 TextPosition;
