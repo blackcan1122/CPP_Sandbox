@@ -1,6 +1,8 @@
 #include "TimeCalculator.h"
 #include "time.h"
 #include <functional>
+#include <iomanip>
+#include <sstream> 
 
 TimeCalculator::TimeCalculator()
 {
@@ -95,6 +97,14 @@ void TimeCalculator::InitMember()
 		.UpdateFontSize(22)
 		.UpdateFontColor(DARKGRAY);
 
+	EstimatedLeaveTimeBox.Construct(GetScreenWidth() / 2.0f, 360 + 60, 225, 50, RAYWHITE)
+		.UseBorder(false)
+		.CanBeEdited(false)
+		.SetInitialText("16:00")
+		.UpdateFontSize(22)
+		.UpdateFontColor(DARKGRAY);
+
+
 }
 
 bool TimeCalculator::IsDebug()
@@ -119,6 +129,7 @@ void TimeCalculator::CalculateTime()
 	CorrectionTime.ConvertStringToTimeFormat(CorrectionTimeBox.StringToHold);
 	CorrectionTime.ConvertToDecimalTime();
 
+
 	double workedTime = CurrentTime.DecimalTime.Combined - StartTime.DecimalTime.Combined;
 	double totalPause = PauseTime.DecimalTime.Combined - CorrectionTime.DecimalTime.Combined;
 	double remaining = std::fmod(8.0 - (workedTime - totalPause), 24.0);
@@ -127,26 +138,42 @@ void TimeCalculator::CalculateTime()
 
 
 
-	double Temp = std::fmod(8.0 - ((CurrentTime.DecimalTime.Combined - StartTime.DecimalTime.Combined) - (PauseTime.DecimalTime.Combined - CorrectionTime.DecimalTime.Combined)), 24.0);
+	//double Temp = std::fmod(8.0 - ((CurrentTime.DecimalTime.Combined - StartTime.DecimalTime.Combined) - (PauseTime.DecimalTime.Combined - CorrectionTime.DecimalTime.Combined)), 24.0);
 
 	DifferenceTime.DecimalTime.Combined = remaining;
 	DifferenceTime.DecimalTime.CombinedTimeToComponents();
 	DifferenceTime.ConvertToTimeFormat();
 
-	std::string OutputText = std::to_string(DifferenceTime.Hour) + ":" + std::to_string(DifferenceTime.Minutes);
+	std::stringstream ss;
+	ss << DifferenceTime.Hour << ":" << std::setw(2) << std::setfill('0') << std::abs(DifferenceTime.Minutes);
+	std::string OutputText = ss.str();
+
+	std::stringstream ls;
+	ls << EstimatedLeaveTime.Hour << ":" << std::setw(2) << std::setfill('0') << EstimatedLeaveTime.Minutes;
+	std::string LeaveTimeText = ls.str();
+	
+	EstimatedLeaveTimeBox.UpdateTextShown(LeaveTimeText);
 	OutputTime.UpdateTextShown(OutputText);
 
 	if (remaining > 0.0)
 	{
-		Konto1Delta.DecimalTime.Combined = 0.0 - remaining;
+		Konto1Delta.DecimalTime.Combined = std::max(-4.0, std::min(0.0 - remaining, 1.0));
 		Konto1Delta.DecimalTime.CombinedTimeToComponents();
 		Konto1Delta.ConvertToTimeFormat();
+
+		EstimatedLeaveTime.DecimalTime.Combined = remaining + CurrentTime.DecimalTime.Combined;
+		EstimatedLeaveTime.DecimalTime.CombinedTimeToComponents();
+		EstimatedLeaveTime.ConvertToTimeFormat();
 	}
 	else
 	{
 		Konto1Delta.DecimalTime.Combined = std::max(-4.0, std::min((workedTime - totalPause) - 8, 1.0));
 		Konto1Delta.DecimalTime.CombinedTimeToComponents();
 		Konto1Delta.ConvertToTimeFormat();
+
+		EstimatedLeaveTime.DecimalTime.Combined = CurrentTime.DecimalTime.Combined;
+		EstimatedLeaveTime.DecimalTime.CombinedTimeToComponents();
+		EstimatedLeaveTime.ConvertToTimeFormat();
 	}
 
 
@@ -169,8 +196,10 @@ void TimeCalculator::CalculateTime()
 
 void TimeCalculator::HandleRendering()
 {
-	DrawText(TextFormat("Konto 1 Delta : %d:%d", Konto1Delta.Hour, Konto1Delta.Minutes), GetScreenWidth() / 2.0f - 150, 450, 18, GREEN);
-	DrawText(TextFormat("Konto 2 Delta : %d:%d", Konto2Delta.Hour, Konto2Delta.Minutes), GetScreenWidth() / 2.0f - 150, 470, 18, GREEN);
+
+
+	DrawText(TextFormat("Konto 1 Delta : %d:%d", Konto1Delta.Hour, std::abs(Konto1Delta.Minutes)), GetScreenWidth() / 2.0f - 150, 500, 18, GREEN);
+	DrawText(TextFormat("Konto 2 Delta : %d:%d", Konto2Delta.Hour, std::abs(Konto2Delta.Minutes)), GetScreenWidth() / 2.0f - 150, 520, 18, GREEN);
 
 	if (IsDebug())
 	{
@@ -181,6 +210,8 @@ void TimeCalculator::HandleRendering()
 	PauseTimeBox.UpdatePosition(Vector2() = { GetScreenWidth() / 2.0f, 240 }).UpdateTextPosition().Update();
 	CorrectionTimeBox.UpdatePosition(Vector2() = { GetScreenWidth() / 2.0f, 300 }).UpdateTextPosition().Update();
 	OutputTime.UpdatePosition(Vector2() = { GetScreenWidth() / 2.0f, 360 }).UpdateTextPosition().Update();
+	EstimatedLeaveTimeBox.UpdatePosition(Vector2() = { GetScreenWidth() / 2.0f, 360+60 }).UpdateTextPosition().Update();
+	
 
 
 }

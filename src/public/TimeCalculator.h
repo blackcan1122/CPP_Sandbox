@@ -183,9 +183,12 @@ private:
 	TimeFormat StartTime;
 	TimeFormat CurrentTime;
 	TimeFormat DifferenceTime;
+	TimeFormat EstimatedLeaveTime;
 	TimeFormat Konto1Delta;
 	TimeFormat Konto2Delta;
 
+
+	TextInputBox EstimatedLeaveTimeBox;
 	TextInputBox ArriveTimeBox;
 	TextInputBox DebugTimeBox;
 	TextInputBox PauseTimeBox;
