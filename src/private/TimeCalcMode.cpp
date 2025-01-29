@@ -1,5 +1,5 @@
 #include "TimeCalcMode.h"
-#include "Lindi.h"
+#include "Trex.h"
 #include "Logo.h"
 #include "GameInstance.h"
 #include "EventDispatcher.hpp"
@@ -9,8 +9,9 @@
 
 TimeCalcMode::TimeCalcMode(bool bIsDebug)
 {
+
 	SetTargetFPS(30);
-	image = LoadImageFromMemory(".jpg", lindi_jpg, lindi_jpg_len);     // Loaded in CPU memory (RAM)
+	image = LoadImageFromMemory(".jpg", trex_jpg, trex_jpg_len);     // Loaded in CPU memory (RAM)
 	imageLogo = LoadImageFromMemory(".png", Logo_png, Logo_png_len);     // Loaded in CPU memory (RAM)
 	texture = LoadTextureFromImage(image);          // Image converted to texture, GPU memory (VRAM)
 	SetWindowSize(600, 600);
@@ -24,6 +25,8 @@ TimeCalcMode::TimeCalcMode(bool bIsDebug)
 	LoadEvent->TimeCalcGameMode = this;
 
 	GameInstance::GetSaveStateEventDispatcher().Dispatch(LoadEvent);
+
+	ActiveTimeCalc.SetDebugMode(bIsDebug);
 
 }
 
@@ -46,7 +49,7 @@ void TimeCalcMode::Update()
 
 	// Setup the back buffer for drawing (clear color and depth buffers)
 
-	float ScaleFactor = 0.45f;
+	float ScaleFactor = 1.f;
 
 	DrawTextureEx(
 		texture,
@@ -56,7 +59,7 @@ void TimeCalcMode::Update()
 		},
 		0.0f,   // No rotation
 		ScaleFactor,  // Scale texture to 25% of its original size
-		Color{40,40,40,255}   // Default tint color
+		DARKGRAY   // Default tint color
 	);
 
 	ActiveTimeCalc.UpdateCalculator();
@@ -66,6 +69,7 @@ void TimeCalcMode::Update()
 	DrawText("Pausen Zeit HH:MM :", GetScreenWidth() / 2.0f - 200, 260, 18, GREEN);
 	DrawText("Korrektur Zeit HH:MM :", GetScreenWidth() / 2.0f - 223, 320, 18, GREEN);
 	DrawText("Restliche Qual:", GetScreenWidth() / 2.0f - 150, 380, 18, GREEN);
+	DrawText("Voraussichtliche Geh-Zeit:", GetScreenWidth() / 2.0f - 250, 440, 18, GREEN);
 
 }
 
