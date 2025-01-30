@@ -34,3 +34,7 @@
 .vs/*
 .vscode/*
 bin/*
+
+# Make files
+Makefile
+*.make
