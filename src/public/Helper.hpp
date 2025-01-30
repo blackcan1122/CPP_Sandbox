@@ -1,7 +1,7 @@
 #pragma once
 #include "Core.h"
 
-static class Helper
+class Helper
 {
 	Helper();
 	~Helper() = default;

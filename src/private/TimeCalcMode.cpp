@@ -1,5 +1,5 @@
 #include "TimeCalcMode.h"
-#include "Trex.h"
+#include "trex.h"
 #include "Logo.h"
 #include "GameInstance.h"
 #include "EventDispatcher.hpp"

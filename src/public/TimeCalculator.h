@@ -1,6 +1,7 @@
 #pragma once
 #include "raylib.h"
 #include "TextBox.h"
+#include <cstring>
 
 struct TimeFormatDecimal
 {

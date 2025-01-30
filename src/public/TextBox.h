@@ -1,6 +1,7 @@
 #pragma once
 #include "raylib.h"
 #include <string>
+#include <cstring>
 #include "BaseUI.h"
 
 

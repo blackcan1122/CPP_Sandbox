@@ -14,6 +14,7 @@
 #include <algorithm>
 #include <string>
 #include <cmath>
+#include <cstring>
 #include <iostream>
 
 // Own
