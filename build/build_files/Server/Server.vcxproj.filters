@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Server">
+      <UniqueIdentifier>{7C62DFD0-6804-0AA7-51BF-1DFB3D0091F7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Server\Source Files">
+      <UniqueIdentifier>{0F4E3855-7BAF-1563-041D-5C15707D4C22}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\Server\main.cpp">
+      <Filter>Server\Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

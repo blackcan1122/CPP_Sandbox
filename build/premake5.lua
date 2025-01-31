@@ -142,6 +142,12 @@ if (downloadRaylib) then
         location "build_files/"
         targetdir "../bin/%{cfg.buildcfg}"
 
+        files {
+            "../src/private/**.cpp",  -- All source files go here
+            "../src/public/**.h",  -- All header files go here
+            "../src/public/**.hpp"
+        }
+
         filter {"system:windows", "configurations:Release", "action:gmake*"}
             kind "WindowedApp"
             buildoptions { "-Wl,--subsystem,windows" }
@@ -231,8 +237,9 @@ if (downloadRaylib) then
         includedirs {raylib_dir .. "/src", raylib_dir .. "/src/external/glfw/include" }
         vpaths
         {
-            ["Header Files"] = { raylib_dir .. "/src/**.h"},
-            ["Source Files/*"] = { raylib_dir .. "/src/**.c"},
+            ["Header Files/*"] = { "../include/**.h",  "../include/**.hpp", "../src/**.h", "../src/**.hpp"},
+            ["Source Files/*"] = {"../src/**.c", "src/**.cpp"},
+            ["Resources/*"] = {"../resources/**.ico"}
         }
         files {raylib_dir .. "/src/*.h", raylib_dir .. "/src/*.c"}
 
@@ -242,3 +249,51 @@ if (downloadRaylib) then
             compileas "Objective-C"
 
         filter{}
+
+
+
+
+    project "Server"
+    kind "ConsoleApp"
+    location "build_files/Server"
+    targetdir "../bin/%{cfg.buildcfg}/Server"
+
+    files {
+        "../src/Server/private/**.cpp",
+        "../src/Server/**.cpp",         -- All .cpp files in private
+        "../src/Server/public/**.h"     -- All .h files in public
+    }
+
+    print("../src/Server/private/**.cpp")
+
+    includedirs {
+        "../src/Server/public",  -- Public headers
+        "../src/Server/private", -- Private headers (if needed)
+        "../include"
+    }
+
+    -- Organizing the solution view with folders
+    vpaths {
+        ["Server/Header Files"] = { "../src/Server/public/**.h" },
+        ["Server/Source Files"] = { "../src/Server/private/**.cpp" },
+        ["Server/Source Files"] = { "../src/Server/**.cpp" },
+        ["Server/Resources"] = { "../resources/**.*" }
+    }
+
+    cdialect "C99"
+    cppdialect "C++17"
+
+    flags { "ShadowedVariables" }
+    platform_defines()
+
+    filter "system:windows"
+        defines{"_WIN32"}
+        links {"ws2_32"}  -- Windows Sockets API (Winsock)
+
+    filter "system:linux"
+        links {"pthread", "m", "dl", "rt", "X11"}
+
+    filter "system:macosx"
+        links {"OpenGL.framework", "Cocoa.framework", "IOKit.framework", "CoreFoundation.framework", "CoreAudio.framework", "CoreVideo.framework", "AudioToolbox.framework"}
+
+    filter{}
