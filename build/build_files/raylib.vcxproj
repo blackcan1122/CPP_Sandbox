@@ -175,73 +175,73 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>..\..\bin\Debug\</OutDir>
-    <IntDir>obj\x64\Debug\raylib\</IntDir>
+    <IntDir>obj\x64\Debug\</IntDir>
     <TargetName>raylib</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>..\..\bin\Debug\</OutDir>
-    <IntDir>obj\x86\Debug\raylib\</IntDir>
+    <IntDir>obj\x86\Debug\</IntDir>
     <TargetName>raylib</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
     <OutDir>..\..\bin\Debug\</OutDir>
-    <IntDir>obj\ARM64\Debug\raylib\</IntDir>
+    <IntDir>obj\ARM64\Debug\</IntDir>
     <TargetName>raylib</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>..\..\bin\Release\</OutDir>
-    <IntDir>obj\x64\Release\raylib\</IntDir>
+    <IntDir>obj\x64\Release\</IntDir>
     <TargetName>raylib</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>..\..\bin\Release\</OutDir>
-    <IntDir>obj\x86\Release\raylib\</IntDir>
+    <IntDir>obj\x86\Release\</IntDir>
     <TargetName>raylib</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
     <OutDir>..\..\bin\Release\</OutDir>
-    <IntDir>obj\ARM64\Release\raylib\</IntDir>
+    <IntDir>obj\ARM64\Release\</IntDir>
     <TargetName>raylib</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_RGFW|x64'">
     <OutDir>..\..\bin\Debug_RGFW\</OutDir>
-    <IntDir>obj\x64\Debug_RGFW\raylib\</IntDir>
+    <IntDir>obj\x64\Debug_RGFW\</IntDir>
     <TargetName>raylib</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_RGFW|Win32'">
     <OutDir>..\..\bin\Debug_RGFW\</OutDir>
-    <IntDir>obj\x86\Debug_RGFW\raylib\</IntDir>
+    <IntDir>obj\x86\Debug_RGFW\</IntDir>
     <TargetName>raylib</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_RGFW|ARM64'">
     <OutDir>..\..\bin\Debug_RGFW\</OutDir>
-    <IntDir>obj\ARM64\Debug_RGFW\raylib\</IntDir>
+    <IntDir>obj\ARM64\Debug_RGFW\</IntDir>
     <TargetName>raylib</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_RGFW|x64'">
     <OutDir>..\..\bin\Release_RGFW\</OutDir>
-    <IntDir>obj\x64\Release_RGFW\raylib\</IntDir>
+    <IntDir>obj\x64\Release_RGFW\</IntDir>
     <TargetName>raylib</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_RGFW|Win32'">
     <OutDir>..\..\bin\Release_RGFW\</OutDir>
-    <IntDir>obj\x86\Release_RGFW\raylib\</IntDir>
+    <IntDir>obj\x86\Release_RGFW\</IntDir>
     <TargetName>raylib</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_RGFW|ARM64'">
     <OutDir>..\..\bin\Release_RGFW\</OutDir>
-    <IntDir>obj\ARM64\Release_RGFW\raylib\</IntDir>
+    <IntDir>obj\ARM64\Release_RGFW\</IntDir>
     <TargetName>raylib</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
