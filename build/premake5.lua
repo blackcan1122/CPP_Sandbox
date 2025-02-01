@@ -139,7 +139,7 @@ if (downloadRaylib) then
 
     project (workspaceName)
         kind "ConsoleApp"
-        location "build_files/"
+        location "build_files/Client"
         targetdir "../bin/%{cfg.buildcfg}"
 
         files {
@@ -164,23 +164,27 @@ if (downloadRaylib) then
 
         vpaths 
         {
-            ["Header Files/*"] = { "../include/**.h",  "../include/**.hpp", "../src/**.h", "../src/**.hpp"},
-            ["Source Files/*"] = {"../src/**.c", "src/**.cpp"},
+            ["Header Files/*"] = { "../include/client/**.h",  "../include/client/**.hpp", "../src/client/**.h", "../src/client/**.hpp"},
+            ["Source Files/*"] = {"../src/client/**.c", "src/client/**.cpp"},
             ["Resources/*"] = {"../resources/**.ico"}
         }
         files {
-            "../src/**.c", 
-            "../src/**.cpp", 
-            "../src/**.h", 
-            "../src/**.hpp", 
+            "../src/client/**.c", 
+            "../src/client/**.cpp", 
+            "../src/client/**.h", 
+            "../src/client/**.hpp", 
+            "../src/client/private/**.c", 
+            "../src/client/private/**.cpp", 
+            "../src/client/public/**.h", 
+            "../src/client/public/**.hpp", 
             "../include/**.h", 
             "../include/**.hpp",
             "../resources/**.ico" -- Add the .ico file to the project
         }
     
-        includedirs { "../src" }
-        includedirs { "../src/public" }
-        includedirs { "../src/private" }
+        includedirs { "../src/client" }
+        includedirs { "../src/client/public" }
+        includedirs { "../src/client/private" }
         includedirs { "../include" }
 
         links {"raylib"}
@@ -279,6 +283,11 @@ if (downloadRaylib) then
         ["Server/Source Files"] = { "../src/Server/**.cpp" },
         ["Server/Resources"] = { "../resources/**.*" }
     }
+
+    includedirs {raylib_dir .. "/src" }
+    includedirs {raylib_dir .."/src/external" }
+    includedirs {raylib_dir .."/src/external/glfw/include" }
+
 
     cdialect "C99"
     cppdialect "C++17"
