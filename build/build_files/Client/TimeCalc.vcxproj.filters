@@ -129,6 +129,7 @@
     <ClInclude Include="..\..\..\src\client\trex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\client\public\ChatTest.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\client\main.cpp">
@@ -212,6 +213,7 @@
     <ClCompile Include="..\..\..\src\client\private\WindowHandle.cpp">
       <Filter>Source Files\private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\client\private\ChatTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\resources\Logo.ico">

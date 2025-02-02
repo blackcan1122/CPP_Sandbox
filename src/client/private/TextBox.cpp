@@ -44,6 +44,12 @@ TextInputBox& TextInputBox::CanBeEdited(bool IsEditable)
 	return *this;
 }
 
+TextInputBox& TextInputBox::ChangeMaxChars(int MaxCharacters)
+{
+	MaxChars = MaxCharacters;
+	return *this;
+}
+
 TextInputBox& TextInputBox::UpdateTextOffset(Vector2 NewTextPosition)
 {
 	this->TextOffset = NewTextPosition;

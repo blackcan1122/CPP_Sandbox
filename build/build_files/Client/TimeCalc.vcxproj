@@ -544,6 +544,7 @@
     <ClInclude Include="..\..\..\src\client\public\BaseRectangle.h" />
     <ClInclude Include="..\..\..\src\client\public\BaseUI.h" />
     <ClInclude Include="..\..\..\src\client\public\Button.h" />
+    <ClInclude Include="..\..\..\src\client\public\ChatTest.h" />
     <ClInclude Include="..\..\..\src\client\public\CollisionEvent.hpp" />
     <ClInclude Include="..\..\..\src\client\public\Core.h" />
     <ClInclude Include="..\..\..\src\client\public\DispatcherEvent.hpp" />
@@ -578,6 +579,7 @@
     <ClCompile Include="..\..\..\src\client\private\BaseRectangle.cpp" />
     <ClCompile Include="..\..\..\src\client\private\BaseUI.cpp" />
     <ClCompile Include="..\..\..\src\client\private\Button.cpp" />
+    <ClCompile Include="..\..\..\src\client\private\ChatTest.cpp" />
     <ClCompile Include="..\..\..\src\client\private\CollisionEvent.cpp" />
     <ClCompile Include="..\..\..\src\client\private\DispatcherEvent.cpp" />
     <ClCompile Include="..\..\..\src\client\private\EventDispatcher.cpp" />
