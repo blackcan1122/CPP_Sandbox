@@ -131,7 +131,7 @@ void Button::Update()
     if (IsClicked(GetMousePosition(), isHovered))
     {
         std::cout << "Dispatching Event" << std::endl;
-        UsedEventDispatcher.get()->Dispatch(OnClickEvent());
+        UsedEventDispatcher->Dispatch(OnClickEvent());
     }
     if (m_IsRounded)
     {

@@ -1,7 +1,3 @@
-﻿  SandboxMode.cpp
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\client\public\BaseRectangle.h(102,20): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\client\public\Physic.hpp(79,24): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\client\private\SandboxMode.cpp(118,39): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\client\private\SandboxMode.cpp(148,44): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\client\private\SandboxMode.cpp(149,45): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+﻿  ChatTest.cpp
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\client\private\ChatTest.cpp(43,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   TimeCalc.vcxproj -> C:\Users\marce\Documents\Hax0rStuff\TimeCalc\bin\Release\TimeCalc.exe

@@ -23,6 +23,9 @@ class EventDispatcher;
 class StateMachine;
 class GameMode;
 class GameInstance;
+class TextInputBox;
+class Button;
+class Event;
 
 
 //#include "TickableFactory.h"

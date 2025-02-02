@@ -15,6 +15,7 @@
 #include "Button.h"
 #include "PongGameMod.h"
 #include "TimeTrackerSave.h"
+#include "ChatTest.h"
 
 EventDispatcher GameInstance::UIEventDispatcher;
 EventDispatcher GameInstance::SaveStateDispatcher;
@@ -78,6 +79,7 @@ void GameInstance::GameLoop()
 	ActiveStateMachine.RegisterState("Menu", []() {return new TimeCalcMode(false); });
 	ActiveStateMachine.RegisterState("Sandbox", []() {return new SandboxMode(); });
 	ActiveStateMachine.RegisterState("Pong", []() {return new PongGameMod(); });
+	ActiveStateMachine.RegisterState("Chat", []() {return new ChatTest(); });
 
 	//SaveState
 	std::shared_ptr<TimeTrackerSave> NewSave = nullptr;
@@ -192,8 +194,8 @@ void GameInstance::GameLoop()
 
 	Button OptionButton;
 	Rectangle NewRecOption = { Width * 4 - Width,-50,Width,100 };
-	OptionButton.Construct(NewRecOption, "Option", LIGHTGRAY, true, 0.2)
-		.SetEventPayload("Menu")
+	OptionButton.Construct(NewRecOption, "ChatTest", LIGHTGRAY, true, 0.2)
+		.SetEventPayload("Chat")
 		.SetEventDispatcher(std::make_shared<EventDispatcher>(UIEventDispatcher))
 		.UpdateTextPosition((Width / 2) - (OptionSize / 2), 75)
 		.UpdateFontSize(18)

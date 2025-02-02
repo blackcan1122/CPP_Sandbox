@@ -1,22 +1,9 @@
 #include "SandboxMode.h"
-
-#if defined(_WIN32)           
-#define NOGDI             // All GDI defines and routines
-#define NOUSER            // All USER defines and routines
-#endif
-#include <winsock2.h>
-#pragma comment(lib, "ws2_32.lib")
-
-
-#if defined(_WIN32)           // raylib uses these names as function parameters
-#undef near
-#undef far
-#endif
-
-
 #include "EventDispatcher.hpp"
 #include "Physic.hpp"
 #include "TickAll.h"
+
+
 
 
 
@@ -50,27 +37,7 @@ SandboxMode::SandboxMode()
 
     EventDispatcher GlobalDispatcher;
 
-    WSADATA wsa;
-    SOCKET sock;
-    struct sockaddr_in server;
-
-    WSAStartup(MAKEWORD(2, 2), &wsa);
-    sock = socket(AF_INET, SOCK_STREAM, 0);
-
-    server.sin_addr.s_addr = inet_addr("127.0.0.1"); // Localhost
-    server.sin_family = AF_INET;
-    server.sin_port = htons(12345); // Port number
-
-    if (connect(sock, (struct sockaddr*)&server, sizeof(server)) == 0) {
-        send(sock, "Hello, Server!", 14, 0);
-        char buffer[256];
-        recv(sock, buffer, sizeof(buffer), 0);
-        std::cout << "Server response: " << buffer << std::endl;
-    }
-
-    closesocket(sock);
-    WSACleanup();
-
+    
 }
 
 SandboxMode::~SandboxMode()
