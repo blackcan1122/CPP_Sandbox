@@ -38,7 +38,7 @@ ChatTest::ChatTest()
 		.UpdateFontSize(19);
 	PortInput->Construct(430, 100, 150, 50, WHITE)
 		.CanBeEdited(true)
-		.UpdateFontColor(BLACK).SetInitialText("12345")
+		.UpdateFontColor(BLACK).SetInitialText("49152")
 		.ChangeMaxChars(6).UpdateFontSize(19);
 	ChatWindow->Construct(20, 175 , GetScreenWidth() - 40, 400, WHITE)
 		.CanBeEdited(true)

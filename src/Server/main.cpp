@@ -6,7 +6,7 @@
 
 #pragma comment(lib, "ws2_32.lib")
 
-#define SERVER_PORT 12345
+#define SERVER_PORT 49152
 #define MAX_CLIENTS 64
 
 int main() 
