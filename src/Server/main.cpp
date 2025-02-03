@@ -1,126 +1,122 @@
 #include <winsock2.h>
 #include <ws2tcpip.h>
 #include <iostream>
+#include <vector>
+
 
 #pragma comment(lib, "ws2_32.lib")
 
-#define TCP_SERVER_PORT 12345
-#define IP "127.0.0.1"
+#define SERVER_PORT 12345
+#define MAX_CLIENTS 64
 
-int main() {
-    WSADATA wsa;
-    WSAStartup(MAKEWORD(2, 2), &wsa);
-
-    char hostname[256];
-    if (gethostname(hostname, sizeof(hostname)) == SOCKET_ERROR) {
-        std::cerr << "Error getting hostname\n";
-        return -1;
-    }
-
-
-    addrinfo hints = {};
-    hints.ai_family = AF_INET;  // IPv4 only
-    hints.ai_socktype = SOCK_STREAM;
-    hints.ai_protocol = IPPROTO_TCP;
-
-    addrinfo* result = nullptr;
-    if (getaddrinfo(hostname, NULL, &hints, &result) != 0) {
-        std::cerr << "Error getting address info\n";
-        return -1;
-    }
-
-    std::string ipAddress;
-    char ipBuffer[INET_ADDRSTRLEN] = { 0 };
-
-    for (addrinfo* ptr = result; ptr != nullptr; ptr = ptr->ai_next) {
-        sockaddr_in* sockaddr_ipv4 = (sockaddr_in*)ptr->ai_addr;
-        inet_ntop(AF_INET, &sockaddr_ipv4->sin_addr, ipBuffer, sizeof(ipBuffer));
-
-        std::string currentIP = ipBuffer;
-
-        // Ignore WSL/Hyper-V addresses (typically 172.x.x.x)
-        if (currentIP.rfind("172.", 0) == 0) {
-            continue;
-        }
-
-        // Prioritize LAN addresses (192.168.x.x or 10.x.x.x)
-        if (currentIP.rfind("192.168.", 0) == 0 || currentIP.rfind("10.", 0) == 0) {
-            ipAddress = currentIP;
-            break;  // Stop searching once a LAN IP is found
-        }
-    }
-
-    // If no LAN IP was found, use the first available IP
-    if (ipAddress.empty() && result) {
-        sockaddr_in* sockaddr_ipv4 = (sockaddr_in*)result->ai_addr;
-        inet_ntop(AF_INET, &sockaddr_ipv4->sin_addr, ipBuffer, sizeof(ipBuffer));
-        ipAddress = ipBuffer;
-    }
-
-    // Final check before using the IP
-    if (ipAddress.empty()) {
-        std::cerr << "No valid IP address found!" << std::endl;
-    }
-    else {
-        std::cout << "Selected IP: " << ipAddress << std::endl;
-    }
-
-    freeaddrinfo(result);
-
-
-    // === Step 1: Start TCP Server ===
-    SOCKET tcpServer = socket(AF_INET, SOCK_STREAM, 0);
-    sockaddr_in serverAddr = {};
-    serverAddr.sin_family = AF_INET;
-    //serverAddr.sin_addr.s_addr = getaddrinfo();  // Bind to all interfaces
-    
-    inet_pton(AF_INET, ipAddress.c_str(), &serverAddr.sin_addr);
-    
-    serverAddr.sin_port = htons(TCP_SERVER_PORT);
-
-    bind(tcpServer, (sockaddr*)&serverAddr, sizeof(serverAddr));
-    listen(tcpServer, SOMAXCONN);
-    std::cout << "TCP Server listening on port " << TCP_SERVER_PORT << "...\n";
-
-    SOCKET UsedSocket;
-    sockaddr_in clientAddr;
-    int clientAddrSize = sizeof(clientAddr);
-
-    while(true)
+int main() 
+{
+    // Initialize Winsock
+    WSADATA WSAData;
+    if (WSAStartup(MAKEWORD(2, 2), &WSAData) != 0) 
     {
-        UsedSocket = accept(tcpServer, (sockaddr*)&clientAddr, 0);
-        if (UsedSocket == INVALID_SOCKET)
-        {
-            std::cerr << "Something is wrong with the Socket" << std::endl;
-            continue;
-        }
-
-        std::cout << "OH YEAH WE ARE CONNECTED" << std::endl;
-
-        char TextToHold[257];
-
-        // New loop to keep receiving from the same client
-        while (true)
-        {
-            int bytesReceived = recv(UsedSocket, TextToHold, sizeof(TextToHold) - 1, 0);
-            if (bytesReceived == SOCKET_ERROR) {
-                std::cerr << "recv failed: " << WSAGetLastError() << std::endl;
-                break; // Exit client loop on error
-            }
-            else if (bytesReceived == 0) {
-                std::cout << "Connection closed by client." << std::endl;
-                break; // Exit client loop if client disconnects
-            }
-            else {
-                // Null-terminate the received data
-                TextToHold[bytesReceived] = '\0';
-                std::cout << TextToHold << std::endl;
-            }
-        }
+        std::cerr << "WSAStartup failed!" << std::endl;
+        return 1;
     }
 
 
-    closesocket(tcpServer);
+    SOCKET ServerSocket = socket(AF_INET, SOCK_STREAM, 0);
+    if (ServerSocket == INVALID_SOCKET) 
+    {
+        std::cerr << "Failed to create socket!" << std::endl;
+        WSACleanup();
+        return 1;
+    }
+
+
+    u_long Mode = 1;
+    ioctlsocket(ServerSocket, FIONBIO, &Mode);
+
+    // Bind the socket
+    sockaddr_in ServerAddress = {};
+    ServerAddress.sin_family = AF_INET;
+    ServerAddress.sin_addr.s_addr = INADDR_ANY;
+    ServerAddress.sin_port = htons(SERVER_PORT);
+    if (bind(ServerSocket, (sockaddr*)&ServerAddress, sizeof(ServerAddress)) == SOCKET_ERROR) 
+    {
+        std::cerr << "Bind failed!" << std::endl;
+        closesocket(ServerSocket);
+        WSACleanup();
+        return 1;
+    }
+
+    // Start listening
+    if (listen(ServerSocket, SOMAXCONN) == SOCKET_ERROR) 
+    {
+        std::cerr << "Listen failed!" << std::endl;
+        closesocket(ServerSocket);
+        WSACleanup();
+        return 1;
+    }
+
+    std::vector<SOCKET> ConnectedClients;
+
+    while (true) 
+    {
+        fd_set ClientFD;
+        FD_ZERO(&ClientFD);
+        FD_SET(ServerSocket, &ClientFD);
+
+        for (SOCKET Client : ConnectedClients) 
+        {
+            FD_SET(Client, &ClientFD);
+        }
+
+        timeval Timeout = { 0, 500000 }; // 500 ms timeout
+        int ClientsToDo = select(0, &ClientFD, NULL, NULL, &Timeout);
+        if (ClientsToDo == SOCKET_ERROR) {
+            std::cerr << "Select failed!" << std::endl;
+            break;
+        }
+
+        if (FD_ISSET(ServerSocket, &ClientFD)) 
+        {
+            sockaddr_in ClientAddress;
+            int ClientSize = sizeof(ClientAddress);
+            SOCKET ClientSocket = accept(ServerSocket, (sockaddr*)&ClientAddress, &ClientSize);
+            if (ClientSocket != INVALID_SOCKET) 
+            {
+                u_long nonBlocking = 1;
+                ioctlsocket(ClientSocket, FIONBIO, &nonBlocking);
+                ConnectedClients.push_back(ClientSocket);
+                std::cout << "New client connected!" << std::endl;
+            }
+        }
+
+        for (auto ConnectedClient = ConnectedClients.begin(); ConnectedClient != ConnectedClients.end(); ) 
+        {
+            SOCKET client = *ConnectedClient;
+            if (FD_ISSET(client, &ClientFD)) 
+            {
+                char Buffer[512];
+                int BytesReceived = recv(client, Buffer, sizeof(Buffer) - 1, 0);
+                if (BytesReceived > 0) 
+                {
+                    Buffer[BytesReceived] = '\0';
+                    std::cout << "Client: " << Buffer << std::endl;
+                }
+                else if (BytesReceived == 0 || BytesReceived == SOCKET_ERROR) 
+                {
+                    std::cout << "Client disconnected!" << std::endl;
+                    closesocket(client);
+                    ConnectedClient = ConnectedClients.erase(ConnectedClient);
+                    continue;
+                }
+            }
+
+            ++ConnectedClient;
+        }
+    }
+
+    for (SOCKET ConnectedClient : ConnectedClients) {
+        closesocket(ConnectedClient);
+    }
+    closesocket(ServerSocket);
     WSACleanup();
     return 0;
 }
