@@ -44,7 +44,7 @@ ChatTest::ChatTest()
 		.CanBeEdited(true)
 		.UpdateFontColor(BLACK)
 		.SetInitialText("")
-		.ChangeMaxChars(6)
+		.ChangeMaxChars(254)
 		.UpdateFontSize(19);
 
 	ButtonDispatcher->AddListener("UIEvent", [this](std::shared_ptr<Event> Event)
@@ -89,6 +89,11 @@ void ChatTest::Update()
 	PortInput->Update();
 	ChatWindow->Update();
 	ConnectButton->Update();
+
+	if (ChatWindow->bIsFocused(GetMousePosition()) && IsKeyPressed(257) && ChatWindow->StringToHold != "")
+	{
+		send(TCPSocket, ChatWindow->StringToHold, sizeof(ChatWindow->StringToHold), 0);
+	}
 
 
 }

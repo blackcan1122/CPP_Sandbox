@@ -82,11 +82,40 @@ int main() {
     listen(tcpServer, SOMAXCONN);
     std::cout << "TCP Server listening on port " << TCP_SERVER_PORT << "...\n";
 
+    SOCKET UsedSocket;
+    sockaddr_in clientAddr;
+    int clientAddrSize = sizeof(clientAddr);
+
     while(true)
     {
-        if (accept(tcpServer, (sockaddr*)&serverAddr, 0))
+        UsedSocket = accept(tcpServer, (sockaddr*)&clientAddr, 0);
+        if (UsedSocket == INVALID_SOCKET)
         {
-            std::cout << "Found Something yaaaay" << std::endl;
+            std::cerr << "Something is wrong with the Socket" << std::endl;
+            continue;
+        }
+
+        std::cout << "OH YEAH WE ARE CONNECTED" << std::endl;
+
+        char TextToHold[257];
+
+        // New loop to keep receiving from the same client
+        while (true)
+        {
+            int bytesReceived = recv(UsedSocket, TextToHold, sizeof(TextToHold) - 1, 0);
+            if (bytesReceived == SOCKET_ERROR) {
+                std::cerr << "recv failed: " << WSAGetLastError() << std::endl;
+                break; // Exit client loop on error
+            }
+            else if (bytesReceived == 0) {
+                std::cout << "Connection closed by client." << std::endl;
+                break; // Exit client loop if client disconnects
+            }
+            else {
+                // Null-terminate the received data
+                TextToHold[bytesReceived] = '\0';
+                std::cout << TextToHold << std::endl;
+            }
         }
     }
 
