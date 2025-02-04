@@ -5,6 +5,15 @@
 #include <future>
 #include "EventDispatcher.hpp"
 #include "Event.hpp"
+#include "openssl/sha.h"
+#include <iomanip>
+
+void printHashClient(const unsigned char* hash, size_t length) {
+	for (size_t i = 0; i < length; i++) {
+		std::cout << std::hex << std::setw(2) << std::setfill('0') << (int)hash[i];
+	}
+	std::cout << std::endl;
+}
 
 ChatTest::ChatTest()
 {
@@ -76,7 +85,17 @@ ChatTest::ChatTest()
 	ServerAdress.sin_family = AF_INET;
 	
 	
+	unsigned char hash[SHA256_DIGEST_LENGTH];
 
+	const std::string input = "Hello, OpenSSL!";
+
+	SHA256_CTX sha256;
+	SHA256_Init(&sha256);
+	SHA256_Update(&sha256, input.c_str(), input.size());
+	SHA256_Final(hash, &sha256);
+
+	std::cout << "SHA-256 Hash: ";
+	printHashClient(hash, SHA256_DIGEST_LENGTH);
 
 }
 
@@ -100,7 +119,11 @@ void ChatTest::Update()
 
 bool ChatTest::TryConnect(SOCKET Socket, sockaddr_in Adress)
 {
-	return connect(Socket, (sockaddr*)&Adress, sizeof(Adress)) == 0;
+	bool ReturnBool = connect(Socket, (sockaddr*)&Adress, sizeof(Adress)) == 0;
+	std::string Handshake = "Name:Blackcan;Token:63ee7f365450f9586dbb31c9b59db63817797e04ea1014dd5a8ac6615d44fac1;";
+	send(TCPSocket, Handshake.c_str(), Handshake.size(), 0);
+	return ReturnBool;
+
 }
 
 bool ChatTest::ConnectWithTimeout(SOCKET Socket, sockaddr_in ServerAdress, int Time)
