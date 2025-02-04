@@ -186,8 +186,9 @@ if (downloadRaylib) then
         includedirs { "../src/client/public" }
         includedirs { "../src/client/private" }
         includedirs { "../include" }
+        includedirs { "external/openssl/include"}
 
-        links {"raylib"}
+        links {"raylib", "libssl_static", "libcrypto_static"}
 
         cdialect "C99"
         cppdialect "C++17"
@@ -209,7 +210,8 @@ if (downloadRaylib) then
             filter "system:windows"
             defines{"_WIN32"}
             links {"winmm", "gdi32", "opengl32"}
-            libdirs {"../bin/%{cfg.buildcfg}"}
+            links {"ws2_32", "crypt32"}
+            libdirs {"../bin/%{cfg.buildcfg}", "external/openssl/lib/static/"}
             files { "../resources/TimeCalc1.rc" } -- Include .rc file for all configurations on Windows
         
 
@@ -264,7 +266,7 @@ if (downloadRaylib) then
 
     files {
         "../src/Server/private/**.cpp",
-        "../src/Server/**.cpp",         -- All .cpp files in private
+        "../src/Server/main.cpp",         -- All .cpp files in private
         "../src/Server/public/**.h"     -- All .h files in public
     }
 
@@ -275,6 +277,7 @@ if (downloadRaylib) then
         "../src/Server/private", -- Private headers (if needed)
         "../include"
     }
+    includedirs { "external/openssl/include"}
 
     -- Organizing the solution view with folders
     vpaths {
@@ -288,6 +291,9 @@ if (downloadRaylib) then
     includedirs {raylib_dir .."/src/external" }
     includedirs {raylib_dir .."/src/external/glfw/include" }
 
+    libdirs {"../bin/%{cfg.buildcfg}", "external/openssl/lib/static/"}
+    
+    links {"raylib", "libssl_static", "libcrypto_static"}
 
     cdialect "C99"
     cppdialect "C++17"
@@ -297,7 +303,7 @@ if (downloadRaylib) then
 
     filter "system:windows"
         defines{"_WIN32"}
-        links {"ws2_32"}  -- Windows Sockets API (Winsock)
+        links {"ws2_32", "crypt32"}  -- Windows Sockets API (Winsock)
 
     filter "system:linux"
         links {"pthread", "m", "dl", "rt", "X11"}
