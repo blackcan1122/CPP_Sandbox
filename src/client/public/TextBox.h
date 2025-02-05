@@ -19,6 +19,7 @@ public:
 	TextInputBox& SetInitialText(char InitalText[51]);
 	TextInputBox& CanBeEdited(bool IsEditable);
 	TextInputBox& ChangeMaxChars(int MaxCharacters);
+	TextInputBox& EreaseText();
 
 
 

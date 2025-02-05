@@ -14,8 +14,8 @@
 
 
 #if defined(_WIN32)           // raylib uses these names as function parameters
-#undef near
-#undef far
+//#undef near
+//#undef far
 #endif
 
 
@@ -33,6 +33,8 @@ public:
 
 	SOCKET TCPSocket;
 	sockaddr_in ServerAdress;
+	fd_set ConnectedServerFD;
+
 
 	std::shared_ptr<TextInputBox> IPInput = nullptr;
 	std::shared_ptr<TextInputBox> PortInput = nullptr;
@@ -45,6 +47,7 @@ public:
 	std::string ServerIp;
 
 	bool bIsConnected = false;
+	bool bHasSetFSET = false;
 
 private:
 	bool TryConnect(SOCKET Socket, sockaddr_in Adress);

@@ -1,7 +1,5 @@
 ﻿  ChatTest.cpp
 C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\client\private\ChatTest.cpp(52,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\client\private\ChatTest.cpp(93,2): warning C4996: 'SHA256_Init': Since OpenSSL 3.0
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\client\private\ChatTest.cpp(94,2): warning C4996: 'SHA256_Update': Since OpenSSL 3.0
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\client\private\ChatTest.cpp(95,2): warning C4996: 'SHA256_Final': Since OpenSSL 3.0
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\client\private\ChatTest.cpp(124,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\client\private\ChatTest.cpp(142,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  LINK : ..\..\..\bin\Debug\TimeCalc.exe not found or not built by the last incremental link; performing full link
   TimeCalc.vcxproj -> C:\Users\marce\Documents\Hax0rStuff\TimeCalc\bin\Debug\TimeCalc.exe

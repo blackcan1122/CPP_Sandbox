@@ -50,6 +50,13 @@ TextInputBox& TextInputBox::ChangeMaxChars(int MaxCharacters)
 	return *this;
 }
 
+TextInputBox& TextInputBox::EreaseText()
+{
+	LetterCount = 0;
+	StringToHold[LetterCount] = '\0';
+	return *this;
+}
+
 TextInputBox& TextInputBox::UpdateTextOffset(Vector2 NewTextPosition)
 {
 	this->TextOffset = NewTextPosition;
