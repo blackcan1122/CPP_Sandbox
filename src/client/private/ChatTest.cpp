@@ -83,27 +83,15 @@ ChatTest::ChatTest()
 	TCPSocket = socket(AF_INET, SOCK_STREAM, 0);
 	ServerAdress = {};
 	ServerAdress.sin_family = AF_INET;
-	
-	
-	unsigned char hash[SHA256_DIGEST_LENGTH];
 
-	const std::string input = "Hello, OpenSSL!";
-
-	SHA256_CTX sha256;
-	SHA256_Init(&sha256);
-	SHA256_Update(&sha256, input.c_str(), input.size());
-	SHA256_Final(hash, &sha256);
-
-	std::cout << "SHA-256 Hash: ";
-	printHashClient(hash, SHA256_DIGEST_LENGTH);
-
+	u_long SocketMode = 1;
+	ioctlsocket(TCPSocket, FIONBIO, &SocketMode);
 }
 
 void ChatTest::Update()
 {
 	ClearBackground(BLACK);
 
-	
 	IPInput->Update();
 	PortInput->Update();
 	ChatWindow->Update();
@@ -112,18 +100,54 @@ void ChatTest::Update()
 	if (ChatWindow->bIsFocused(GetMousePosition()) && IsKeyPressed(257) && ChatWindow->StringToHold != "")
 	{
 		send(TCPSocket, ChatWindow->StringToHold, sizeof(ChatWindow->StringToHold), 0);
+		ChatWindow->EreaseText();
 	}
+
+	if (bIsConnected)
+	{
+		timeval TimeOutForSelect = { 0, 0 }; // 500 ms timeout
+	
+			FD_ZERO(&ConnectedServerFD);
+			FD_SET(TCPSocket, &ConnectedServerFD);
+			bHasSetFSET = true;
+
+
+		int ClientsToDo = select(0, &ConnectedServerFD, NULL, NULL, &TimeOutForSelect);
+		if (ClientsToDo == SOCKET_ERROR)
+		{
+			std::cerr << "select() failed with error: " << WSAGetLastError() << std::endl;
+		}
+
+		if (FD_ISSET(TCPSocket, &ConnectedServerFD))
+		{
+			char Buffer[512];
+			int BytesReceived = recv(TCPSocket, Buffer, sizeof(Buffer) - 1, 0);
+			if (BytesReceived > 0)
+			{
+				Buffer[BytesReceived] = '\0';
+				ChatWindow->SetInitialText(Buffer);
+			}
+		}
+	}
+	
+
 
 
 }
 
 bool ChatTest::TryConnect(SOCKET Socket, sockaddr_in Adress)
 {
-	bool ReturnBool = connect(Socket, (sockaddr*)&Adress, sizeof(Adress)) == 0;
-	std::string Handshake = "Name:Blackcan;Token:63ee7f365450f9586dbb31c9b59db63817797e04ea1014dd5a8ac6615d44fac1;";
-	send(TCPSocket, Handshake.c_str(), Handshake.size(), 0);
-	return ReturnBool;
-
+	int ReturnConnect = connect(Socket, (sockaddr*)&Adress, sizeof(Adress));
+	std::string Handshake = "Name:Bibi;Token:63ee7f365450f9586dbb31c9b59db63817797e04ea1014dd5a8ac6615d44fac1;";
+	send(Socket, Handshake.c_str(), Handshake.size(), 0);
+	
+	if (ReturnConnect != -1)
+	{
+		std::cout << "Good Connection" << std::endl;
+		return true;
+	}
+	closesocket(TCPSocket);
+	return false;
 }
 
 bool ChatTest::ConnectWithTimeout(SOCKET Socket, sockaddr_in ServerAdress, int Time)

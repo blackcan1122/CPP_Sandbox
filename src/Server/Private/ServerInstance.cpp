@@ -91,6 +91,7 @@ void ServerInstance::ProcessClientSockets()
         {
             if (!ClientSocket.PerformInitialHandshake())
             {
+                closesocket(ClientSocket.GetSocket());
                 std::cerr << "Client failed at Handshake." << std::endl;
                 return;
             }
@@ -109,8 +110,14 @@ void ServerInstance::ProcessClientSockets()
             int BytesReceived = recv(it->GetSocket(), Buffer, sizeof(Buffer) - 1, 0);
             if (BytesReceived > 0)
             {
+                for (auto CurrentClient : ConnectedClients)
+                { 
+                    std::string Answer = it->GetClientName() + ": " + Buffer;
+                    send(CurrentClient.GetSocket(), Answer.c_str(), Answer.size(), 0);
+                    
+                    
+                }
                 Buffer[BytesReceived] = '\0';
-                std::cout << it->GetClientName() << ": " << Buffer << std::endl;
             }
             else if (BytesReceived == 0 || BytesReceived == SOCKET_ERROR)
             {

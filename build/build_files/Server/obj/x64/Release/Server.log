@@ -1,2 +1,3 @@
-﻿  Client.cpp
+﻿  ServerInstance.cpp
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\Server\private\ServerInstance.cpp(116,80): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   Server.vcxproj -> C:\Users\marce\Documents\Hax0rStuff\TimeCalc\bin\Release\Server\Server.exe
