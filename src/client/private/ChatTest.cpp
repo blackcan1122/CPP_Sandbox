@@ -45,17 +45,20 @@ ChatTest::ChatTest()
 		.UpdateFontColor(BLACK).SetInitialText(ServerIP)
 		.ChangeMaxChars(15)
 		.UpdateFontSize(19);
+
 	PortInput->Construct(430, 100, 150, 50, WHITE)
 		.CanBeEdited(true)
 		.UpdateFontColor(BLACK).SetInitialText("49152")
 		.ChangeMaxChars(6).UpdateFontSize(19);
-	ChatWindow->Construct(20, GetScreenHeight()-45, GetScreenWidth() - 40, 40, RED)
+
+	ChatWindow->Construct(20, GetScreenHeight()-45, GetScreenWidth() - 40, 40, BLACK)
 		.CanBeEdited(true)
-		.UpdateFontColor(BLACK)
+		.UpdateFontColor(GREEN)
 		.SetInitialText("")
 		.ChangeMaxChars(254)
 		.UpdateFontSize(19)
-		.UseWordWrap();
+		.UseWordWrap()
+		.ResizeBoxToText();
 
 	ButtonDispatcher->AddListener("UIEvent", [this](std::shared_ptr<Event> Event)
 		{
@@ -91,7 +94,7 @@ ChatTest::ChatTest()
 
 void ChatTest::Update()
 {
-	ClearBackground(BLACK);
+	ClearBackground(Color{25,25,25,255});
 
 	IPInput->Update();
 	PortInput->Update();
@@ -100,8 +103,9 @@ void ChatTest::Update()
 
 	if (ChatWindow->bIsFocused(GetMousePosition()) && IsKeyPressed(257) && ChatWindow->StringToHold != "")
 	{
-		send(TCPSocket, ChatWindow->StringToHold, sizeof(ChatWindow->StringToHold), 0);
+		send(TCPSocket, ChatWindow->StringToHold, strlen(ChatWindow->StringToHold), 0);
 		ChatWindow->EreaseText();
+		ChatWindow->ResetSizeToInitial();
 	}
 
 	if (bIsConnected)
@@ -126,13 +130,24 @@ void ChatTest::Update()
 			if (BytesReceived > 0)
 			{
 				Buffer[BytesReceived] = '\0';
-				ChatWindow->SetInitialText(Buffer);
+				std::shared_ptr<TextInputBox> NewMessage = std::make_shared<TextInputBox>();
+				NewMessage->Construct(30, ChatWindow->Box.y - 50, 350, 40, RED)
+					.ChangeMaxChars(256)
+					.UpdateFontColor(GREEN)
+					.UpdateFontSize(19);
+
+				strcpy(NewMessage->StringToHold, Buffer);
+
+				ChatHistory.push_back(NewMessage);
+			
 			}
 		}
 	}
 	
-
-
+	for (const auto& Chat : ChatHistory)
+	{
+		Chat->Update();
+	}
 
 }
 

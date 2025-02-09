@@ -68,7 +68,7 @@ void ServerInstance::ProcessClientSockets()
     FD_ZERO(&ActiveClientFD);
     FD_SET(ServerSocket, &ActiveClientFD);
 
-    for (Client Client : ConnectedClients)
+    for (Client& Client : ConnectedClients)
     {
         FD_SET(Client.GetSocket(), &ActiveClientFD);
     }
@@ -110,14 +110,12 @@ void ServerInstance::ProcessClientSockets()
             int BytesReceived = recv(it->GetSocket(), Buffer, sizeof(Buffer) - 1, 0);
             if (BytesReceived > 0)
             {
-                for (auto CurrentClient : ConnectedClients)
-                { 
-                    std::string Answer = it->GetClientName() + ": " + Buffer;
+                Buffer[BytesReceived] = '\0'; // Ensure proper termination first!
+                std::string Answer = it->GetClientName() + ": " + Buffer;
+                for (auto& CurrentClient : ConnectedClients)
+                {
                     send(CurrentClient.GetSocket(), Answer.c_str(), Answer.size(), 0);
-                    
-                    
                 }
-                Buffer[BytesReceived] = '\0';
             }
             else if (BytesReceived == 0 || BytesReceived == SOCKET_ERROR)
             {

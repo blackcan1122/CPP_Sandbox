@@ -3,6 +3,7 @@
 TextInputBox& TextInputBox::Construct(Rectangle Box, Color BackgroundColor)
 {
 	this->Box = Box;
+	this->InitialPosition = Box;
 	this->BoxBackgroundColor = BackgroundColor;
 	this->bUseBorder = false;
 	this->TextPosition.x = this->Box.x;
@@ -51,6 +52,12 @@ TextInputBox& TextInputBox::UseContains()
 	return *this;
 }
 
+TextInputBox& TextInputBox::ResizeBoxToText()
+{
+	bGrowBoxToText = true;
+	return *this;
+}
+
 TextInputBox& TextInputBox::CanBeEdited(bool IsEditable)
 {
 	this->IsEditable = IsEditable;
@@ -81,7 +88,7 @@ TextInputBox& TextInputBox::UpdateTextPosition()
 	unsigned int Calculate = MeasureText(StringToHold, FontSize);
 	this->TextPosition.x = this->Box.x;
 
-	this->TextPosition.y = this->Box.y + this->Box.height / 2 - (FontSize / 2);
+	this->TextPosition.y = this->Box.y;
 	return *this;
 }
 
@@ -128,6 +135,12 @@ TextInputBox& TextInputBox::UpdateBorder(int Thickness, Color BorderColor)
 	return *this;
 }
 
+TextInputBox& TextInputBox::ResetSizeToInitial()
+{
+	Box = InitialPosition;
+	return *this;
+}
+
 bool TextInputBox::bIsFocused(Vector2 MousePosition)
 {
 	return CheckCollisionPointRec(MousePosition, this->Box);
@@ -140,12 +153,13 @@ void TextInputBox::Update()
 {
 	if (bGrowBoxToText)
 	{
-		// TODO
+		this->Box.y = Box.y - (FontSize * NumberOfLines);
+		this->Box.height = Box.height + (FontSize * NumberOfLines);
+		NumberOfLines = 0;
 	}
-	else
-	{
-		DrawRectangle(this->Box.x, this->Box.y, this->Box.width, this->Box.height, this->BoxBackgroundColor);
-	}
+
+	DrawRectangle(this->Box.x, this->Box.y, this->Box.width, this->Box.height, this->BoxBackgroundColor);
+
 
 	
 
@@ -161,6 +175,11 @@ void TextInputBox::Update()
 			if (LetterCount > 0)
 			{
 				LetterCount--;
+				if (StringToHold[LetterCount] == '\n')
+				{
+					NumberOfLines--;
+				}
+				
 				StringToHold[LetterCount] = '\0';
 			}
 
@@ -181,6 +200,10 @@ void TextInputBox::Update()
 					if (LetterCount > 0)
 					{
 						LetterCount--;
+						if (StringToHold[LetterCount] == '\n')
+						{
+							NumberOfLines--;
+						}
 						StringToHold[LetterCount] = '\0';
 					}
 
@@ -216,23 +239,24 @@ void TextInputBox::Update()
 					*/
 						std::string TextBuffer;
 						// Assigning all but the first space from the last time we did a space to a buffer
-						TextBuffer.append(&StringToHold[LastSpaceIndex] + 1);
+						TextBuffer.append(&StringToHold[LastSpaceIndex]);
 						// then we do a Line Break where the last space was made
 						StringToHold[LastSpaceIndex-1] = '\n';
 						// Adapt the Lettercount accordingly (Was the letter count where we made the last letter - the delta of the lastSpaceIndex
-						LetterCount = LetterCount - (LetterCount - LastSpaceIndex);
+						LetterCount = LastSpaceIndex;
 
 						// then we add the stuff from the Textbuffer back
-						for (int i = 0; i < TextBuffer.size(); i++)
+						for (size_t i = 0; i < TextBuffer.size(); i++)
 						{
-							LetterCount++;
 							StringToHold[LetterCount] = TextBuffer[i];
+							LetterCount++;
 						}
 
 						// then we assign the key we actually pressed too, as we never added it up the actual string
-						StringToHold[LetterCount + 1] = (char)PressedKey;
-						StringToHold[LetterCount + 2] = '\0';
+						StringToHold[LetterCount] = (char)PressedKey;
 						LetterCount++;
+						StringToHold[LetterCount] = '\0';
+						NumberOfLines++;
 						std::cout << "After WordWrap: " << LetterCount << std::endl;
 				}
 
@@ -242,9 +266,9 @@ void TextInputBox::Update()
 					StringToHold[LetterCount] = '\n';
 					StringToHold[LetterCount + 1] = (char)PressedKey;
 					StringToHold[LetterCount + 2] = '\0';
+					NumberOfLines++;
 					LetterCount++;
 				}
-				LetterCount++;
 			}
 
 			// Normal appending

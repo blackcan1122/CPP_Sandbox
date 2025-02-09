@@ -1,5 +1,6 @@
 ﻿  ChatTest.cpp
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\client\private\ChatTest.cpp(52,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\client\private\ChatTest.cpp(52,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\client\private\ChatTest.cpp(143,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\client\private\ChatTest.cpp(54,67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\client\private\ChatTest.cpp(54,45): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\client\private\ChatTest.cpp(106,51): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\client\private\ChatTest.cpp(158,48): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   TimeCalc.vcxproj -> C:\Users\marce\Documents\Hax0rStuff\TimeCalc\bin\Debug\TimeCalc.exe

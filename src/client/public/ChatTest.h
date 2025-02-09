@@ -19,8 +19,8 @@
 #endif
 
 
-#define TCP_SERVER_PORT 12345
-#define ServerIP "172.23.144.1"
+#define TCP_SERVER_PORT 49152
+#define ServerIP "127.0.0.1"
 
 class ChatTest : public GameMode
 {
@@ -42,6 +42,8 @@ public:
 	std::shared_ptr<TextInputBox> ChatWindow = nullptr;
 	std::shared_ptr<Button> ConnectButton = nullptr;
 	std::shared_ptr<EventDispatcher> ButtonDispatcher;
+
+	std::vector<std::shared_ptr<TextInputBox>> ChatHistory;
 
 	int Port;
 	std::string ServerIp;

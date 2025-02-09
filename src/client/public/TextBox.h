@@ -10,6 +10,11 @@ public:
 
 	// Methods
 
+	/*
+	* This class got way to specialized for a ChatBox
+	* Need to refactor this someday
+	*/
+
 	TextInputBox() = default;
 
 	TextInputBox& Construct(Rectangle Box, Color BackgroundColor);
@@ -19,6 +24,7 @@ public:
 	TextInputBox& SetInitialText(char InitalText[51]);
 	TextInputBox& UseWordWrap();
 	TextInputBox& UseContains();
+	TextInputBox& ResizeBoxToText();
 	TextInputBox& CanBeEdited(bool IsEditable);
 	TextInputBox& ChangeMaxChars(int MaxCharacters);
 	TextInputBox& EreaseText();
@@ -34,6 +40,8 @@ public:
 	TextInputBox& UpdateColor(Color NewColor);
 	TextInputBox& UpdateTextShown(std::string Text);
 	TextInputBox& UpdateBorder(int Thickness, Color BorderColor);
+	TextInputBox& ResetSizeToInitial();
+
 
 
 	virtual void Update() override;
@@ -69,10 +77,13 @@ private:
 	
 	int LetterCount = 0;
 
+	Rectangle InitialPosition;
 
 	bool bWordWrap = false;
 	bool bContainsText = false;
 	bool bGrowBoxToText = false;
+	int NumberOfLines = 0;
+
 	bool bUseBorder;
 	bool bHasBeenConstructed;
 	bool bUsesText;
