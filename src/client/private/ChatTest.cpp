@@ -49,12 +49,13 @@ ChatTest::ChatTest()
 		.CanBeEdited(true)
 		.UpdateFontColor(BLACK).SetInitialText("49152")
 		.ChangeMaxChars(6).UpdateFontSize(19);
-	ChatWindow->Construct(20, 175 , GetScreenWidth() - 40, 400, WHITE)
+	ChatWindow->Construct(20, GetScreenHeight()-45, GetScreenWidth() - 40, 40, RED)
 		.CanBeEdited(true)
 		.UpdateFontColor(BLACK)
 		.SetInitialText("")
 		.ChangeMaxChars(254)
-		.UpdateFontSize(19);
+		.UpdateFontSize(19)
+		.UseWordWrap();
 
 	ButtonDispatcher->AddListener("UIEvent", [this](std::shared_ptr<Event> Event)
 		{
@@ -94,7 +95,7 @@ void ChatTest::Update()
 
 	IPInput->Update();
 	PortInput->Update();
-	ChatWindow->Update();
+	ChatWindow->UpdateTextPosition().Update();
 	ConnectButton->Update();
 
 	if (ChatWindow->bIsFocused(GetMousePosition()) && IsKeyPressed(257) && ChatWindow->StringToHold != "")

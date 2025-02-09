@@ -17,6 +17,8 @@ public:
 	TextInputBox& UseBorder(bool UseBorder);
 	TextInputBox& SetInitialText(std::string InitialText);
 	TextInputBox& SetInitialText(char InitalText[51]);
+	TextInputBox& UseWordWrap();
+	TextInputBox& UseContains();
 	TextInputBox& CanBeEdited(bool IsEditable);
 	TextInputBox& ChangeMaxChars(int MaxCharacters);
 	TextInputBox& EreaseText();
@@ -38,7 +40,7 @@ public:
 
 	bool bIsFocused(Vector2 MousePosition);
 
-	char StringToHold[50 + 1] = "\0";
+	char StringToHold[1024 + 1] = "\0";
 
 	Rectangle Box;
 
@@ -54,11 +56,23 @@ private:
 	Color FontColor = WHITE;
 	bool IsEditable = true;
 
-	
+	int LastSpaceIndex;
+	int BackupSpaceIndex;
+
+	float DelayTimer;
+	float RepeatTimer;
+	float Delay = 0.2f;
+	float RepeatInterval = 0.05f;
+
 	int MaxChars = 5;
+	
 	
 	int LetterCount = 0;
 
+
+	bool bWordWrap = false;
+	bool bContainsText = false;
+	bool bGrowBoxToText = false;
 	bool bUseBorder;
 	bool bHasBeenConstructed;
 	bool bUsesText;
