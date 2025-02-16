@@ -29,3 +29,4 @@
 bin/*
 build/build_files/*
 build/external/raylib-master/*
+/.idea/.idea.TimeCalc/.idea

@@ -21,7 +21,7 @@
 
 
 #define TCP_SERVER_PORT 49152
-#define ServerIP "127.0.0.1"
+#define ServerIP "216.201.76.178"
 
 class ChatTest : public GameMode
 {

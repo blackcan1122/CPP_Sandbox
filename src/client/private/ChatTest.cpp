@@ -45,10 +45,18 @@ ChatTest::ChatTest()
 			})
 		.OnHoverLeave([this](Button* Button)
 			{
-				Button->UpdateColor(WHITE);
+				if (bIsConnected)
+				{
+					Button->UpdateColor(GREEN);
+				}
+				else
+				{
+					Button->UpdateColor(WHITE);
+				}
 			});
 
 
+	
 
 	IPInput->Construct(10, 100, 400, 50, WHITE).CanBeEdited(true)
 		.UpdateFontColor(BLACK).SetInitialText(ServerIP)
@@ -113,7 +121,7 @@ ChatTest::ChatTest()
 			}
 		});
 
-
+	
 
 	ChatArea = { ChatWindow->Box.x, ChatWindow->Box.y - 375, ChatWindow->Box.width, 350 };
 }
@@ -135,7 +143,6 @@ void ChatTest::Update()
 		ChatWindow->ResetSizeToInitial();
 	}
 
-	
 
 	if (bIsConnected)
 	{
@@ -251,7 +258,7 @@ bool ChatTest::ConnectWithTimeout(SOCKET Socket, sockaddr_in ServerAdress, int T
 		{
 			std::cout << "Connected to Server" << std::endl;
 			bIsConnected = true;
-			ConnectButton->UpdateText("Disconnect").CenterText();
+			ConnectButton->UpdateText("Disconnect").UpdateColor(GREEN).UpdateTextColor(BLACK).CenterText();
 			return true;
 		}
 		else {
