@@ -1,6 +1,7 @@
 #pragma once
 #include "Core.h"
 #include "GameMode.h"
+#include <deque>
 
 
 #if defined(_WIN32)           
@@ -25,7 +26,7 @@
 class ChatTest : public GameMode
 {
 public:
-	~ChatTest() {  };
+	~ChatTest();
 	ChatTest();
 
 	virtual void Update() override;
@@ -35,16 +36,17 @@ public:
 	sockaddr_in ServerAdress;
 	fd_set ConnectedServerFD;
 
+	Rectangle ChatArea;
 
 	std::shared_ptr<TextInputBox> IPInput = nullptr;
 	std::shared_ptr<TextInputBox> PortInput = nullptr;
+	std::shared_ptr<TextInputBox> UserNameInput = nullptr;
 
 	std::shared_ptr<TextInputBox> ChatWindow = nullptr;
 	std::shared_ptr<Button> ConnectButton = nullptr;
 	std::shared_ptr<EventDispatcher> ButtonDispatcher;
 
-	std::vector<std::shared_ptr<TextInputBox>> ChatHistory;
-
+	std::deque<std::shared_ptr<TextInputBox>> ChatHistory;
 	int Port;
 	std::string ServerIp;
 
@@ -52,7 +54,13 @@ public:
 	bool bHasSetFSET = false;
 
 private:
+
+	std::string UserName = "";
 	bool TryConnect(SOCKET Socket, sockaddr_in Adress);
 	bool ConnectWithTimeout(SOCKET Socket, sockaddr_in ServerAdress, int Time);
+	bool SetUpWSA();
+	bool TeardownWSA();
+
+	int CountNewlines(const std::string MessageToCountLines);
 };
 

@@ -6,9 +6,9 @@ TextInputBox& TextInputBox::Construct(Rectangle Box, Color BackgroundColor)
 	this->InitialPosition = Box;
 	this->BoxBackgroundColor = BackgroundColor;
 	this->bUseBorder = false;
-	this->TextPosition.x = this->Box.x;
+	//this->TextPosition.x = this->Box.x;
 	
-	this->TextPosition.y = this->Box.y + this->Box.height / 2 - (FontSize/2);
+	//this->TextPosition.y = this->Box.y + this->Box.height / 2 - (FontSize/2);
 	return *this;
 }
 
@@ -31,7 +31,7 @@ TextInputBox& TextInputBox::SetInitialText(std::string InitialText)
 	return *this;
 }
 
-TextInputBox& TextInputBox::SetInitialText(char InitalText[51])
+TextInputBox& TextInputBox::SetInitialText(char InitalText[1024])
 {
 	strncpy(this->StringToHold, InitalText, sizeof(this->StringToHold) - 1);
 	this->StringToHold[sizeof(this->StringToHold) - 1] = '\0';  // Ensure null-termination
@@ -49,6 +49,12 @@ TextInputBox& TextInputBox::UseWordWrap()
 TextInputBox& TextInputBox::UseContains()
 {
 	bContainsText = true;
+	return *this;
+}
+
+TextInputBox& TextInputBox::UseCenter()
+{
+	bShouldCenter = true;
 	return *this;
 }
 
@@ -83,12 +89,25 @@ TextInputBox& TextInputBox::UpdateTextOffset(Vector2 NewTextPosition)
 	return *this;
 }
 
+TextInputBox& TextInputBox::UpdateBoxPositionOffset(Vector2 BoxOffset)
+{
+	Box.x = Box.x + BoxOffset.x;
+	Box.y = Box.y + BoxOffset.y;
+	return *this;
+}
+
+TextInputBox& TextInputBox::SetBoxPosition(Vector2 BoxOffset)
+{
+	Box.x = BoxOffset.x;
+	Box.y = BoxOffset.y;
+	return *this;
+}
+
 TextInputBox& TextInputBox::UpdateTextPosition()
 {
-	unsigned int Calculate = MeasureText(StringToHold, FontSize);
-	this->TextPosition.x = this->Box.x;
+	//this->TextPosition.x = this->Box.x;
 
-	this->TextPosition.y = this->Box.y;
+	//this->TextPosition.y = this->Box.y;
 	return *this;
 }
 
@@ -145,7 +164,6 @@ bool TextInputBox::bIsFocused(Vector2 MousePosition)
 {
 	return CheckCollisionPointRec(MousePosition, this->Box);
 }
-
 
 
 
@@ -228,8 +246,6 @@ void TextInputBox::Update()
 
 		if (strlen(StringToHold) < MaxChars && PressedKey > 0)
 		{
-			std::cout << LetterCount << std::endl;
-			std::cout << MeasureText(StringToHold, FontSize) << " Vs: " << Box.width << std::endl;
 			if (MeasureText(StringToHold, FontSize) > Box.width && bContainsText)
 			{
 				if (bWordWrap)
@@ -290,16 +306,41 @@ void TextInputBox::Update()
 		}
 	}
 
+	if (bShouldCenter)
+	{
+		int LineCount = 1; // Starting with 1 since we always have atleast 1 line
+		size_t pos = 0;
+
+		std::string TempString(StringToHold);
+
+		while ((pos = TempString.find('\n', pos)) != std::string::npos)
+		{
+			LineCount++;
+			pos++;
+		}
+
+		// Measure the width of the text
+		int textWidth = MeasureText(TempString.c_str(), FontSize);
+		int LineHeight = FontSize * LineCount;
+
+		// Assuming ButtonDim.x is the button's width, center the text in local space:
+		float XPosition = (Box.width - textWidth) / 2.0f;
+		float YPosition = (Box.height - LineHeight) / 2.0f;
+
+		// Update the local X offset; Y remains unchanged
+		TextOffset.x = XPosition;
+		TextOffset.y = YPosition;
+
+	}
 
 	if(IsEditable)
 	{
-		DrawText(this->StringToHold, TextPosition.x + TextOffset.x, TextPosition.y + TextOffset.y, FontSize, FontColor);
+		DrawText(StringToHold, Box.x + TextOffset.x, Box.y + TextOffset.y, FontSize, FontColor);
 	}
-	
 	
 	else
 	{
-		DrawText(this->Text.c_str(), TextPosition.x + TextOffset.x, TextPosition.y + TextOffset.y, FontSize, FontColor);
+		DrawText(Text.c_str(), Box.x + TextOffset.x, Box.y + TextOffset.y, FontSize, FontColor);
 	}
 	
 }

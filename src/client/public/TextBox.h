@@ -11,8 +11,9 @@ public:
 	// Methods
 
 	/*
-	* This class got way to specialized for a ChatBox
-	* Need to refactor this someday
+	* This class got way to specialized for the Chat
+	* TODO: Should maybe be split up in different inheritaded classes and somehow be more aligned with the button class
+	* Also not really smart to use const char[] here while using a std::string in the button....
 	*/
 
 	TextInputBox() = default;
@@ -24,6 +25,7 @@ public:
 	TextInputBox& SetInitialText(char InitalText[51]);
 	TextInputBox& UseWordWrap();
 	TextInputBox& UseContains();
+	TextInputBox& UseCenter();
 	TextInputBox& ResizeBoxToText();
 	TextInputBox& CanBeEdited(bool IsEditable);
 	TextInputBox& ChangeMaxChars(int MaxCharacters);
@@ -32,6 +34,8 @@ public:
 
 
 	TextInputBox& UpdateTextOffset(Vector2 NewTextPosition);
+	TextInputBox& UpdateBoxPositionOffset(Vector2 BoxOffset);
+	TextInputBox& SetBoxPosition(Vector2 BoxOffset);
 	TextInputBox& UpdateTextPosition();
 	TextInputBox& UpdateFontSize(int NewFontSize);
 	TextInputBox& UpdateFontColor(Color NewFontColor);
@@ -63,6 +67,7 @@ private:
 	int FontSize = 8;
 	Color FontColor = WHITE;
 	bool IsEditable = true;
+	bool bShouldCenter = false;
 
 	int LastSpaceIndex;
 	int BackupSpaceIndex;

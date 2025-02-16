@@ -55,6 +55,32 @@ Button& Button::UpdateTextPosition(Vector2 NewPos)
     return *this;
 }
 
+Button& Button::CenterText()
+{
+    int LineCount = 1; // Starting with 1 since we always have atleast 1 line
+    size_t pos = 0;
+
+    while ((pos = m_Text.find('\n', pos)) != std::string::npos)
+    {
+        LineCount++;
+        pos++;
+    }
+
+    // Measure the width of the text
+    int textWidth = MeasureText(m_Text.c_str(), FontSize);
+    int LineHeight = FontSize * LineCount;
+
+    // Assuming ButtonDim.x is the button's width, center the text in local space:
+    float XPosition = (ButtonDim.width - textWidth) / 2.0f;
+    float YPosition = (ButtonDim.height - LineHeight) / 2.0f;
+
+    // Update the local X offset; Y remains unchanged
+    TextPosition.x = XPosition;
+    TextPosition.y = YPosition;
+
+    return *this;
+}
+
 Button& Button::UpdateTextPosition(int X, int Y)
 {
     TextPosition.x = X;
@@ -79,6 +105,12 @@ Button& Button::UpdateButtonPosition(int X, int Y)
 Button& Button::UpdateColor(Color NewColor)
 {
     m_BackgroundColor = NewColor;
+    return *this;
+}
+
+Button& Button::UpdateText(std::string NewText)
+{
+    m_Text = NewText;
     return *this;
 }
 

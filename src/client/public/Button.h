@@ -21,10 +21,12 @@ public:
 	virtual Button& SetEventPayload(std::string GameModeName);
 
 	virtual Button& UpdateTextPosition(Vector2 NewPos);
+	virtual Button& CenterText();
 	virtual Button& UpdateTextPosition(int X, int Y);
 	virtual Button& UpdateButtonPosition(Vector2 NewPos);
 	virtual Button& UpdateButtonPosition(int X, int Y);
 	virtual Button& UpdateColor(Color NewColor);
+	virtual Button& UpdateText(std::string NewText);
 	virtual Button& UpdateTextColor(Color NewTextColor);
 	virtual Button& UpdateFontSize(int NewFontSize);
 
