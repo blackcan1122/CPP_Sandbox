@@ -139,8 +139,14 @@ if (downloadRaylib) then
 
     project (workspaceName)
         kind "ConsoleApp"
-        location "build_files/"
+        location "build_files/Client"
         targetdir "../bin/%{cfg.buildcfg}"
+
+        files {
+            "../src/private/**.cpp",  -- All source files go here
+            "../src/public/**.h",  -- All header files go here
+            "../src/public/**.hpp"
+        }
 
         filter {"system:windows", "configurations:Release", "action:gmake*"}
             kind "WindowedApp"
@@ -158,26 +164,31 @@ if (downloadRaylib) then
 
         vpaths 
         {
-            ["Header Files/*"] = { "../include/**.h",  "../include/**.hpp", "../src/**.h", "../src/**.hpp"},
-            ["Source Files/*"] = {"../src/**.c", "src/**.cpp"},
+            ["Header Files/*"] = { "../include/client/**.h",  "../include/client/**.hpp", "../src/client/**.h", "../src/client/**.hpp"},
+            ["Source Files/*"] = {"../src/client/**.c", "src/client/**.cpp"},
             ["Resources/*"] = {"../resources/**.ico"}
         }
         files {
-            "../src/**.c", 
-            "../src/**.cpp", 
-            "../src/**.h", 
-            "../src/**.hpp", 
+            "../src/client/**.c", 
+            "../src/client/**.cpp", 
+            "../src/client/**.h", 
+            "../src/client/**.hpp", 
+            "../src/client/private/**.c", 
+            "../src/client/private/**.cpp", 
+            "../src/client/public/**.h", 
+            "../src/client/public/**.hpp", 
             "../include/**.h", 
             "../include/**.hpp",
             "../resources/**.ico" -- Add the .ico file to the project
         }
     
-        includedirs { "../src" }
-        includedirs { "../src/public" }
-        includedirs { "../src/private" }
+        includedirs { "../src/client" }
+        includedirs { "../src/client/public" }
+        includedirs { "../src/client/private" }
         includedirs { "../include" }
+        includedirs { "external/openssl/include"}
 
-        links {"raylib"}
+        links {"raylib", "libssl_static", "libcrypto_static"}
 
         cdialect "C99"
         cppdialect "C++17"
@@ -199,7 +210,8 @@ if (downloadRaylib) then
             filter "system:windows"
             defines{"_WIN32"}
             links {"winmm", "gdi32", "opengl32"}
-            libdirs {"../bin/%{cfg.buildcfg}"}
+            links {"ws2_32", "crypt32"}
+            libdirs {"../bin/%{cfg.buildcfg}", "external/openssl/lib/static/"}
             files { "../resources/TimeCalc1.rc" } -- Include .rc file for all configurations on Windows
         
 
@@ -231,8 +243,9 @@ if (downloadRaylib) then
         includedirs {raylib_dir .. "/src", raylib_dir .. "/src/external/glfw/include" }
         vpaths
         {
-            ["Header Files"] = { raylib_dir .. "/src/**.h"},
-            ["Source Files/*"] = { raylib_dir .. "/src/**.c"},
+            ["Header Files/*"] = { "../include/**.h",  "../include/**.hpp", "../src/**.h", "../src/**.hpp"},
+            ["Source Files/*"] = {"../src/**.c", "src/**.cpp"},
+            ["Resources/*"] = {"../resources/**.ico"}
         }
         files {raylib_dir .. "/src/*.h", raylib_dir .. "/src/*.c"}
 
@@ -242,3 +255,60 @@ if (downloadRaylib) then
             compileas "Objective-C"
 
         filter{}
+
+
+
+
+    project "Server"
+    kind "ConsoleApp"
+    location "build_files/Server"
+    targetdir "../bin/%{cfg.buildcfg}/Server"
+
+    files {
+        "../src/Server/private/**.cpp",
+        "../src/Server/main.cpp",         -- All .cpp files in private
+        "../src/Server/public/**.h"     -- All .h files in public
+    }
+
+    print("../src/Server/private/**.cpp")
+
+    includedirs {
+        "../src/Server/public",  -- Public headers
+        "../src/Server/private", -- Private headers (if needed)
+        "../include"
+    }
+    includedirs { "external/openssl/include"}
+
+    -- Organizing the solution view with folders
+    vpaths {
+        ["Server/Header Files"] = { "../src/Server/public/**.h" },
+        ["Server/Source Files"] = { "../src/Server/private/**.cpp" },
+        ["Server/Source Files"] = { "../src/Server/**.cpp" },
+        ["Server/Resources"] = { "../resources/**.*" }
+    }
+
+    includedirs {raylib_dir .. "/src" }
+    includedirs {raylib_dir .."/src/external" }
+    includedirs {raylib_dir .."/src/external/glfw/include" }
+
+    libdirs {"../bin/%{cfg.buildcfg}", "external/openssl/lib/static/"}
+    
+    links {"raylib", "libssl_static", "libcrypto_static"}
+
+    cdialect "C99"
+    cppdialect "C++17"
+
+    flags { "ShadowedVariables" }
+    platform_defines()
+
+    filter "system:windows"
+        defines{"_WIN32"}
+        links {"ws2_32", "crypt32"}  -- Windows Sockets API (Winsock)
+
+    filter "system:linux"
+        links {"pthread", "m", "dl", "rt", "X11"}
+
+    filter "system:macosx"
+        links {"OpenGL.framework", "Cocoa.framework", "IOKit.framework", "CoreFoundation.framework", "CoreAudio.framework", "CoreVideo.framework", "AudioToolbox.framework"}
+
+    filter{}
