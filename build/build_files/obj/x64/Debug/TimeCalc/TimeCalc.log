@@ -1,7 +1,0 @@
-﻿  TimeCalcMode.cpp
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(68,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(69,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(70,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(71,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\marce\Documents\Hax0rStuff\TimeCalc\src\private\TimeCalcMode.cpp(72,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  TimeCalc.vcxproj -> C:\Users\marce\Documents\Hax0rStuff\TimeCalc\bin\Debug\TimeCalc.exe
