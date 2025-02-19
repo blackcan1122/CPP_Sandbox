@@ -17,7 +17,7 @@ Client::Client(SOCKET IncomingSocket)
 
 int Client::SendData(const std::string& Data)
 {
-    return send(m_ClientSocket, Data.c_str(), sizeof(Data.c_str()), 0);
+    return send(m_ClientSocket, Data.c_str(), Data.size(), 0);
 }
 
 int Client::ReceiveData(std::string& Data)
@@ -72,8 +72,7 @@ bool Client::PerformInitialHandshake()
     ClientHandshake->ParseHandshake(HandShakeMessage);
 
     if (ClientHandshake->IsTokenCorrect(ExpectedToken) == false)
-    {
-        std::cerr << "Client: " << ClientHandshake->GetClientName() << " With the Token: " << ClientHandshake->GetClientToken() << " Rejected";
+    {     
         return false;
     }
     m_ClientName = ClientHandshake->GetClientName();

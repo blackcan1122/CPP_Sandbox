@@ -30,6 +30,7 @@ public:
 	TextInputBox& CanBeEdited(bool IsEditable);
 	TextInputBox& ChangeMaxChars(int MaxCharacters);
 	TextInputBox& EreaseText();
+	std::string GetText();
 
 
 

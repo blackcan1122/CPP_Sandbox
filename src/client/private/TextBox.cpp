@@ -83,6 +83,11 @@ TextInputBox& TextInputBox::EreaseText()
 	return *this;
 }
 
+std::string TextInputBox::GetText()
+{
+	return Text;
+}
+
 TextInputBox& TextInputBox::UpdateTextOffset(Vector2 NewTextPosition)
 {
 	this->TextOffset = NewTextPosition;

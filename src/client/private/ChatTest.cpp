@@ -177,9 +177,11 @@ void ChatTest::Update()
 				NewMessage->Construct(30, ChatWindow->Box.y, WidthText, 22 * LineCount, Color{60,60,60,128})
 					.ChangeMaxChars(256)
 					.UpdateFontColor(GREEN)
-					.UpdateFontSize(19);
+					.UpdateFontSize(19)
+					.CanBeEdited(false)
+					.SetInitialText(Message.c_str());
 
-				strcpy(NewMessage->StringToHold, Message.c_str());
+				//strcpy(NewMessage->StringToHold, Message.c_str());
 
 				ChatHistory.push_front(NewMessage);
 
@@ -190,11 +192,11 @@ void ChatTest::Update()
 					if (i == 0) // Latest message at the bottom
 					{
 						NewPos = { NewMessage->Box.x, ChatWindow->Box.y - 35 - (19 * LineCount) };
-						std::cout << "The First Message in the Loop is: " << NewMessage->StringToHold << std::endl;
+						std::cout << "The First Message in the Loop is: " << NewMessage->GetText() << std::endl;
 					}
 					else // Stack older messages on top
 					{
-						int CurrentLineCount = CountNewlines(ChatHistory[i]->StringToHold);
+						int CurrentLineCount = CountNewlines(ChatHistory[i]->GetText());
 						
 
 						NewPos = { NewMessage->Box.x, ChatHistory[i - 1]->Box.y - (24 * CurrentLineCount) };

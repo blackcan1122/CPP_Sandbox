@@ -1,4 +1,5 @@
 #include "ServerInstance.h"
+#include <sstream>
 
 int ServerInstance::InitServer()
 {
@@ -87,18 +88,41 @@ void ServerInstance::ProcessClientSockets()
         sockaddr_in ClientAddress;
         int ClientSize = sizeof(ClientAddress);
         Client ClientSocket = accept(ServerSocket, (sockaddr*)&ClientAddress, &ClientSize);
+        ClientSocket.SetAddress(ClientAddress);
         if (ClientSocket.GetSocket() != INVALID_SOCKET)
         {
             if (!ClientSocket.PerformInitialHandshake())
             {
                 closesocket(ClientSocket.GetSocket());
-                std::cerr << "Client failed at Handshake." << std::endl;
+                std::cerr << "Client with IP: " << inet_ntoa(ClientAddress.sin_addr) << "failed at Handshake." << std::endl;
                 return;
             }
-            ClientSocket.SetAddress(ClientAddress);
             ioctlsocket(ClientSocket.GetSocket(), FIONBIO, &SocketMode);
             ConnectedClients.push_back(ClientSocket);
-            std::cout << "Welcome " << ClientSocket.GetClientName() << std::endl;
+            std::cout << "Client With Name: " << ClientSocket.GetClientName() << "And IP: " << inet_ntoa(ClientAddress.sin_addr) << " Connected." << std::endl;
+            for (auto CurrentClient : ConnectedClients)
+            {
+                if (CurrentClient.GetClientName() == ClientSocket.GetClientName())
+                {
+                    std::ostringstream WelcomeMessageStream;
+                    WelcomeMessageStream << "Hey " << CurrentClient.GetClientName() << "\n" << "Aktuell sind folgende User Verbunden: \n";
+                    for (auto CurrentClientStr : ConnectedClients)
+                    {
+                        if (CurrentClientStr.GetClientName() != ClientSocket.GetClientName())
+                        {
+                            WelcomeMessageStream << CurrentClientStr.GetClientName() << "\n";
+                        }
+
+                    }
+                    CurrentClient.SendData(WelcomeMessageStream.str());
+                }
+                else
+                {
+                    std::string WelcomeMessage = ClientSocket.GetClientName() + " is now Online";
+                    CurrentClient.SendData(WelcomeMessage);
+                }
+
+            }
         }
     }
 
@@ -120,8 +144,13 @@ void ServerInstance::ProcessClientSockets()
             else if (BytesReceived == 0 || BytesReceived == SOCKET_ERROR)
             {
                 std::cout << "Client disconnected!" << std::endl;
+                std::string ClientName = it->GetClientName();
                 it->CloseConnection();
                 it = ConnectedClients.erase(it);  // Erase and get the next iterator
+                for (auto& CurrentClients : ConnectedClients)
+                {
+                    CurrentClients.SendData("Server: " + ClientName + " Disconnected");
+                }
                 continue;  // Skip the increment and go to the next iteration
             }
         }
